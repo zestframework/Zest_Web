@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /css/
+Disallow: /image/
+Disallow: /js/
+Disallow: /tinymce/
+
+
+ 
+Disallow: /quiz/ 
+Disallow: /admin/ 
