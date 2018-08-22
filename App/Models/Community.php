@@ -31,7 +31,6 @@ class Community extends Model
 			'created' => $created,
 			'views' => 0,
 			'slug' => $slug,
-            'isComponent' => 'yes'
 		]]);
 		$db->db()->close();
 		return $result;

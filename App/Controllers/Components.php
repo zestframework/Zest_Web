@@ -20,7 +20,7 @@ class Components extends \Zest\Controller\Controller
         if (input('submit')) {
             $title = escape(input('title'));
             $contents = escape(input('description'));
-            $com = new \App\Models\Community();
+            $com = new \App\Models\Components();
             $result = $com->create($title,$contents);
             redirect(site_base_url().'components/1');
         }
