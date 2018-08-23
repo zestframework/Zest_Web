@@ -167,4 +167,43 @@ class Admin extends \Zest\Controller\Controller
             View::view("admin/pageViewId",$page[0]);
         }
     }
+    public function generateSiteMap()
+    {
+            $url = site_base_url();
+            $url = str_replace(":80", '', $url);
+            $root = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        '. "<url><loc>$url</loc></url><url><loc>{$url}blogs/1</loc></url><url><loc>{$url}community/1</loc></url><url><loc>{$url}Components/1</loc></url><url><loc>{$url}site/terms</loc></url><url><loc>{$url}site/privacy</loc></url><url><loc>{$url}faqs/1</loc></url>
+        <url><loc>$url/blogs</loc></url><url><loc>{$url}faqs</loc></url><url><loc>{$url}contribute/index</loc></url><url><loc>{$url}contribute/donate</loc></url>
+        ";
+        $fh = fopen("../Public/sitemap.xml", "w");
+        fwrite($fh, $root);
+        $topics = (new \App\Models\Community)->communityAll();
+        $components = (new \App\Models\Components)->componentAll();
+        $blogs = (new \App\Models\Pages)->pageWhere('type','blog');
+        $faqs = (new \App\Models\Pages)->pageWhere('type','faq');  
+        $users = (new \Zest\Auth\User)->getAll();     
+        foreach ($topics as $topic => $value) {
+               $links =  "<url><loc>".$url."community/view/".$value['slug']."</loc></url>";
+                fwrite($fh, $links);
+        }
+        foreach ($components as $component => $value) {
+               $links =  "<url><loc>".$url."components/view/".$value['slug']."</loc></url>";
+                fwrite($fh, $links);
+        } 
+        foreach ($blogs as $blog => $value) {
+               $links =  "<url><loc>".$url."blog/view/".$value['slug']."</loc></url>";
+                fwrite($fh, $links);
+        }   
+        foreach ($faqs as $faq => $value) {
+               $links =  "<url><loc>".$url."faq/view/".$value['slug']."</loc></url>";
+                fwrite($fh, $links);
+        }        
+        foreach ($users as $faq => $value) {
+               $links =  "<url><loc>".$url."@".$value['username']."</loc></url>";
+                fwrite($fh, $links);
+        }                            
+        $endroot = "</urlset>";
+        fwrite($fh, $endroot);
+        redirect($url."admin/home");
+    }
 }

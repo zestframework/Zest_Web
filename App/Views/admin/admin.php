@@ -52,6 +52,7 @@
                 <div class="card">
                     <div class="container">
                         <h1>Welcome Back</h1>
+                        <a href="<?=site_base_url()?>admin/generate/sitemap" class='btn btn-primary'>Generate Sitemap</a>
                     </div>
                 </div>
             </div>     

@@ -21,6 +21,7 @@ $router->add('admin/site/setting',"Admin@siteSetting","GET|POST|HEAD");
 $router->add('admin/page/add',"Admin@pageAdd","GET|POST|HEAD");
 $router->get('admin/page/view',"Admin@pageView");
 $router->add('admin/view/page/{id:[0-9]+}',"Admin@pageViewId","GET|POST|HEAD");
+$router->get('admin/generate/sitemap',"Admin@generateSiteMap");
 
 //blogs 
 $router->get('blogs/{page:[0-9]+}',"Blogs@blog");
