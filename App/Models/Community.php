@@ -1,209 +1,117 @@
 <?php
 
-namespace App\Controllers;
-use Zest\View\View;
-use Zest\Auth\Auth;
-use Zest\Auth\User;
+namespace App\Models;
 
-class Admin extends \Zest\Controller\Controller
-{
-    public function isAdmin(){
-         $user = new User;
-        if (!$user->isLogin() || $user->loginUser()[0]['role'] !== 'admin') {
-            redirect(site_base_url());
-        }     
-    }    
-    public function index()
-    {
-        self::isAdmin();
-        View::view('admin/admin');
-    }
-    /*
-    public function usersList()
-    {
-        self::isAdmin();
-        View::view("admin/userList");
-    }
-    public function userBanned()
-    {
-        self::isAdmin();
-        View::view("admin/userBanned");
-    }
-    public function userAdd()
-    {
-        self::isAdmin();
-       if (input("submit")) {
-            $name = escape(input('name'));
-            $username = escape(input('username'));
-            $email = escape(input('email'));
-            $password = escape(input('password'));
-            $confirm = $password;
-            $role = escape(input('status'));
-            \App\Models\Account::signup($name,$username,$email,$password,$confirm,$role);
-            header("Location:".site_base_url()."admin/list/users");
-       } else {
-            View::view("admin/userAdd");
-       } 
-    }
-    public function userView()
-    {
-        self::isAdmin();
-        if (input('edit') || input('ban') || input('unban') || input('close') || input('open') || input('role')){
-            if (input('ban')) {
-                $id = input('id');
-                $ban = "banned";
-                \App\Models\Account::updateUser(['ban'=>$ban],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                
-            }
-            if (input('unban')) {
-                $id = input('id');
-                $unban = "NULL";
-                \App\Models\Account::updateUser(['ban'=>$unban],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                
-            }    
-            if (input('close')) {
-                $id = input('id');
-                $close = "closed";
-                \App\Models\Account::updateUser(['close'=>$close],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                
-            }
-            if (input('open')) {
-                $id = input('id');
-                $open = "NULL";
-                \App\Models\Account::updateUser(['close'=>$open],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                
-            }                      
-            if (input("role")) {
-                $id = input('id');
-                $status = input("type");
-                \App\Models\Account::updateUser(['role'=>$status],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");
-            }
-            if (input('edit')){
-                $id = input('id');
-                $name = escape(input('name'));
-                $username = escape(input('username'));
-                $email = escape(input('email'));
-                \App\Models\Account::updateUser(['name'=>$name,'username'=>$username,'email'=>$email],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                                
-            }
-        } else {
-            $id = $this->route_params['id'];
-            $user = \App\Models\Account::userWhere('id',$id);
-            View::view("admin/userView",$user[0]);
-        }
-    } 
-    public function userClosed()
-    {
-        self::isAdmin();
-        View::view("admin/userClosed");
-    }
+use \Zest\Database\Db as Model;
+use Config\Database;
+use Zest\Auth\User;
+use Config\Auth;
+use Config\Email;
+use Zest\Mail\Mail;
+class Community extends Model
+{   
+    /* 
+    * Store database name
     */
-    public function siteSetting()
+    protected static $db_name = Database::DB_NAME;
+    /* 
+    * Store database table name
+    */
+    protected static $db_tbl = 'community';
+    
+    public function create($title,$cat,$contents)
+    {   
+        
+        $db = new Model;
+        $created = date("Y-m-d H:i:s");
+        $slug = \Zest\Site\Site::salts(7);
+        $token = \Zest\Site\Site::salts(15);
+        $result = $db->db()->insert(['table'=>static::$db_tbl,'db_name'=>static::$db_name,'columns' => [
+            'ownerId' => (new User())->loginUser()[0]['id'],
+            'title' => $title,
+            'category' => $cat,
+            'contents' => $contents,
+            'created' => $created,
+            'views' => 0,
+            'slug' => $slug,
+        ]]);
+        $db->db()->close();
+        return $result;
+    }
+    public function reply($slug,$contents)
+    {   
+        $db = new Model;
+        $ownerId = $this->communityWhere('slug',$slug)[0]['ownerId'];
+        $email = (new User())->getByWhere('id',$id)[0]['email'];
+        $created = date("Y-m-d H:i:s");
+        $token = \Zest\Site\Site::salts(15);
+        $result = $db->db()->insert(['table'=>static::$db_tbl,'db_name'=>static::$db_name,'columns' => [
+            'ownerId' => (new User())->loginUser()[0]['id'],
+            'contents' => $contents,
+            'created' => $created,
+            'slug' => $slug,
+        ]]);
+        $mail = new Mail();
+        $link = site_base_url() . "community/view/" . $slug;
+        $html = "Dear {$email} Someone reply in your discussion topic<br><a href='{$link}'>topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
+        $mail->setSubject("Community topic");
+        $mail->setSender(Email::SITE_EMAIL);
+        $mail->setContentHTML($html);
+        $mail->addReceiver($email);
+        $mail->send();
+        $db->db()->close();
+        return $result;
+    }    
+    public function communityAll()
     {
-        self::isAdmin();
-        if (input('status') || input('site')) {
-            if (input('status')) {
-                $status = input('type');
-                \App\Models\Site::siteUpdate($status,1);
-                header("Location:".site_base_url()."admin/site/setting");
-            }
-            if (input('site')) {
-                $name = escape(input('name'));
-                $email = escape(input('email'));
-                $description = escape(input('description'));
-                $keyword = escape(input('keyword'));
-                $gmeta = escape(input('gmeta'));
-                \App\Models\Site::siteUpdate($name,2);
-                \App\Models\Site::siteUpdate($email,3);
-                \App\Models\Site::siteUpdate($description,4);
-                \App\Models\Site::siteUpdate($keyword,5);
-                \App\Models\Site::siteUpdate($gmeta,6);
-                header("Location:".site_base_url()."admin/site/setting");
-            }
+        $db = new Model;
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'order_by'=> 'ID DESC','wheres' => ['title IS NOT NULL AND isComponent IS NULL']]);
+        $db->db()->close();
+        return $result;     
+    }
+    public function communityWhere($where,$value)
+    {
+        $db = new Model;
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ["{$where} ="."'{$value}'" . 'AND title IS NOT NULL AND isComponent IS NULL'],'order_by'=> 'ID DESC']);
+        $db->db()->close();
+        return $result;
+    }   
+    public function isClose($slug)
+    {
+        $result = $this->communityWhere('slug',$slug);
+        if ($result[0]['isClosed'] === 'yes') {
+            return true;
         } else {
-            View::view("admin/siteSetting");
+            return false;
         }
-    }
-    public function pageAdd(){
-        self::isAdmin();
-        if (input("page")) {
-            $title = escape(input('title'));
-            $shortContent = escape(input('scontent'));
-            $type = escape(input('type'));
-            $content = escape(input('contents'));
-            $result = \App\Models\Pages::pageCreate($title,$shortContent,$type,$content);
-            redirect(site_base_url()."admin/page/view");
-        } else {
-            View::view("admin/pageAdd");
-        }
-    }
-    public function pageView()
+    }       
+    public function communityReplies($slug)
     {
-        self::isAdmin();
-        View::view("admin/pageView");
+        $db = new Model;
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NULL AND isComponent IS NULL" ],'order_by'=> 'ID DESC']);
+        $db->db()->close();
+        return $result;        
     }
-    public function pageViewId()
+    public function viewLimitedCommunity($limit,$offset)
     {
-        self::isAdmin();
-        if (input('edit') || input('ty')) {
-            if (input('edit')) {
-                $id = input('id');
-                $title = escape(input('title'));
-                $shortContent = escape(input('scontent'));
-                $content = escape(input('contents'));
-                $result = \App\Models\Pages::pageUpdate(['title'=>$title,'scontent'=>$shortContent,'content'=>$content,'updated'=>time()],$id);
-                redirect(site_base_url()."admin/view/page/{$id}");
-            }
-            if (input('ty')) {
-                $id = input('id');
-                $type = input('type');
-                $result = \App\Models\Pages::pageUpdate(['type'=>$type,'updated'=>time()],$id);
-                redirect("Location:".site_base_url()."admin/view/page/{$id}");
-            }
-        } else {
-            $id = $this->route_params['id'];
-            $page = \App\Models\Pages::pageWhere("id",$id);
-            View::view("admin/pageViewId",$page[0]);
-        }
+        $db = new Model;
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
+        $db->db()->close();
+        return $result;     
+    }    
+    public function isCommunity($slug)
+    {
+        $db = new Model;
+        $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NULL"]]);
+        $db->db()->close();
+        return $result;
     }
-    public function generateSiteMap()
+
+    public function communityUpdate($params,$id)
     {
-            $url = site_base_url();
-            $url = str_replace(":443", '', $url);
-            $root = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-        '. "<url><loc>$url</loc></url><url><loc>{$url}blogs/1</loc></url><url><loc>{$url}community/1</loc></url><url><loc>{$url}Components/1</loc></url><url><loc>{$url}site/terms</loc></url><url><loc>{$url}site/privacy</loc></url><url><loc>{$url}faqs/1</loc></url>
-        <url><loc>$url/blogs</loc></url><url><loc>{$url}faqs</loc></url><url><loc>{$url}contribute/index</loc></url><url><loc>{$url}contribute/donate</loc></url>
-        ";
-        $fh = fopen("../public_html/sitemap.xml", "w");
-        fwrite($fh, $root);
-        $topics = (new \App\Models\Community)->communityAll();
-        $components = (new \App\Models\Components)->componentAll();
-        $blogs = (new \App\Models\Pages)->pageWhere('type','blog');
-        $faqs = (new \App\Models\Pages)->pageWhere('type','faq');  
-        $users = (new \Zest\Auth\User)->getAll();     
-        foreach ($topics as $topic => $value) {
-               $links =  "<url><loc>".$url."community/view/".$value['slug']."</loc></url>";
-                fwrite($fh, $links);
-        }
-        foreach ($components as $component => $value) {
-               $links =  "<url><loc>".$url."components/view/".$value['slug']."</loc></url>";
-                fwrite($fh, $links);
-        } 
-        foreach ($blogs as $blog => $value) {
-               $links =  "<url><loc>".$url."blog/view/".$value['slug'] . '/' .urlencode($value['title']) . "</loc></url>";
-                fwrite($fh, $links);
-        }   
-        foreach ($faqs as $faq => $value) {
-               $links =  "<url><loc>".$url."faq/view/".$value['slug']. '/' .  urlencode($value['title'])  ."</loc></url>";
-                fwrite($fh, $links);
-        }        
-        foreach ($users as $faq => $value) {
-               $links =  "<url><loc>".$url."@".$value['username']."</loc></url>";
-                fwrite($fh, $links);
-        }                            
-        $endroot = "</urlset>";
-        fwrite($fh, $endroot);
-        redirect($url."admin/home");
+        $db = new Model;
+        $update = $db->db()->update(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'columns'=>$params,'wheres'=>['id ='.$id]]);
+        $db->db()->close();
+        return $update;     
     }
 }

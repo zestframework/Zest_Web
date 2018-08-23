@@ -18,20 +18,20 @@ class Admin extends \Zest\Controller\Controller
         self::isAdmin();
         View::view('admin/admin');
     }
-	/*
+    /*
     public function usersList()
     {
-    	self::isAdmin();
+        self::isAdmin();
         View::view("admin/userList");
     }
     public function userBanned()
     {
-    	self::isAdmin();
+        self::isAdmin();
         View::view("admin/userBanned");
     }
     public function userAdd()
     {
-    	self::isAdmin();
+        self::isAdmin();
        if (input("submit")) {
             $name = escape(input('name'));
             $username = escape(input('username'));
@@ -47,7 +47,7 @@ class Admin extends \Zest\Controller\Controller
     }
     public function userView()
     {
-    	self::isAdmin();
+        self::isAdmin();
         if (input('edit') || input('ban') || input('unban') || input('close') || input('open') || input('role')){
             if (input('ban')) {
                 $id = input('id');
@@ -95,13 +95,13 @@ class Admin extends \Zest\Controller\Controller
     } 
     public function userClosed()
     {
-    	self::isAdmin();
+        self::isAdmin();
         View::view("admin/userClosed");
     }
-	*/
+    */
     public function siteSetting()
     {
-    	self::isAdmin();
+        self::isAdmin();
         if (input('status') || input('site')) {
             if (input('status')) {
                 $status = input('type');
@@ -126,26 +126,26 @@ class Admin extends \Zest\Controller\Controller
         }
     }
     public function pageAdd(){
-    	self::isAdmin();
+        self::isAdmin();
         if (input("page")) {
             $title = escape(input('title'));
             $shortContent = escape(input('scontent'));
             $type = escape(input('type'));
             $content = escape(input('contents'));
             $result = \App\Models\Pages::pageCreate($title,$shortContent,$type,$content);
-			redirect(site_base_url()."admin/page/view");
+            redirect(site_base_url()."admin/page/view");
         } else {
             View::view("admin/pageAdd");
         }
     }
     public function pageView()
     {
-    	self::isAdmin();
+        self::isAdmin();
         View::view("admin/pageView");
     }
     public function pageViewId()
     {
-    	self::isAdmin();
+        self::isAdmin();
         if (input('edit') || input('ty')) {
             if (input('edit')) {
                 $id = input('id');
@@ -170,12 +170,12 @@ class Admin extends \Zest\Controller\Controller
     public function generateSiteMap()
     {
             $url = site_base_url();
-            $url = str_replace(":80", '', $url);
+            $url = str_replace(":443", '', $url);
             $root = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
         '. "<url><loc>$url</loc></url><url><loc>{$url}blogs/1</loc></url><url><loc>{$url}community/1</loc></url><url><loc>{$url}Components/1</loc></url><url><loc>{$url}site/terms</loc></url><url><loc>{$url}site/privacy</loc></url><url><loc>{$url}faqs/1</loc></url>
         <url><loc>$url/blogs</loc></url><url><loc>{$url}faqs</loc></url><url><loc>{$url}contribute/index</loc></url><url><loc>{$url}contribute/donate</loc></url>
         ";
-        $fh = fopen("../Public/sitemap.xml", "w");
+        $fh = fopen("../public_html/sitemap.xml", "w");
         fwrite($fh, $root);
         $topics = (new \App\Models\Community)->communityAll();
         $components = (new \App\Models\Components)->componentAll();
@@ -191,11 +191,11 @@ class Admin extends \Zest\Controller\Controller
                 fwrite($fh, $links);
         } 
         foreach ($blogs as $blog => $value) {
-               $links =  "<url><loc>".$url."blog/view/".$value['slug']."</loc></url>";
+               $links =  "<url><loc>".$url."blog/view/".$value['slug'] . '/' .urlencode($value['title']) . "</loc></url>";
                 fwrite($fh, $links);
         }   
         foreach ($faqs as $faq => $value) {
-               $links =  "<url><loc>".$url."faq/view/".$value['slug']."</loc></url>";
+               $links =  "<url><loc>".$url."faq/view/".$value['slug']. '/' .  urlencode($value['title'])  ."</loc></url>";
                 fwrite($fh, $links);
         }        
         foreach ($users as $faq => $value) {
