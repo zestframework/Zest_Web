@@ -131,7 +131,7 @@ class Admin extends \Zest\Controller\Controller
             $title = escape(input('title'));
             $shortContent = escape(input('scontent'));
             $type = escape(input('type'));
-            $content = $_POST['contents'];
+            $content = escape(input('contents'));
             $result = \App\Models\Pages::pageCreate($title,$shortContent,$type,$content);
 			redirect(site_base_url()."admin/page/view");
         } else {
