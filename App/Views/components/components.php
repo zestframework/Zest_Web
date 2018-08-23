@@ -13,7 +13,7 @@
           $page = $args['page'];
           $limit = 10;
           $url = site_base_url()."/";
-          $paginator = new \App\Classes\Pagination($tItems,10,$url,$page,'faqs');
+          $paginator = new \App\Classes\Pagination($tItems,$limit,$url,$page,'/');
           if($page == 1){
             $start = 0;
           }else{

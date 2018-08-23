@@ -1,4 +1,5 @@
 <?= \Zest\View\View::view('nav'); ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 <title>Add Component</title>
 <br><br>
 <style type="text/css">
@@ -21,8 +22,7 @@
       </div>           
       <div class="row">
         <div class="input-field col s10 offset-s1">
-        <textarea id="textarea1" name='description' class="materialize-textarea"></textarea>
-        <label for="description">Description (markdown supported)</label>
+        <textarea id="description" name='description' class="materialize-textarea"></textarea>
         </div>
       </div>  
     </div>
@@ -30,7 +30,7 @@
       <div class='row'>
         <div class='col m12 s12'>
             <div class='col m3 s3'>
-                <input class='btn waves-effect waves-light' type='submit' name='submit' value='Submit' style='color:#fff' />
+                <input class='btn zest' type='submit' name='submit' value='Submit' style='color:#fff' />
              </div>   
         </div> 
       </div>   
@@ -38,3 +38,7 @@
   </div>  
 
 <?= \Zest\View\View::view('footer'); ?>
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+var simplemde = new SimpleMDE({ element: document.getElementById("description") });
+</script>

@@ -10,7 +10,7 @@ class Admin extends \Zest\Controller\Controller
     public function isAdmin(){
          $user = new User;
         if (!$user->isLogin() || $user->loginUser()[0]['role'] !== 'admin') {
-            redirect(site_base_url() . "@" . $user->loginUser()[0]['username']);
+            redirect(site_base_url());
         }     
     }    
     public function index()

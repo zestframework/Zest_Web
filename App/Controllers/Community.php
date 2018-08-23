@@ -37,16 +37,16 @@ class Community extends \Zest\Controller\Controller
          if (input('submit')) {
             $slug = $this->route_params['slug'];
             $contents = escape(input('description'));
-            $res = \App\Models\Community::reply($slug,$contents);
+            $res = (new \App\Models\Community)->reply($slug,$contents);
              redirect(site_base_url().'community/view/' .$slug);
          } elseif(input('close')) {
             $slug = $this->route_params['slug'];
-            $id = \App\Models\Community::communityWhere('slug',$slug)[0]['id'];
+            $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
             $res = \App\Models\Community::communityUpdate(['isClosed' => 'yes'],$id);
             redirect(site_base_url().'community/view/' .$slug);
          }elseif(input('open')) {
             $slug = $this->route_params['slug'];
-            $id = \App\Models\Community::communityWhere('slug',$slug)[0]['id'];
+            $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
             $res = \App\Models\Community::communityUpdate(['isClosed' => 'no'],$id);
             redirect(site_base_url().'community/view/' .$slug);
          } else {

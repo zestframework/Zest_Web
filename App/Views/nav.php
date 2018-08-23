@@ -41,20 +41,10 @@ $user = new \Zest\Auth\User;
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="manifest" href="<?= site_base_url(); ?>manifest.json">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <meta name="theme-color" content="#009688" />
+      <meta name="theme-color" content="#e89696" />
       <meta name="google-site-verification" content="<?= $args[5]['value'] ?>" />
       <neta name="description" content="<?= $args[3]['value'] ?>"/>
       <neta name="keyword" content="<?= $args[4]['value'] ?>"/>
-      <style type="text/css">
-          #whr-logo:before {
-            content: url("<?= site_base_url(); ?>/image/icon.png");
-          }
-          @media only screen and (max-width: 950px) {
-            .whr-logo:before {
-              content: url("<?= site_base_url(); ?>/image/icon.png");
-            }
-          }
-      </style> 
 </head>
 <body>
 <div id="overlay"></div>
@@ -62,10 +52,11 @@ $user = new \Zest\Auth\User;
 <div id='none'>  
 <nav class="hide-on-med-and-down desktop-mav">
 	   <div class="nav-wrapper container">
-      <a href="<?= site_base_url(); ?>" class="brand-logo" style="font-size: 18px!important"><img src="<?= site_base_url(); ?>/image/iconwhite.png" style='width: 25px;height:25px;margin-bottom:-6px'> <b> ZestFramework</b></a>
+      <a href="<?= site_base_url(); ?>" class="brand-logo" style="font-size: 18px!important"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'> <b> ZestFramework</b></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="waves-effect" href="<?=site_base_url()?>">Home</a></li>
         <li><a class="waves-effect" href="<?=site_base_url()?>blogs/1">Blog</a></li>
+        <li><a class="waves-effect" href="https://zest.readthedocs.io/en/latest/">Documentation</a></li> 
         <li><a class="waves-effect" href="<?=site_base_url()?>community/1">Community</a></li>
         <li><a class='dropdown-button' href='#' data-target='dropdown01' >Download &#x25BE</a></li>
         <ul id='dropdown01' class='dropdown-content'>
@@ -74,6 +65,9 @@ $user = new \Zest\Auth\User;
       <?php if ($user->isLogin()){ ?>
         <li><a class='dropdown-button' href='#' data-target='dropdown1' ><i class="material-icons" style="color:#fff!important">account_circle</i></a></li>
         <ul id='dropdown1' class='dropdown-content'>
+           <?php if ((new \App\Models\Account())->isAdmin()) { ?>
+                <li><a class="waves-effect" href="<?= site_base_url(); ?>admin/home">Admin</a></li>          
+           <?php } ?> 
             <li><a class="waves-effect" href="<?= site_base_url(); ?>components/add">Add Component</a></li>
             <li><a class="waves-effect" href="<?= site_base_url(); ?>community/add">Add Topic</a></li>
             <li><a class="waves-effect" href="<?= site_base_url(); ?>@<?= $user->loginUser()[0]['username'] ?>">Profile</a></li>
@@ -89,9 +83,10 @@ $user = new \Zest\Auth\User;
 </nav>
   <div class="hide-on-large-only"> 
    <div class="topnav container" id="myTopnav">
-      <a href="<?=site_base_url()?>" class="active wrh-logo"><img src="<?= site_base_url(); ?>/image/iconwhite.png" style='width: 25px;height:25px;margin-bottom:-6px'>  ZestFramework</a>
+      <a href="<?=site_base_url()?>" class="active wrh-logo"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'>  Zest</a>
       <a href="<?=site_base_url()?>" class="">Home</a>
         <a class="waves-effect" href="<?=site_base_url()?>blogs/1">Blog</a>
+        <a class="waves-effect" href="https://zest.readthedocs.io/en/latest/">Documentation</a>
         <a class="waves-effect" href="<?=site_base_url()?>community/1">Community</a>
         <a class='dropdown-button' href='#' data-target='dropdown01-mob' >Downloads &#x25BE</a>
         <ul id='dropdown01-mob' class='dropdown-content'>
@@ -100,6 +95,9 @@ $user = new \Zest\Auth\User;
       <?php if ($user->isLogin()){ ?>
         <a class='dropdown-button' href='#' data-target='dropdown1-mob'>My account &#x25BE</a>
         <ul id='dropdown1-mob' class='dropdown-content'>
+            <?php if ((new \App\Models\Account())->isAdmin()) { ?>
+                <li><a class="waves-effect" href="<?= site_base_url(); ?>admin/home">Admin</a></li>          
+           <?php } ?>          
             <li><a class="waves-effect" href="<?= site_base_url(); ?>community/add">Add Topic</a></li>
             <li><a class="waves-effect" href="<?= site_base_url(); ?>components/add">Add Component</a></li>
             <li><a class="waves-effect" href="<?= site_base_url(); ?>@<?= $user->loginUser()[0]['username'] ?>">Profile</a></li>

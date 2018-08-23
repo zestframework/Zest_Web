@@ -4,7 +4,7 @@
     <h1 class="align-center">Blogs</h1>
 </div> 
 <div id='relax'></div>
-<div id='relax-course-plater'>
+<div id='relax-plater'>
   <h1 class="zest-title"><span class="page-title">Blogs</span></h1>
   <div class="col m12 s12">
     <div class="row">

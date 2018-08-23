@@ -10,15 +10,7 @@
     <link href="<?= site_base_url() ?>admin/css/style.css" rel="stylesheet">
     <link href="<?= site_base_url() ?>admin/css/themes/all-themes.css" rel="stylesheet" />
     <?= \Zest\View\View::view('admin/nav'); ?>
-    <script type="text/javascript">
-        tinymce.init({
-                selector: "textarea",
-                plugins: [
-                        "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
-                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                        "table contextmenu directionality emoticons template textcolor paste fullpage textcolor"
-                ],
-    });</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <title>Add pages -Admin</title>
 <section class="content">
     <div class="container-fluid">
@@ -60,7 +52,7 @@
                                     <b>Contents</b>
                                 <div class="input-group">
                                     <div class="form-line">
-                                        <textarea id="tinymce" name='contents'></textarea>
+                                        <textarea id="desc" name='contents'></textarea>
                                     </div>
                                 </div>
                                 </div> 
@@ -88,3 +80,7 @@
     <script src="<?= site_base_url() ?>admin/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <script src="<?= site_base_url() ?>admin//js/admin.js"></script>
     <script src="<?= site_base_url() ?>admin/js/pages/forms/basic-form-elements.js"></script>
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script>
+    var simplemde = new SimpleMDE({ element: document.getElementById("desc") });
+    </script>

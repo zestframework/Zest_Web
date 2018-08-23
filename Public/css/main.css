@@ -57,14 +57,14 @@ body{
 #profile-plater p {
     font-size: 28px;
 }
-#relax{
+#relax {
     background-color: #ededed;
     color: #000;
     width: 100%;
     max-width: 100%;
     padding:100px;
 }
-#relax-course-plater {
+#relax-plater {
     background-color: #ededed;
     color: #000;
     width: 100%;
@@ -87,39 +87,12 @@ body{
     border: 1px solid transparent;
     border-radius: 50%;
 }
-#pages{
+#pages {
     background: rgb(180,103,103);
     background: linear-gradient(90deg, rgba(180,103,103,1) 0%, rgba(202,150,232,0.7840356719627809) 35%, rgba(255,199,199,1) 100%);    color: #fff;
     width: 100%;
     max-width: 100%;
     padding: 60px;
-}
-#font-size-course-all-page {
-    font-size: 15px!important;
-    color: black;
-    font-family: GothamRoundedBook;
-}
-#course-second-plater {
-    background-color: #fff;
-    color: #000;
-    width: 100%;
-    max-width: 100%;
-    padding: 100px; 
-}
-#price-course-page{
-    background-color: #003e4c;
-    font-size: 17px;
-    padding: 5px;
-    border: 1px solid #003e4c;
-    border-radius: 25px;
-}
-#card-title-course{
-    font-weight: bold;
-    font-size: 31px;
-    background-color: #003e4c;
-    padding: 6px;
-    border: 1px solid #003e4c;
-    border-radius: 25px;
 }
 .pagination a {
     color: black;
@@ -134,62 +107,6 @@ body{
 }
 .pagination a:hover:not(.active) {
     background-color: #ddd;
-}
-#course-plater{
-    background: rgb(0,62,76);
-    background: radial-gradient(circle, rgba(0,62,76,1) 0%, rgba(0,42,76,1) 35%, rgba(0,76,73,1) 100%);
-    color: #fff;
-    width: 100%;
-    max-width: 100%;
-    padding: 230px;
-}
-#course-plater p{
-    color: white!important;
-}
-#home-p{
-    font-size: 25px!important;
-}
-#home-icon-card {
-    position: absolute;
-    margin-top: -80px!important;
-    margin-left: 45%;
-    border: 1px solid transparent;
-}
-#card-home {
-    margin-top: 60px;
-    padding: 12px;
-}
-.slideshow-container {
-    max-width: 100%;
-    position: relative;
-    margin: auto;
-}
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-@-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-#course-about p{
-    font-family: GothamRoundedBook!important;
-    text-align: justify;
 }
 .verdana {
     font-family: Poppins,verdana!important;
@@ -325,35 +242,14 @@ body{
   #profile-plater {
       padding: 80px;
   }
-  #home-icon-card {
-     display: none;
-  }
-  #price-course-page{
-      font-size: 14px;
-      padding: 2px;
-  }
-  #relax-course-plater {
+  #relax-plater {
       padding:10px;    
-  }
-  #card-title-course{
-      font-size: 21px;
-      padding: 4px;
-  }
-  #course-card p {
-      font-size: 11px!important;
-  }
-  #card-title-course {
-      font-size: 21px!important;
-      padding: 2px!important; 
   }
   #relax {
       padding:12px!important;    
   }
   #white-board {
       padding:12px!important;
-  }
-  #home-p{
-      font-size: 15px!important;
   }
   #desktop-bottom {
     margin-top: 0px!important;
@@ -439,7 +335,7 @@ body{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #009688;
+    background-color: #e89696;
     min-width: 160px;
     box-shadow: 0px 8px 26px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -455,12 +351,12 @@ body{
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #b46768;
+  background-color: #e89696;
   color: white;
 }
 
 .dropdown-content a:hover {
-    background-color: #b46768;
+    background-color: #e89696;
     color: black;
 }
 
@@ -585,26 +481,60 @@ h6 {
     background: #00397f;
 }
 .topic-answer {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 10px;
   color: #fff;
-  line-height: 25px;
+  line-height: 30px;
   text-align: center;
   background: #329e36;
 }
 .topic-answer-no {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 10px;
   color: #fff;
-  line-height: 25px;
+  line-height: 30px;
   text-align: center;
   background: #0062af;
 }
 .community-page-title {
-   margin-left: 25px!important;
+   margin-left: 35px!important;
    margin-top: -20px!important;
+}
+
+.btn {
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+.btn:hover{
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2) 
+}
+.zest {
+  background: #e89696;
+}
+p img {
+    width: 100%;
+  }
+pre code {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
 }

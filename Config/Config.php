@@ -26,7 +26,7 @@ class Config
      *
      * @var bool
      */
-    const SHOW_ERRORS = true;
+    const SHOW_ERRORS = false;
 
     /**
      * Default language.

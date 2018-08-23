@@ -10,20 +10,18 @@
                   <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>site/terms">Terms</a></li>
                   <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>site/privacy">Privacy</a></li>
                   <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>faqs/1">Faqs</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/Softhub99/Zest_Web">Find me Github</a></li>
+                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>contribute/index">Contribute</a></li>
+                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>contribute/donate">Donation</a></li>                  
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-           Copyright © 2018 ZestFramework
+           Copyright © 2018 ZestFramework (Built using ZestFramework)
            <br>
-            <a class="grey-text text-lighten-4 right" href="#!" id='f-icon'><i class="fa fa-facebook"></i></a>
-            <a class="grey-text text-lighten-4 right" href="#!" id='f-icon'> <i class="fa fa-instagram"></i></a>
-           <a class="grey-text text-lighten-4 right" href="#!" id='f-icon'> <i class="fa fa-twitter"></i></a>
-           <a class="grey-text text-lighten-4 right" href="#!" id='f-icon'> <i class="fa fa-linkedin"></i></a>
-           <a class="grey-text text-lighten-4 right" href="#!" id='f-icon'> <i class="fa fa-youtube"></i></a>
-           <a class="grey-text text-lighten-4 right" href="#!" id='f-icon'> <i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            <a class="grey-text text-lighten-4 right" href="https://web.facebook.com/malikumerfarooq01/" id='f-icon'><i class="fa fa-facebook"></i></a>
             </div>
           </div>
         </footer>

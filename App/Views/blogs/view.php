@@ -18,12 +18,14 @@
 </div> 
 <div class="container">
   <h1 class="zest-title"><span class="page-title"><?=$args['title']?></span></h1>
-  <div><i><?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?></i> </div>
-  <i><?= $args['created']?></i></div> 
+  <div><b><?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?></b> </div>
+  <i><?= $args['created']?></i> 
   <br>
-  <p class="verdana"><?=$args['content']?></p>
+  <div class="fb-share-button" data-href="<?=site_base_url();?>/blog/view/<?=$args['slug']?>/<?=urlencode($args['title'])?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+  <br>
+  <p class="verdana"><?= (new \Michelf\Markdown())::defaultTransform($args['content']);?></p>
   <br>
   
-  <div class="fb-share-button" data-href="<?=site_base_url();?>/blog/view/<?=$args['slug']?>/<?=urlencode($args['title'])?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-</div>
+
+</div></div>
 <?= \Zest\View\View::view('footer'); ?>

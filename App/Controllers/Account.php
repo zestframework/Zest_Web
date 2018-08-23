@@ -52,26 +52,35 @@ class Account extends \Zest\Controller\Controller
     public function signupProcess() 
     {
         $this->isLogin();
-        $name = escape(input('name'));
-        $username = escape(input('username'));
-        $email = escape(input('email'));
-        $password = escape(input('password'));
-        $confirm = escape(input('confirm'));
-        $auth = new Auth;
-        $auth->signup()->signup($username,$email,$password,['name' => $name, 'passConfirm' => $confirm,'role' => 'normal','ip' => (new \Zest\UserInfo\UserInfo)->ip()]);
-        if ($auth->fail()) {
-            $errors = $auth->error()->get();
-            foreach ($errors as $error) {
-                if (is_array($error)) {
-                    foreach ($error as $value) {
-                        echo $value."<br>";
+         $value = \Zest\Session\Session::getValue('signup');
+         if (time() > $value) {
+            \Zest\Session\Session::unsetValue('signup');
+         }        
+        if (!(new \App\Models\Account)->isSignup()) {
+            $name = escape(input('name'));
+            $username = escape(input('username'));
+            $email = escape(input('email'));
+            $password = escape(input('password'));
+            $confirm = escape(input('confirm'));
+            $auth = new Auth;
+            $auth->signup()->signup($username,$email,$password,['name' => $name, 'passConfirm' => $confirm,'role' => 'normal','ip' => (new \Zest\UserInfo\UserInfo)->ip()]);
+            if ($auth->fail()) {
+                $errors = $auth->error()->get();
+                foreach ($errors as $error) {
+                    if (is_array($error)) {
+                        foreach ($error as $value) {
+                            echo $value."<br>";
+                        }
+                    } else {
+                        echo $error."<br>";
                     }
-                } else {
-                    echo $error."<br>";
                 }
+            } else {
+                \Zest\Session\Session::setValue('signup',time() + 3600);
+                echo 'Your account has been created login to enjoy in our services';
             }
         } else {
-            echo 'Your account has been created login to enjoy in our services';
+            echo "You're allow create only one account within one hour";
         }
     }
     public function logout() 

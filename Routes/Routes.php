@@ -17,10 +17,10 @@ $router->post('account/update/password/action',"Account@profilePasswordUpdate");
 
 //Admin
 $router->get('admin/home',"Admin@index");
-$router->get('admin/site/setting',"Admin@siteSetting");
+$router->add('admin/site/setting',"Admin@siteSetting","GET|POST|HEAD");
 $router->add('admin/page/add',"Admin@pageAdd","GET|POST|HEAD");
 $router->get('admin/page/view',"Admin@pageView");
-$router->get('admin/view/page/{id:[0-9]+}',"Admin@pageViewId");
+$router->add('admin/view/page/{id:[0-9]+}',"Admin@pageViewId","GET|POST|HEAD");
 
 //blogs 
 $router->get('blogs/{page:[0-9]+}',"Blogs@blog");
@@ -33,6 +33,10 @@ $router->get('faq/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+]+}',"Faq@view");
 //Site
 $router->get('site/terms',"Site@terms");
 $router->get('site/privacy',"Site@privacy");
+
+//Contribute
+$router->get('contribute/index',"Contribute@index");
+$router->get('contribute/donate',"Contribute@donation");
 
 //Community
 $router->get('community/add',"Community@add");
