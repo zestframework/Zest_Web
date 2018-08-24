@@ -64,7 +64,9 @@
 				</form>
 			</div>
 		</div>
-	<?php }} ?>		
+	<?php }} else { ?>
+		<div class='alert info' style='color:white'>You should login in order to reply this topic</div>		
+	<?php } ?>		
   </div>
 </div>
 </div>

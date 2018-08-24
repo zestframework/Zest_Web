@@ -19,14 +19,14 @@
                   <div class="row">
                     <div class="input-field col s10 offset-s1">
                       <i class="material-icons prefix">people</i>
-                      <input id="username-update" type="text" class="validate" value="<?= $args['username'] ?>" >
+                      <input id="username-update" type="text" class="validate" value="<?= $args['username'] ?>" disabled>
                       <label for="username-update">Username</label>
                     </div>
                   </div>        
                   <div class="row">
                     <div class="input-field col s10 offset-s1">
                       <i class="material-icons prefix">email</i>
-                      <input id="email" type="email" class="validate" value="<?= $args['email'] ?>" >
+                      <input id="email" type="email" class="validate" value="<?= $args['email'] ?>" disabled >
                       <label for="email">Email</label>
                     </div>
                   </div> 

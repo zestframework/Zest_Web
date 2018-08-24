@@ -103,21 +103,11 @@ class Account extends \Zest\Controller\Controller
     {
         $user = new User;
         $error = false;
-        $name = escape(input('name'));
-        $username = escape(input('username'));
-        $email = escape(input('email'));
-        if ($user->isUsername($username)) {
-            $error = true;
-            echo "Sorry, {$username} username already exists, try another";
-        }
-        if ($user->isEmail($email)) {
-            $error = true;
-            echo "Sorry, {$email} email already exists, try another";
-        }        
+        $name = escape(input('name'));      
         if ($error !== true) {
             $auth = new Auth;
             $id = $user->loginUser()[0]['id'];
-            $auth->update()->update(['name'=>$name,'username'=>$username,'email'=>$email],$id);
+            $auth->update()->update(['name'=>$name],$id);
             if ($auth->fail()) {
                 $errors = $auth->error()->get();
                 foreach ($errors as $error) {
@@ -159,25 +149,32 @@ class Account extends \Zest\Controller\Controller
     public function profilePasswordUpdate()
     {
         $user = new User;
-        $password = escape(input('password'));   
-        $confirm = escape(input('confirm'));      
-        $auth = new Auth;
-        $id = $user->loginUser()[0]['id'];
-        $auth->update()->updatePassword($password,$confirm,$id);
-        if ($auth->fail()) {
-            $errors = $auth->error()->get();
-            foreach ($errors as $error) {
-                if (is_array($error)) {
-                    foreach ($error as $value) {
-                        echo $value."<br>";
+        $error = false;
+        if (!input('password') || !input('confirm')) {
+            $error = true;
+            echo "Password fields are required";
+        }
+        if (!$error) {
+           $password = escape(input('password'));   
+           $confirm = escape(input('confirm'));      
+            $auth = new Auth;
+            $id = $user->loginUser()[0]['id'];
+            $auth->update()->updatePassword($password,$confirm,$id);
+            if ($auth->fail()) {
+                $errors = $auth->error()->get();
+                foreach ($errors as $error) {
+                    if (is_array($error)) {
+                        foreach ($error as $value) {
+                            echo $value."<br>";
+                        }
+                    } else {
+                        echo $error."<br>";
                     }
-                } else {
-                    echo $error."<br>";
                 }
-            }
-        } else {
-            echo 'Your account password has been updated successfully';
-        }            
+            } else {
+                echo 'Your account password has been updated successfully';
+            }              
+        }          
     }    
     public function profileView() 
     {

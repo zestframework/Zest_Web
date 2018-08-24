@@ -38,9 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   	$("#submit-update").css('opacity', '0.4');
     var name = $("#name").val();
     var id = $("#id").val();
-    var username = $("#username-update").val();
-    var email = $("#email").val();
-    $.post(url+"account/update/action",{id:id,name:name,username:username,email:email},function(data){
+    $.post(url+"account/update/action",{id:id,name:name},function(data){
       $("#submit-update").css('opacity', '1');
       	 var toastHTML = '<span>'+ data +'</span>';
  			   M.toast({html: toastHTML});        
