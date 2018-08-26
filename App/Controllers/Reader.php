@@ -36,6 +36,6 @@ class Reader extends \Zest\Controller\Controller
 		header("Content-Transfer-Encoding: binary");
 		header("Content-Length: ".filesize($zip));
 		readfile($zip);
-		redirect('prev');
+		//redirect('prev');
     } 
 }    

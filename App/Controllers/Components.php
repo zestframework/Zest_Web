@@ -59,7 +59,7 @@ class Components extends \Zest\Controller\Controller
                     'file' => $_FILES['file'],
                 ]
             );
-            $res = (new \App\Models\Components)->communityUpdate(['componentFile' => $file,'componentVersion' => $version],$id);
+            $res = (new \App\Models\Community)->communityUpdate(['componentFile' => $file,'componentVersion' => $version],$id);
             redirect(site_base_url().'components/view/' .$slug);
          }else {
              $slug = $this->route_params['slug'];

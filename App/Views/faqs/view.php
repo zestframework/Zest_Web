@@ -12,7 +12,7 @@
   <h1 class="zest-title"><span class="page-title"><?=$args['title']?></span></h1>
   <p class="verdana"><?php
   $html = (new \Parsedown())->text($args['content']);
-	echo restore_line_break(html_entity_decode($html));
+	echo html_entity_decode($html);
 		?>      
     </p>
 </div>
