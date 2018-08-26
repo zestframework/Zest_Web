@@ -1,21 +1,4 @@
 <?php  $args = \App\Models\Site::get(); ?>
-
-<!--
-#########################################################
-These code protected by world/WRH copyright law
-#########################################################
-so you can not use the source code of  this page if you don't have 
-#########################################################
-written permission from WRH.
-#########################################################
-read our terms <?=site_base_url()?>site/terms
-#########################################################
-if you try copy our code we will take legal action against you 
-#########################################################
-Your use of this site shall be governed by international law and shall be subject to the exclusive jurisdiction of the international Courts.
-#########################################################
--->
-
 <?php
 $user = new \Zest\Auth\User;
  if (!$user->isLogin()) {
@@ -115,14 +98,15 @@ $user = new \Zest\Auth\User;
 <script type="text/javascript">
     url = "<?= site_base_url(); ?>";
 </script>  
-  <!-- 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122570069-1"></script>
+<!--
+<!-- Global site tag (gtag.js) - Google Analytics 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122570069-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-122570069-1');
+  gtag('config', 'UA-122570069-2');
 </script>
 -->
 <div id='desktop-bottom' class="hide-on-med-and-down"></div>
