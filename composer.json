@@ -19,6 +19,6 @@
     },
     "require":{
     	"softhub99/zest_framework": "dev-master",
-        "michelf/php-markdown": "^1.8.0"
+        "erusev/parsedown": "^1.7"
     }
 }

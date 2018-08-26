@@ -23,7 +23,11 @@
   <br>
   <div class="fb-share-button" data-href="<?=site_base_url();?>/blog/view/<?=$args['slug']?>/<?=urlencode($args['title'])?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
   <br>
-  <p class="verdana"><?= (new \Michelf\Markdown())::defaultTransform($args['content']);?></p>
+  <p class="verdana"><?php
+  $html = (new \Parsedown())->text($args['content']);
+	echo restore_line_break(html_entity_decode($html));
+		?>      
+    </p>
   <br>
   
 

@@ -18,7 +18,7 @@ class Blogs extends \Zest\Controller\Controller
          $slug = $this->route_params['slug'];
          if (\App\Models\Pages::isBlog($slug) !== 0) {
             $pages = \App\Models\Pages::pageWhere('slug',$slug);
-            View::view('blogs/view',$pages[0],false);
+            View::view('blogs/view',$pages[0]);
          } else {
             View::View("errors/404");
          }

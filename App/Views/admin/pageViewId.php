@@ -52,7 +52,7 @@
                         <p>
                             <b>Short content</b>
                         </p>
-                        <input type="text" name="scontent" class="form-control" value="<?= $args['scontent'] ?>" />
+                        <input type="text" name="scontent" class="form-control" value="<?= restore_line_break($args['scontent']) ?>" />
                         </div>  
                         <div class="col-md-12ss">
                         <p><b> content</b></p>

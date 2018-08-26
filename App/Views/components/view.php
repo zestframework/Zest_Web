@@ -13,7 +13,7 @@
 	<h5 id='cummunity-user-name'><b><?=(new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['name']?></b></h5>
 	<h5 id='cummunity-time'><i><?=$args['created']?></i></h5>
 					<div id='community-description' class="verdana">
-						<?=  (new \Michelf\Markdown())::defaultTransform($args['contents']);?>
+						<?=  restore_line_break(html_entity_decode((new \Parsedown())->text($args['contents'])));?>
 						<?php if ((new \App\Models\Community)->isClose($args['slug'])) { ?>
 							<div class='alert info' style='color:white'>This topic has been closed by admin</div>
 						<?php } ?>
@@ -78,7 +78,7 @@
 					<h5 id='cummunity-user-name'><b><?=(new \Zest\Auth\User)->getByWhere('id',$value['ownerId'])[0]['name']?></b></h5>
 					<h5 id='cummunity-time'><i><?=$value['created']?></i></h5>
 					<div id='community-description' class="verdana">
-						<?=  (new \Michelf\Markdown())::defaultTransform($value['contents']);?>
+						<?=  restore_line_break(html_entity_decode((new \Parsedown())->text($value['contents'])));?>
 					</div>
 				</div>
 			</div>                  
