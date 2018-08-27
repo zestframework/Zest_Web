@@ -25,7 +25,7 @@ $router->get('admin/generate/sitemap',"Admin@generateSiteMap");
 
 //blogs 
 $router->get('blogs/{page:[0-9]+}',"Blogs@blog");
-$router->get('blog/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+]+}',"Blogs@view");
+$router->get('blog/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+.-]+}',"Blogs@view");
 
 //faqs 
 $router->get('faqs/{page:[0-9]+}',"Faq@faq");
