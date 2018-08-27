@@ -91,6 +91,12 @@
                             <span>Home</span>
                         </a>
                     </li>
+                    <li class="active">
+                        <a href="<?=site_base_url()?>admin/generate/sitemap">
+                            <i class="material-icons">map</i>
+                            <span>Generate Sitemap</span>
+                        </a>
+                    </li>                    
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">settings</i>

@@ -21,7 +21,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Users</div>
-                           
+                            <div class="number count-to" data-from="0" data-to="<?= count((new \Zest\Auth\User)->getAll()) ?>" data-speed="2" data-fresh-interval="20"><?= count((new \Zest\Auth\User)->getAll()) ?></div>
                         </div>
                     </div>
                 </div>
@@ -36,23 +36,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-light-green hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">payment</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">Payments</div>
-                            <div class="number count-to" data-from="0" data-to="0" data-speed="1000" data-fresh-interval="20">$0</div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="row clearfix">
                 <div class="card">
                     <div class="container">
                         <h1>Welcome Back</h1>
-                        <a href="<?=site_base_url()?>admin/generate/sitemap" class='btn btn-primary'>Generate Sitemap</a>
                     </div>
                 </div>
             </div>     

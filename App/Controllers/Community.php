@@ -53,7 +53,7 @@ class Community extends \Zest\Controller\Controller
              $slug = $this->route_params['slug'];
              if (( new \App\Models\Community)->isCommunity($slug) !== 0) {
                 $pages = (new \App\Models\Community)->communityWhere('slug',$slug);
-                View::view('community/view',$pages[0]);
+                View::view('community/view',$pages[0],false);
              } else {
                 View::View("errors/404");
              }

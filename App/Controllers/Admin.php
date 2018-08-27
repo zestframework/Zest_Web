@@ -164,7 +164,7 @@ class Admin extends \Zest\Controller\Controller
         } else {
             $id = $this->route_params['id'];
             $page = \App\Models\Pages::pageWhere("id",$id);
-            View::view("admin/pageViewId",$page[0]);
+            View::view("admin/pageViewId",$page[0],false);
         }
     }
     public function generateSiteMap()
