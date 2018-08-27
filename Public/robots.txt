@@ -3,8 +3,10 @@ Disallow: /css/
 Disallow: /image/
 Disallow: /js/
 Disallow: /tinymce/
-
-
- 
 Disallow: /quiz/ 
 Disallow: /admin/ 
+
+Disallow: /shop/
+Disallow: /Storage/
+Disallow: /vendor/ 
+Disallow: /store-listing/ 
