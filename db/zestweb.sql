@@ -56,6 +56,7 @@ CREATE TABLE `pages` (
   `ownerId` int(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
+  `keyword` varchar(255) DEFAULT NULL,
   `scontent` varchar(255) NOT NULL,
   `content` longtext NOT NULL,
   `created` datetime NOT NULL,

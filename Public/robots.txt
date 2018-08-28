@@ -8,5 +8,8 @@ Disallow: /admin/
 
 Disallow: /shop/
 Disallow: /Storage/
+Disallow: /Storage/Session/
+Disallow: /admin/home/ 
+Disallow: /admin/ 
 Disallow: /vendor/ 
 Disallow: /store-listing/ 

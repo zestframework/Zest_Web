@@ -1,5 +1,8 @@
 <?= Zest\View\View::view('nav'); ?>
 <title>Signup</title>
+<meta name="author" content="Malik Umer Farooq">
+<meta name="description" lang="en" content="Register to enjoy in our services, to ask question upload your component in our components store">
+<meta name="keywords" lang="en" content="signup,register,create an account,open,zest,framework,php,php7,php7.2,Zest framework">
 <br><br>
 <style type="text/css">
   .form {

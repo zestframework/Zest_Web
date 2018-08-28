@@ -129,10 +129,11 @@ class Admin extends \Zest\Controller\Controller
         self::isAdmin();
         if (input("page")) {
             $title = escape(input('title'));
+            $keyword = escape(input('keyword'));
             $shortContent = escape(input('scontent'));
             $type = escape(input('type'));
             $content = escape(input('contents'));
-            $result = \App\Models\Pages::pageCreate($title,$shortContent,$type,$content);
+            $result = \App\Models\Pages::pageCreate($title,$keyword,$shortContent,$type,$content);
             redirect(site_base_url()."admin/page/view");
         } else {
             View::view("admin/pageAdd");
@@ -150,9 +151,10 @@ class Admin extends \Zest\Controller\Controller
             if (input('edit')) {
                 $id = input('id');
                 $title = escape(input('title'));
+                $keyword = escape(input('keyword'));
                 $shortContent = escape(input('scontent'));
                 $content = escape(input('contents'));
-                $result = \App\Models\Pages::pageUpdate(['title'=>$title,'scontent'=>$shortContent,'content'=>$content,'updated'=>time()],$id);
+                $result = \App\Models\Pages::pageUpdate(['title'=>$title,'keyword' => $keyword,'scontent'=>$shortContent,'content'=>$content,'updated'=>time()],$id);
                 redirect(site_base_url()."admin/view/page/{$id}");
             }
             if (input('ty')) {

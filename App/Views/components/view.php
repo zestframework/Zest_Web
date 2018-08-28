@@ -1,6 +1,8 @@
 <?= \Zest\View\View::view('nav'); ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 <title><?=$args['title']?></title>
+<meta name="author" content="<?=(new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['name']?>">
+<meta name="keywords" lang="en" content="component,components,add on , plugin , parts , ,<?= $args['title'] ?>,zest,framework,php,php7,php7.2,Zest framework">
 <div id='pages'>
     <h1 class="align-center"><?=$args['title']?></h1>
 </div> 

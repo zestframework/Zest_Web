@@ -16,7 +16,7 @@ class Pages extends Model
 	*/
 	protected static $db_tbl = 'pages';
 	
-	public function pageCreate($title,$shortContent,$type,$content)
+	public function pageCreate($title,$keyword,$shortContent,$type,$content)
 	{	
 		
 		$db = new Model;
@@ -27,6 +27,7 @@ class Pages extends Model
             'ownerId' => (new User())->loginUser()[0]['id'],
 			'title' => $title,
 			'type' => $type,
+            'keyword' => $keyword,
 			'scontent' => $shortContent,
 			'content' => $content,
 			'created' => $created,

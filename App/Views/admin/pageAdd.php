@@ -41,6 +41,14 @@
                                 </select>
                                 </div>
                                 <div class="col-md-8">
+                                    <b>Keywords (seperate by comma)</b>
+                                <div class="input-group">
+                                    <div class="form-line">
+                                        <input type="text" id="title-text" class="form-control" name='keyword' >
+                                    </div>
+                                </div>
+                                </div>          
+                                <div class="col-md-8">
                                     <b>Short Contents</b>
                                 <div class="input-group">
                                     <div class="form-line">

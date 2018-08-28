@@ -1,5 +1,8 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title><?=$args['title']?></title>
+<meta name="author" content="<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?>">
+<meta name="description" lang="en" content="<?=$args['scontent']?>">
+<meta name="keywords" lang="en" content="<?=$args['keyword']?>">
 <style type="text/css">
   body {
     background-color: #fff!important;

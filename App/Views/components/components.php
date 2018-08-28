@@ -1,5 +1,8 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title>Components</title>
+<meta name="author" content="Malik Umer Farooq">
+<meta name="description" content="Download any component for your Zest Framework">
+<meta name="keywords" lang="en" content="components,zest,framework,php,php7,php7.2,Zest framework">
 <div id='pages'>
     <h1 class="align-center">Components</h1>
 </div> 

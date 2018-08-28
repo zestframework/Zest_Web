@@ -1,5 +1,7 @@
 <?= Zest\View\View::view('nav'); ?>
 <title><?= $args['name'] ?></title>
+<meta name="author" content="<?=$args['name']?>">
+<meta name="keywords" lang="en" content="account,profile,<?=$args['name']?>,signin,open,zest,framework,php,php7,php7.2,Zest framework">
 <br>
   <div class="row">
     <div class="col s10 offset-s1">

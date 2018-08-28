@@ -1,5 +1,8 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title>Faq's</title>
+<meta name="author" content="Malik Umer Farooq">
+<meta name="description" lang="en" content="See all the questions and their answer about zest framework free of cost if any question feel free to ask in our community">
+<meta name="keywords" lang="en" content="faqs,faq,questions,free,zest,framework,master,question,answer">
 <div id='pages'>
     <h1 class="align-center">Faq's</h1>
 </div> 

@@ -1,5 +1,8 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title>Community</title>
+<meta name="author" content="Malik Umer Farooq">
+<meta name="description" content="This is free community about Zest Framework ask any question that is in your mind">
+<meta name="keywords" lang="en" content="community,zest,framework,php,php7,php7.2,Zest framework">
 <div id='pages'>
     <h1 class="align-center">Community</h1>
 </div> 

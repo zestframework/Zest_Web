@@ -26,8 +26,6 @@ $user = new \Zest\Auth\User;
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <meta name="theme-color" content="#e89696" />
       <meta name="google-site-verification" content="<?= $args[5]['value'] ?>" />
-      <neta name="description" content="<?= $args[3]['value'] ?>"/>
-      <neta name="keyword" content="<?= $args[4]['value'] ?>"/>
 </head>
 <body>
 <div id="overlay"></div>

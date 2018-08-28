@@ -1,5 +1,8 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title>Terms</title>
+<meta name="author" content="Malik umer Farooq">
+<meta name="description" lang="en" content="All content included on this site, such as text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of <?=\App\Models\Site::get()[1]['value']?> or its content suppliers and protected by international copyright laws. The compilation of all content on this site is the exclusive property of <?=\App\Models\Site::get()[1]['value']?>, with copyright authorship for this collection by Open Source Social Network, and protected by international copyright laws">
+<meta name="keywords" lang="en" content="Zest,framework, Zest Framework , terms , free, source, GDPR , gdpr">
 <style type="text/css">
 	body {
 		background-color: #fff!important;

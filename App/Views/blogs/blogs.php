@@ -1,5 +1,8 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title>Blogs</title>
+<meta name="author" content="Malik Umer Farooq">
+<meta name="description" lang="en" content="Learn all blogs related to zest framework free of cost if any question feel free to ask in our community">
+<meta name="keywords" lang="en" content="Blogs,blog,blogger,free,zest,framework,master,articles,article">
 <div id='pages'>
     <h1 class="align-center">Blogs</h1>
 </div> 
