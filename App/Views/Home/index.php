@@ -165,6 +165,7 @@
             <td>Yes</td>
             <td>Yes</td>
             <td>Yes</td>
+            <td>Yes</td>            
           </tr>  
            <tr>
             <th>PHP7.</th>
@@ -172,8 +173,9 @@
             <td>Yes</td>
             <td>Yes</td>
             <td>Yes</td>
+            <td>Yes</td>            
           </tr>                             
-            <th>Auth.</th>
+            <th>License.</th>
             <td>MIT</td>
             <td>MIT</td>
             <td>MIT</td>
