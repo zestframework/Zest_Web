@@ -174,8 +174,7 @@ class Admin extends \Zest\Controller\Controller
             $url = site_base_url();
             $url = str_replace(":443", '', $url);
             $root = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-        '. "<url><loc>$url</loc></url><url><loc>{$url}blogs/1</loc></url><url><loc>{$url}community/1</loc></url><url><loc>{$url}Components/1</loc></url><url><loc>{$url}site/terms</loc></url><url><loc>{$url}site/privacy</loc></url><url><loc>{$url}faqs/1</loc></url>
-        <url><loc>$url/blogs</loc></url><url><loc>{$url}faqs</loc></url><url><loc>{$url}contribute/index</loc></url><url><loc>{$url}contribute/donate</loc></url>
+        '. "<url><loc>$url</loc></url><url><loc>{$url}blogs/1</loc></url><url><loc>{$url}community/1</loc></url><url><loc>{$url}Components/1</loc></url><url><loc>{$url}site/terms</loc></url><url><loc>{$url}site/privacy</loc></url><url><loc>{$url}faqs/1</loc></url><url><loc>{$url}contribute/index</loc></url><url><loc>{$url}contribute/donate</loc></url>
         ";
         $fh = fopen("../public_html/sitemap.xml", "w");
         fwrite($fh, $root);

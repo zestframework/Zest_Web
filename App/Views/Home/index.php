@@ -42,7 +42,7 @@
    <div id='relax'></div>
    <div id='white-board'>
     <h4>Features</h4>
-          <table class="responsive-table">
+      <table class="responsive-table">
         <thead>
           <tr>
               <th>Features</th>
@@ -75,8 +75,8 @@
    </div>   
    <div id='relax'></div>
    <div id='white-board'>
-    <h4 id='#comparision'>Comparision</h4>
-          <table class="responsive-table">
+    <h4 id='#comparision'>Comparison</h4>
+      <table class="responsive-table">
         <thead>
           <tr>
               <th></th>
