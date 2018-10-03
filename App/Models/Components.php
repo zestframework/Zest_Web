@@ -35,6 +35,15 @@ class Components extends Model
 			'slug' => $slug,
             'isComponent' => 'yes',
 		]]);
+        $mail = new Mail();
+        $email = (new User())->loginUser()[0]['email'];
+        $link = site_base_url() . "components/view/" . $slug;
+        $html = "Dear {$email} your component project topic has been created<br><a href='{$link}'>topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
+        $mail->setSubject("Component topic");
+        $mail->setSender(Email::SITE_EMAIL);
+        $mail->setContentHTML($html);
+        $mail->addReceiver($email);
+        $mail->send();             
 		$db->db()->close();
 		return $result;
 	}
@@ -43,7 +52,6 @@ class Components extends Model
         
         $db = new Model;
         $ownerId = $this->componentWhere('slug',$slug)[0]['ownerId'];
-        $email = (new User())->getByWhere('id',$id)[0]['email'];
         $created = date("Y-m-d H:i:s");
         $token = \Zest\Site\Site::salts(15);
         $result = $db->db()->insert(['table'=>static::$db_tbl,'db_name'=>static::$db_name,'columns' => [
@@ -53,15 +61,14 @@ class Components extends Model
             'slug' => $slug,
         ]]);
         $mail = new Mail();
+        $email = (new User())->getByWhere('id',$ownerId)[0]['email'];
         $link = site_base_url() . "components/view/" . $slug;
-        $html = "Dear {$email} Someone reply in your discussion topic<br><a href='{$link}'>topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
-        $mail->setSubject("Community topic");
+        $html = "Dear {$email} Someone reply in your component project topic<br><a href='{$link}'>topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
+        $mail->setSubject("Component topic reply");
         $mail->setSender(Email::SITE_EMAIL);
         $mail->setContentHTML($html);
         $mail->addReceiver($email);
         $mail->send();
-
-
         $db->db()->close();
         return $result;
     }    

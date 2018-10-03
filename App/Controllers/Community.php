@@ -17,14 +17,18 @@ class Community extends \Zest\Controller\Controller
     
      public function addProcess()
     {
-        if (input('submit')) {
-            $title = escape(input('title'));
-            $cat = escape(input('cat'));
-            $contents = escape(input('description'));
-            $com = new \App\Models\Community();
-            $result = $com->create($title,$cat,$contents);
-            redirect(site_base_url().'community/1');
-        }
+		if ((new \Zest\Auth\User())->isLogin()) {
+			if (input('submit')) {
+				$title = escape(input('title'));
+				$cat = escape(input('cat'));
+				$contents = escape(input('description'));
+				$com = new \App\Models\Community();
+				$result = $com->create($title,$cat,$contents);
+				redirect(site_base_url().'community/1');
+			}
+		} else {
+			redirect(site_base_url()."account/login");
+		}			
     }   
     public function index()
     {
@@ -36,9 +40,13 @@ class Community extends \Zest\Controller\Controller
     {
          if (input('submit')) {
             $slug = $this->route_params['slug'];
-            $contents = escape(input('description'));
-            $res = (new \App\Models\Community)->reply($slug,$contents);
-             redirect(site_base_url().'community/view/' .$slug);
+			if (!(new \App\Models\Community)->isClose($slug)) {
+				$contents = escape(input('description'));
+				$res = (new \App\Models\Community)->reply($slug,$contents);
+				redirect(site_base_url().'community/view/' .$slug);
+			} else {
+				redirect(site_base_url().'community/view/' .$slug);
+			}
          } elseif(input('close')) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
