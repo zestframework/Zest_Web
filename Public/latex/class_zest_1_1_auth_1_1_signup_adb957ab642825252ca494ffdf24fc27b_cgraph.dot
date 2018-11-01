@@ -1,0 +1,15 @@
+digraph "signup"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="signup",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 [label="Zest\\Auth\\Error\\set",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_auth_1_1_error.html#af8908a25550c971e719a2243b130d80b"];
+  Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Zest\\Auth\\Handler\\fail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_auth_1_1_handler.html#ac59dac7398e43cca6e7a717ac210c750"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Zest\\Auth\\Error\\has",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_auth_1_1_error.html#a9db60e5b2881ca151b1780e9a4e08560"];
+  Node0 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Zest\\Auth\\Success\\set",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_auth_1_1_success.html#ac81810b0f33b5e9d34a92bafd04fd85c"];
+}

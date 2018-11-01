@@ -1,0 +1,211 @@
+\hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger}{}\section{Logger Class Reference}
+\label{class_zest_1_1_common_1_1_logger_1_1_logger}\index{Logger@{Logger}}
+
+
+Inheritance diagram for Logger\+:
+% FIG 0
+
+
+Collaboration diagram for Logger\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_ad320d8ce87763c6e2d94b69584ccae3f}{log}} (\$level, \$message, array \$context=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_a7f339e399ed414670f78d235029b7f3e}{writer}} (\$level, \$message)
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_a098c8f4c30f69fc243717fa32eb4ddbf}{store}} (\$\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_ad320d8ce87763c6e2d94b69584ccae3f}{log}})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_ac33ee765f5ad9f134540bac393721cfe}{get}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_aa29dd6a68594af040bbc3a809f110e02}{log\+Exception}} (\$level, \$message, array \$context=\mbox{[}$\,$\mbox{]}, \$exception=null)
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_a893257e3671946329ca52be5c62d7e8d}{interpolate}} (\$string, array \$params, \$level)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_a1035dc0448354cc79f8f9e1ca8dfd0cb}{\$levels}}
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_logger_a8c18f63e92d4d3645843e50a64cbb50e}{\$s\+\_\+levels}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file Logger.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger_ac33ee765f5ad9f134540bac393721cfe}\label{class_zest_1_1_common_1_1_logger_1_1_logger_ac33ee765f5ad9f134540bac393721cfe}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}!get@{get}}
+\index{get@{get}!Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the log message.
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger_a893257e3671946329ca52be5c62d7e8d}\label{class_zest_1_1_common_1_1_logger_1_1_logger_a893257e3671946329ca52be5c62d7e8d}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily interpolate (\begin{DoxyParamCaption}\item[{}]{\$string,  }\item[{array}]{\$params,  }\item[{}]{\$level }\end{DoxyParamCaption})}
+
+Interpolate string with parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$string} & String with parameters \$params Parameter arrays \$level Level of log\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file Logger.\+php.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger_ad320d8ce87763c6e2d94b69584ccae3f}\label{class_zest_1_1_common_1_1_logger_1_1_logger_ad320d8ce87763c6e2d94b69584ccae3f}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}!log@{log}}
+\index{log@{log}!Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily log (\begin{DoxyParamCaption}\item[{}]{\$level,  }\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Log.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$level} & Error level (string or P\+HP syslog priority) \$message Error message \$context Contextual array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file Logger.\+php.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger_aa29dd6a68594af040bbc3a809f110e02}\label{class_zest_1_1_common_1_1_logger_1_1_logger_aa29dd6a68594af040bbc3a809f110e02}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}!log\+Exception@{log\+Exception}}
+\index{log\+Exception@{log\+Exception}!Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{log\+Exception()}{logException()}}
+{\footnotesize\ttfamily log\+Exception (\begin{DoxyParamCaption}\item[{}]{\$level,  }\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}},  }\item[{}]{\$exception = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Log an Exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$level} & Error level (string or P\+HP syslog priority) \$message Error message \$context Contextual array \$exception Exception\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 140 of file Logger.\+php.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger_a098c8f4c30f69fc243717fa32eb4ddbf}\label{class_zest_1_1_common_1_1_logger_1_1_logger_a098c8f4c30f69fc243717fa32eb4ddbf}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}!store@{store}}
+\index{store@{store}!Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily store (\begin{DoxyParamCaption}\item[{}]{\$log }\end{DoxyParamCaption})}
+
+Store the log.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$log} & array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file Logger.\+php.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger_a7f339e399ed414670f78d235029b7f3e}\label{class_zest_1_1_common_1_1_logger_1_1_logger_a7f339e399ed414670f78d235029b7f3e}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}!writer@{writer}}
+\index{writer@{writer}!Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{writer()}{writer()}}
+{\footnotesize\ttfamily writer (\begin{DoxyParamCaption}\item[{}]{\$level,  }\item[{}]{\$message }\end{DoxyParamCaption})}
+
+Write the log message in files.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$string} & Error level (string or P\+HP syslog priority) \$message Error message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Logger.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 9
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger_a1035dc0448354cc79f8f9e1ca8dfd0cb}\label{class_zest_1_1_common_1_1_logger_1_1_logger_a1035dc0448354cc79f8f9e1ca8dfd0cb}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}!\$levels@{\$levels}}
+\index{\$levels@{\$levels}!Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{\$levels}{$levels}}
+{\footnotesize\ttfamily \$levels\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= [
+        \textcolor{stringliteral}{'emergency'} => 0
+\end{DoxyCode}
+Array of conversion levels. 
+
+Definition at line 24 of file Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_logger_a8c18f63e92d4d3645843e50a64cbb50e}\label{class_zest_1_1_common_1_1_logger_1_1_logger_a8c18f63e92d4d3645843e50a64cbb50e}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}!\$s\+\_\+levels@{\$s\+\_\+levels}}
+\index{\$s\+\_\+levels@{\$s\+\_\+levels}!Zest\+::\+Common\+::\+Logger\+::\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{\$s\+\_\+levels}{$s\_levels}}
+{\footnotesize\ttfamily \$s\+\_\+levels\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= [
+        0 => \textcolor{stringliteral}{'emergency'}
+\end{DoxyCode}
+Array of conversion levels in reverse order. 
+
+Definition at line 37 of file Logger.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/\+Logger/Logger.\+php\end{DoxyCompactItemize}

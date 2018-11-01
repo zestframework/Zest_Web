@@ -1,0 +1,17 @@
+digraph "isValidEmail"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node18 [label="isValidEmail",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="addBcc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_mail_1_1_mail.html#af3caeb841610ad2fa4dcbbc4d157eee8"];
+  Node18 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node20 [label="addCc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_mail_1_1_mail.html#aa6928c70ebce7734d8b21ae2c41065da"];
+  Node18 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node21 [label="addReceiver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_mail_1_1_mail.html#a31cd1494886ccd0d0734bfc229f95d9f"];
+  Node18 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node22 [label="setReplyTo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_mail_1_1_mail.html#a18845dc0e743855fef7e3fd8a2375f4b"];
+  Node18 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node23 [label="setSender",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_mail_1_1_mail.html#a1a5cb2c6afc792ad117d5ba30e52b5de"];
+}

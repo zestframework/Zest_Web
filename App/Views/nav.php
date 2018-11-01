@@ -37,8 +37,14 @@ $user = new \Zest\Auth\User;
       <ul class="right hide-on-med-and-down">
         <li><a class="waves-effect" href="<?=site_base_url()?>">Home</a></li>
         <li><a class="waves-effect" href="<?=site_base_url()?>blogs/1">Blog</a></li>
-        <li><a class="waves-effect" href="https://zest.readthedocs.io/en/latest/">Documentation</a></li> 
         <li><a class="waves-effect" href="<?=site_base_url()?>community/1">Community</a></li>
+        <li><a class='dropdown-button' href='#' data-target='dropdown02' >Developers &#x25BE</a></li>
+        <ul id='dropdown02' class='dropdown-content'>
+          <li><a class="waves-effect" href="https://github.com/Softhub99/Zest">Github</a></li>     
+          <li><a class="waves-effect" href="https://zest.readthedocs.io/en/latest/">Documentation</a></li> 
+          <li><a class="waves-effect" href="<?=site_base_url()?>references">References</a></li>
+          <li><a class="waves-effect" href="https://github.com/Softhub99/Zest/issues/new/">Report issue</a></li>
+        </ul>           
         <li><a class='dropdown-button' href='#' data-target='dropdown01' >Download &#x25BE</a></li>
         <ul id='dropdown01' class='dropdown-content'>
           <li><a class="waves-effect" href="<?=site_base_url()?>Components/1">Components</a></li>     
@@ -67,8 +73,14 @@ $user = new \Zest\Auth\User;
       <a href="<?=site_base_url()?>" class="active wrh-logo"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'>  Zest</a>
       <a href="<?=site_base_url()?>" class="">Home</a>
         <a class="waves-effect" href="<?=site_base_url()?>blogs/1">Blog</a>
-        <a class="waves-effect" href="https://zest.readthedocs.io/en/latest/">Documentation</a>
         <a class="waves-effect" href="<?=site_base_url()?>community/1">Community</a>
+        <a class='dropdown-button' href='#' data-target='dropdown02-mob' >Developers &#x25BE</a>
+        <ul id='dropdown02-mob' class='dropdown-content'>
+          <li><a class="waves-effect" href="https://github.com/Softhub99/Zest">Github</a></li>     
+          <li><a class="waves-effect" href="https://zest.readthedocs.io/en/latest/">Documentation</a></li> 
+          <li><a class="waves-effect" href="<?=site_base_url()?>references">References</a></li>
+          <li><a class="waves-effect" href="https://github.com/Softhub99/Zest/issues/new/">Report issue</a></li>
+        </ul>                   
         <a class='dropdown-button' href='#' data-target='dropdown01-mob' >Downloads &#x25BE</a>
         <ul id='dropdown01-mob' class='dropdown-content'>
           <li><a class="waves-effect" href="<?=site_base_url()?>Components/1">Components</a></li>     

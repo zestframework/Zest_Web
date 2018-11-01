@@ -1,0 +1,15 @@
+digraph "htmlMinify"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node20 [label="htmlMinify",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="getFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_common_1_1_minify.html#a905ce83166cd7dd044a49a0d479c4399"];
+  Node20 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="cleanSpaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_common_1_1_minify.html#abf7f7f63348803f74eee2ae6b8d638ff"];
+  Node20 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="fixMaster",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_common_1_1_minify.html#a7d9a8f37e357aea7b32979d653e008a7"];
+  Node20 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="removeComments",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_zest_1_1_common_1_1_minify.html#a009e6f00f6b6f4c1b355e489541ca339"];
+}

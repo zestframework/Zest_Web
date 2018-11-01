@@ -1,0 +1,224 @@
+\hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger}{}\section{Abstract\+Logger Class Reference}
+\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger}\index{Abstract\+Logger@{Abstract\+Logger}}
+
+
+Inheritance diagram for Abstract\+Logger\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a8e44733d5c28a4d7799badda95cbca6f}{emergency}} (\$message, array \$context=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ad1a92292e398409b7e44ab298fdad127}{alert}} (\$message, array \$context=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ab5ebff9512b78e26c896f72ac5d544ff}{critical}} (\$message, array \$context=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a7545997e30fe965d666f20bdcbcde118}{error}} (\$message, array \$context=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ab0265cec309e8de8592c2efc3d00773a}{warning}} (\$message, array \$context=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_abe7cfefc7dacfe6e77c248d62552f824}{notice}} (\$message, array \$context=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a965d1818b6b268d5b49dbf94ff7bc445}{info}} (\$message, array \$context=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a30d64800fcc051abf015b61a4307958c}{debug}} (\$message, array \$context=\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file Abstract\+Logger.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ad1a92292e398409b7e44ab298fdad127}\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ad1a92292e398409b7e44ab298fdad127}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}!alert@{alert}}
+\index{alert@{alert}!Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}}
+\subsubsection{\texorpdfstring{alert()}{alert()}}
+{\footnotesize\ttfamily alert (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Action must be taken immediately.
+
+Example\+: Entire website down, database unavailable, etc. This should trigger the S\+MS alerts and wake you up.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & \\
+\hline
+array & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file Abstract\+Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ab5ebff9512b78e26c896f72ac5d544ff}\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ab5ebff9512b78e26c896f72ac5d544ff}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}!critical@{critical}}
+\index{critical@{critical}!Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}}
+\subsubsection{\texorpdfstring{critical()}{critical()}}
+{\footnotesize\ttfamily critical (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Critical conditions.
+
+Example\+: Application component unavailable, unexpected exception.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & \\
+\hline
+array & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file Abstract\+Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a30d64800fcc051abf015b61a4307958c}\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a30d64800fcc051abf015b61a4307958c}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}!debug@{debug}}
+\index{debug@{debug}!Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}}
+\subsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily debug (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Detailed debug information.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & \\
+\hline
+array & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file Abstract\+Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a8e44733d5c28a4d7799badda95cbca6f}\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a8e44733d5c28a4d7799badda95cbca6f}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}!emergency@{emergency}}
+\index{emergency@{emergency}!Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}}
+\subsubsection{\texorpdfstring{emergency()}{emergency()}}
+{\footnotesize\ttfamily emergency (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+System is unusable.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & \\
+\hline
+array & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file Abstract\+Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a7545997e30fe965d666f20bdcbcde118}\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a7545997e30fe965d666f20bdcbcde118}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}!error@{error}}
+\index{error@{error}!Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}}
+\subsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily error (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Runtime errors that do not require immediate action but should typically be logged and monitored.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & \\
+\hline
+array & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file Abstract\+Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a965d1818b6b268d5b49dbf94ff7bc445}\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_a965d1818b6b268d5b49dbf94ff7bc445}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}!info@{info}}
+\index{info@{info}!Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}}
+\subsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily info (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Interesting events.
+
+Example\+: User logs in, S\+QL logs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & \\
+\hline
+array & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file Abstract\+Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_abe7cfefc7dacfe6e77c248d62552f824}\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_abe7cfefc7dacfe6e77c248d62552f824}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}!notice@{notice}}
+\index{notice@{notice}!Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}}
+\subsubsection{\texorpdfstring{notice()}{notice()}}
+{\footnotesize\ttfamily notice (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Normal but significant events.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & \\
+\hline
+array & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file Abstract\+Logger.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ab0265cec309e8de8592c2efc3d00773a}\label{class_zest_1_1_common_1_1_logger_1_1_abstract_logger_ab0265cec309e8de8592c2efc3d00773a}} 
+\index{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}!warning@{warning}}
+\index{warning@{warning}!Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger@{Zest\+::\+Common\+::\+Logger\+::\+Abstract\+Logger}}
+\subsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily warning (\begin{DoxyParamCaption}\item[{}]{\$message,  }\item[{array}]{\$context = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Exceptional occurrences that are not errors.
+
+Example\+: Use of deprecated A\+P\+Is, poor use of an A\+PI, undesirable things that are not necessarily wrong.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & \\
+\hline
+array & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file Abstract\+Logger.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/\+Logger/Abstract\+Logger.\+php\end{DoxyCompactItemize}

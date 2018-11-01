@@ -1,0 +1,103 @@
+\hypertarget{class_zest_1_1_common_1_1_container_1_1_container}{}\section{Container Class Reference}
+\label{class_zest_1_1_common_1_1_container_1_1_container}\index{Container@{Container}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_container_1_1_container_a3364b3b2c86dee9ad78b8be07d4b5e89}{add}} (\$identifier, callable \$loader, \$singleton=true)
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_container_1_1_container_a711e1d65eb5a7930db612a76ea3bddab}{get}} (\$identifier)
+\item 
+\mbox{\hyperlink{class_zest_1_1_common_1_1_container_1_1_container_aaed74f7942d3fc56582e99324500e87b}{debug}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_zest_1_1_common_1_1_container_1_1_container_ac93fbec81f07e5d15f80db907e63dc10}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file Container.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_container_1_1_container_a3364b3b2c86dee9ad78b8be07d4b5e89}\label{class_zest_1_1_common_1_1_container_1_1_container_a3364b3b2c86dee9ad78b8be07d4b5e89}} 
+\index{Zest\+::\+Common\+::\+Container\+::\+Container@{Zest\+::\+Common\+::\+Container\+::\+Container}!add@{add}}
+\index{add@{add}!Zest\+::\+Common\+::\+Container\+::\+Container@{Zest\+::\+Common\+::\+Container\+::\+Container}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily add (\begin{DoxyParamCaption}\item[{}]{\$identifier,  }\item[{callable}]{\$loader,  }\item[{}]{\$singleton = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Adds an object generator and the identifier for that object, with the option of make the object \textquotesingle{}singleton\textquotesingle{} or not.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$identifier} & The identifier of the dependency \$loader The generator for the dependency objectb (callable) \$singleton Whether or not to return always the same instance of the object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file Container.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_container_1_1_container_aaed74f7942d3fc56582e99324500e87b}\label{class_zest_1_1_common_1_1_container_1_1_container_aaed74f7942d3fc56582e99324500e87b}} 
+\index{Zest\+::\+Common\+::\+Container\+::\+Container@{Zest\+::\+Common\+::\+Container\+::\+Container}!debug@{debug}}
+\index{debug@{debug}!Zest\+::\+Common\+::\+Container\+::\+Container@{Zest\+::\+Common\+::\+Container\+::\+Container}}
+\subsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily debug (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns all the dependencies.
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Container.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_container_1_1_container_a711e1d65eb5a7930db612a76ea3bddab}\label{class_zest_1_1_common_1_1_container_1_1_container_a711e1d65eb5a7930db612a76ea3bddab}} 
+\index{Zest\+::\+Common\+::\+Container\+::\+Container@{Zest\+::\+Common\+::\+Container\+::\+Container}!get@{get}}
+\index{get@{get}!Zest\+::\+Common\+::\+Container\+::\+Container@{Zest\+::\+Common\+::\+Container\+::\+Container}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily get (\begin{DoxyParamCaption}\item[{}]{\$identifier }\end{DoxyParamCaption})}
+
+Gets the dependency identified by the given identifier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$identifier} & The identifier of the dependency\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file Container.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_common_1_1_container_1_1_container_ac93fbec81f07e5d15f80db907e63dc10}\label{class_zest_1_1_common_1_1_container_1_1_container_ac93fbec81f07e5d15f80db907e63dc10}} 
+\index{Zest\+::\+Common\+::\+Container\+::\+Container@{Zest\+::\+Common\+::\+Container\+::\+Container}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Zest\+::\+Common\+::\+Container\+::\+Container@{Zest\+::\+Common\+::\+Container\+::\+Container}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the instance of self class.
+
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file Container.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Common/\+Container/Container.\+php\end{DoxyCompactItemize}

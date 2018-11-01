@@ -1,0 +1,188 @@
+\hypertarget{class_zest_1_1_input_1_1_input}{}\section{Input Class Reference}
+\label{class_zest_1_1_input_1_1_input}\index{Input@{Input}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_zest_1_1_input_1_1_input_a4083d5e802e6866eaf9bad44f01dffbb}{word\+Wrap\+Enable}} (\$str, \$width)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_input_1_1_input_ae207ff15e4180edd01103a5df5967850}{is\+From\+Submit}} (\$name)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_input_1_1_input_a3a0ac15a2db6f690f8cd1b4e59b12924}{input}} (\$key)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_input_1_1_input_a2b65ea249cea8c54bdf821d6d2623ff8}{auto\+Csrf}} ()
+\item 
+static \mbox{\hyperlink{class_zest_1_1_input_1_1_input_a1c124976655b4248fedccd9587a94eaa}{csrf\+Input}} (\$key)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_input_1_1_input_a56f40473b47394481ddb1018ac904aef}{clean}} (\$\mbox{\hyperlink{class_zest_1_1_input_1_1_input_a3a0ac15a2db6f690f8cd1b4e59b12924}{input}}, \$type)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_input_1_1_input_adb807f02238a7bceb0d65c3dcddffa2a}{restore\+Line\+Breaks}} (\$str)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_input_1_1_input_a2b266c0de7a87b606b3926baafe483e5}{is\+Ajax}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file Input.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_input_1_1_input_a2b65ea249cea8c54bdf821d6d2623ff8}\label{class_zest_1_1_input_1_1_input_a2b65ea249cea8c54bdf821d6d2623ff8}} 
+\index{Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}!auto\+Csrf@{auto\+Csrf}}
+\index{auto\+Csrf@{auto\+Csrf}!Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}}
+\subsubsection{\texorpdfstring{auto\+Csrf()}{autoCsrf()}}
+{\footnotesize\ttfamily static auto\+Csrf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Auto-\/validate csrf token.
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file Input.\+php.
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_zest_1_1_input_1_1_input_a56f40473b47394481ddb1018ac904aef}\label{class_zest_1_1_input_1_1_input_a56f40473b47394481ddb1018ac904aef}} 
+\index{Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}!clean@{clean}}
+\index{clean@{clean}!Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}}
+\subsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily static clean (\begin{DoxyParamCaption}\item[{}]{\$input,  }\item[{}]{\$type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Clean input.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & \textquotesingle{}input\textquotesingle{} =$>$ string \textquotesingle{}type\textquotesingle{} =$>$ secured , root\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string $\vert$ boolean 
+\end{DoxyReturn}
+
+
+Definition at line 177 of file Input.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_input_1_1_input_a1c124976655b4248fedccd9587a94eaa}\label{class_zest_1_1_input_1_1_input_a1c124976655b4248fedccd9587a94eaa}} 
+\index{Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}!csrf\+Input@{csrf\+Input}}
+\index{csrf\+Input@{csrf\+Input}!Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}}
+\subsubsection{\texorpdfstring{csrf\+Input()}{csrfInput()}}
+{\footnotesize\ttfamily static csrf\+Input (\begin{DoxyParamCaption}\item[{}]{\$key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Accpet csrf input Support get.\+post,put,server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$key} & \textquotesingle{}key\textquotesingle{} =$>$ name of filed (required in get,post request)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string $\vert$ boolean 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file Input.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_input_1_1_input_a3a0ac15a2db6f690f8cd1b4e59b12924}\label{class_zest_1_1_input_1_1_input_a3a0ac15a2db6f690f8cd1b4e59b12924}} 
+\index{Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}!input@{input}}
+\index{input@{input}!Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}}
+\subsubsection{\texorpdfstring{input()}{input()}}
+{\footnotesize\ttfamily static input (\begin{DoxyParamCaption}\item[{}]{\$key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Accpet input Support get.\+post,put.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$key} & \textquotesingle{}key\textquotesingle{} =$>$ name of filed (required in get,post request)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string $\vert$ boolean 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Input.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_input_1_1_input_a2b266c0de7a87b606b3926baafe483e5}\label{class_zest_1_1_input_1_1_input_a2b266c0de7a87b606b3926baafe483e5}} 
+\index{Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}!is\+Ajax@{is\+Ajax}}
+\index{is\+Ajax@{is\+Ajax}!Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}}
+\subsubsection{\texorpdfstring{is\+Ajax()}{isAjax()}}
+{\footnotesize\ttfamily static is\+Ajax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check request ajax or not.
+
+\begin{DoxyReturn}{Returns}
+string $\vert$ boolean 
+\end{DoxyReturn}
+
+
+Definition at line 218 of file Input.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_input_1_1_input_ae207ff15e4180edd01103a5df5967850}\label{class_zest_1_1_input_1_1_input_ae207ff15e4180edd01103a5df5967850}} 
+\index{Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}!is\+From\+Submit@{is\+From\+Submit}}
+\index{is\+From\+Submit@{is\+From\+Submit}!Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}}
+\subsubsection{\texorpdfstring{is\+From\+Submit()}{isFromSubmit()}}
+{\footnotesize\ttfamily static is\+From\+Submit (\begin{DoxyParamCaption}\item[{}]{\$name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check form sbumit or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$name} & =$>$ name of submit button/ field\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Input.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_input_1_1_input_adb807f02238a7bceb0d65c3dcddffa2a}\label{class_zest_1_1_input_1_1_input_adb807f02238a7bceb0d65c3dcddffa2a}} 
+\index{Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}!restore\+Line\+Breaks@{restore\+Line\+Breaks}}
+\index{restore\+Line\+Breaks@{restore\+Line\+Breaks}!Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}}
+\subsubsection{\texorpdfstring{restore\+Line\+Breaks()}{restoreLineBreaks()}}
+{\footnotesize\ttfamily static restore\+Line\+Breaks (\begin{DoxyParamCaption}\item[{}]{\$str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Restore new lines.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & \textquotesingle{}str\textquotesingle{} =$>$ string that tobe restored new lines\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string $\vert$ boolean 
+\end{DoxyReturn}
+
+
+Definition at line 202 of file Input.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_input_1_1_input_a4083d5e802e6866eaf9bad44f01dffbb}\label{class_zest_1_1_input_1_1_input_a4083d5e802e6866eaf9bad44f01dffbb}} 
+\index{Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}!word\+Wrap\+Enable@{word\+Wrap\+Enable}}
+\index{word\+Wrap\+Enable@{word\+Wrap\+Enable}!Zest\+::\+Input\+::\+Input@{Zest\+::\+Input\+::\+Input}}
+\subsubsection{\texorpdfstring{word\+Wrap\+Enable()}{wordWrapEnable()}}
+{\footnotesize\ttfamily static word\+Wrap\+Enable (\begin{DoxyParamCaption}\item[{}]{\$str,  }\item[{}]{\$width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Wordwrap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$str} & \mbox{\hyperlink{namespace_zest_1_1_str}{Str}} to be wordwraped\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string $\vert$ boolean 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file Input.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Input/Input.\+php\end{DoxyCompactItemize}

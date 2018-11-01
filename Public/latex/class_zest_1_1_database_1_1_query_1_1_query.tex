@@ -1,0 +1,228 @@
+\hypertarget{class_zest_1_1_database_1_1_query_1_1_query}{}\section{Query Class Reference}
+\label{class_zest_1_1_database_1_1_query_1_1_query}\index{Query@{Query}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_a67366620fdfeaab4b480b6e4dca64deb}{insert}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_aacfc8ca52b10f139be3398f374cd01cb}{update}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_aaade19290861bb3abf902bb14a51889b}{select}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_a2fb5b35138aabdbcdbabde07ff1df4b6}{delete}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_afdf795c4c3d555cc515a24249a80919b}{prepare\+Where}} (\$wheres=null)
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_ae44347ec6a2b1e9a12e081db309d0734}{use\+Query}} (\$name)
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_a3653b70be0271cad4b87a49bdcd18ccf}{create\+Db}} (\$name)
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_ae35a90b0a5f1b3d17dfbe5323b6d6983}{delete\+Db}} (\$name)
+\item 
+\mbox{\hyperlink{class_zest_1_1_database_1_1_query_1_1_query_a865173a2c9500d4ba41ce697bd71209a}{delete\+Tbl}} (\$table)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file Query.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_a3653b70be0271cad4b87a49bdcd18ccf}\label{class_zest_1_1_database_1_1_query_1_1_query_a3653b70be0271cad4b87a49bdcd18ccf}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!create\+Db@{create\+Db}}
+\index{create\+Db@{create\+Db}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{create\+Db()}{createDb()}}
+{\footnotesize\ttfamily create\+Db (\begin{DoxyParamCaption}\item[{}]{\$name }\end{DoxyParamCaption})}
+
+Creating database query if not exists.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$name} & name of database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 240 of file Query.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_a2fb5b35138aabdbcdbabde07ff1df4b6}\label{class_zest_1_1_database_1_1_query_1_1_query_a2fb5b35138aabdbcdbabde07ff1df4b6}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!delete@{delete}}
+\index{delete@{delete}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Prepare a query to delete data from database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & array array(); \textquotesingle{}table\textquotesingle{} Names of table \textquotesingle{}db\+\_\+name\textquotesingle{} =$>$ \mbox{\hyperlink{namespace_zest_1_1_database}{Database}} name \textquotesingle{}wheres\textquotesingle{} Specify a selection criteria to get required records\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 180 of file Query.\+php.
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_ae35a90b0a5f1b3d17dfbe5323b6d6983}\label{class_zest_1_1_database_1_1_query_1_1_query_ae35a90b0a5f1b3d17dfbe5323b6d6983}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!delete\+Db@{delete\+Db}}
+\index{delete\+Db@{delete\+Db}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{delete\+Db()}{deleteDb()}}
+{\footnotesize\ttfamily delete\+Db (\begin{DoxyParamCaption}\item[{}]{\$name }\end{DoxyParamCaption})}
+
+Deleting database query if not exists.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$name} & name of database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 258 of file Query.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_a865173a2c9500d4ba41ce697bd71209a}\label{class_zest_1_1_database_1_1_query_1_1_query_a865173a2c9500d4ba41ce697bd71209a}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!delete\+Tbl@{delete\+Tbl}}
+\index{delete\+Tbl@{delete\+Tbl}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{delete\+Tbl()}{deleteTbl()}}
+{\footnotesize\ttfamily delete\+Tbl (\begin{DoxyParamCaption}\item[{}]{\$table }\end{DoxyParamCaption})}
+
+Deleting table query if not exists.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$dbname} & name of database \$table =$>$ \$table name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 277 of file Query.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_a67366620fdfeaab4b480b6e4dca64deb}\label{class_zest_1_1_database_1_1_query_1_1_query_a67366620fdfeaab4b480b6e4dca64deb}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!insert@{insert}}
+\index{insert@{insert}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily insert (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Prepare a query to insert into db.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$table} & Name of tabke array array(); e.\+g\+: \textquotesingle{}name\textquotesingle{} =$>$ \textquotesingle{}new name\textquotesingle{} or \$comeformvariable \textquotesingle{}username\textquotesingle{} =$>$ \textquotesingle{}new username\textquotesingle{} or \$comeformvariable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Query.\+php.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_afdf795c4c3d555cc515a24249a80919b}\label{class_zest_1_1_database_1_1_query_1_1_query_afdf795c4c3d555cc515a24249a80919b}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!prepare\+Where@{prepare\+Where}}
+\index{prepare\+Where@{prepare\+Where}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{prepare\+Where()}{prepareWhere()}}
+{\footnotesize\ttfamily prepare\+Where (\begin{DoxyParamCaption}\item[{}]{\$wheres = {\ttfamily null} }\end{DoxyParamCaption})}
+
+prepare the where statement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \textquotesingle{}wheres\textquotesingle{}} & Specify a selection criteria to get required records\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 206 of file Query.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_aaade19290861bb3abf902bb14a51889b}\label{class_zest_1_1_database_1_1_query_1_1_query_aaade19290861bb3abf902bb14a51889b}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!select@{select}}
+\index{select@{select}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily select (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Prepare a query to select data from database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & array(); \textquotesingle{}table\textquotesingle{} Names of table \textquotesingle{}db\+\_\+name\textquotesingle{} =$>$ \mbox{\hyperlink{namespace_zest_1_1_database}{Database}} name \textquotesingle{}params\textquotesingle{} Names of columns which you want to select \textquotesingle{}wheres\textquotesingle{} Specify a selection criteria to get required records \textquotesingle{}debug\textquotesingle{} If on var\+\_\+dump sql query\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file Query.\+php.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_aacfc8ca52b10f139be3398f374cd01cb}\label{class_zest_1_1_database_1_1_query_1_1_query_aacfc8ca52b10f139be3398f374cd01cb}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!update@{update}}
+\index{update@{update}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily update (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Prepare a query to Update data in database.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$params,;} & e.\+g\+: \textquotesingle{}table\textquotesingle{} required name of table \textquotesingle{}db\+\_\+name\textquotesingle{} =$>$ \mbox{\hyperlink{namespace_zest_1_1_database}{Database}} name \textquotesingle{}wheres\textquotesingle{} Specify id or else for updating records \textquotesingle{}columns\textquotesingle{} =$>$ data e.\+g name=$>$new name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file Query.\+php.
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_zest_1_1_database_1_1_query_1_1_query_ae44347ec6a2b1e9a12e081db309d0734}\label{class_zest_1_1_database_1_1_query_1_1_query_ae44347ec6a2b1e9a12e081db309d0734}} 
+\index{Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}!use\+Query@{use\+Query}}
+\index{use\+Query@{use\+Query}!Zest\+::\+Database\+::\+Query\+::\+Query@{Zest\+::\+Database\+::\+Query\+::\+Query}}
+\subsubsection{\texorpdfstring{use\+Query()}{useQuery()}}
+{\footnotesize\ttfamily use\+Query (\begin{DoxyParamCaption}\item[{}]{\$name }\end{DoxyParamCaption})}
+
+Prepare the use statement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$name} & name of database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+query 
+\end{DoxyReturn}
+
+
+Definition at line 228 of file Query.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Database/\+Query/Query.\+php\end{DoxyCompactItemize}

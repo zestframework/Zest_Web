@@ -1,0 +1,361 @@
+\hypertarget{class_zest_1_1_mail_1_1_mail}{}\section{Mail Class Reference}
+\label{class_zest_1_1_mail_1_1_mail}\index{Mail@{Mail}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_ac987d3ae027d5659e29971c057067a74}{add\+Attachment}} (\$file)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_af3caeb841610ad2fa4dcbbc4d157eee8}{add\+Bcc}} (\$bcc)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_aa6928c70ebce7734d8b21ae2c41065da}{add\+Cc}} (\$cc)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_a31cd1494886ccd0d0734bfc229f95d9f}{add\+Receiver}} (\$email)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_af2eba74758819578cec6df5de4a8daf6}{prepare\+Attachment}} (\$attachment)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_a12bcef5130168b80d3d52dc82213f19a}{send}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_ae48b4d105b2d71bd9c3f88fdf3666058}{is\+Valid\+Email}} (\$email)
+\item 
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_a0f209abcdc9b0fc6073aaea5501d010b}\label{class_zest_1_1_mail_1_1_mail_a0f209abcdc9b0fc6073aaea5501d010b}} 
+{\bfseries is\+S\+M\+TP} (bool \$status=false)
+\item 
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_ac9666ecb59fa08e40f8f92b44a203159}\label{class_zest_1_1_mail_1_1_mail_ac9666ecb59fa08e40f8f92b44a203159}} 
+{\bfseries send\+S\+M\+TP} (\$to, \$from, \$message)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_afeb2c23899fa9c5524de47099eccfa12}{setadd\+Params}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_a72cc5793eec52f5f7d25048e7e7c11cf}{set\+Content\+H\+T\+ML}} (\$content)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_acc1f3676088abeb7ce453636940cde91}{set\+Content\+Plain}} (\$content)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_a18845dc0e743855fef7e3fd8a2375f4b}{set\+Reply\+To}} (\$email)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_a1a5cb2c6afc792ad117d5ba30e52b5de}{set\+Sender}} (\$email)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_a971f2abb85a2e0fc85954322896d6b80}{set\+Subject}} (\$subject)
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_a746fee70ac0f3dcd5543ff033dabbc97}{is\+File}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_mail_1_1_mail_aa821bec12eaa7e0f649397c9675ff505}{clear}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file Mail.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_ac987d3ae027d5659e29971c057067a74}\label{class_zest_1_1_mail_1_1_mail_ac987d3ae027d5659e29971c057067a74}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!add\+Attachment@{add\+Attachment}}
+\index{add\+Attachment@{add\+Attachment}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{add\+Attachment()}{addAttachment()}}
+{\footnotesize\ttfamily add\+Attachment (\begin{DoxyParamCaption}\item[{}]{\$file }\end{DoxyParamCaption})}
+
+For add attachment.
+
+
+\begin{DoxyParams}[1]{Parameters}
+resource & {\em \$file} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file Mail.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_af3caeb841610ad2fa4dcbbc4d157eee8}\label{class_zest_1_1_mail_1_1_mail_af3caeb841610ad2fa4dcbbc4d157eee8}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!add\+Bcc@{add\+Bcc}}
+\index{add\+Bcc@{add\+Bcc}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{add\+Bcc()}{addBcc()}}
+{\footnotesize\ttfamily add\+Bcc (\begin{DoxyParamCaption}\item[{}]{\$bcc }\end{DoxyParamCaption})}
+
+For add a new B\+CC.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$bcc} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Mail.\+php.
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_aa6928c70ebce7734d8b21ae2c41065da}\label{class_zest_1_1_mail_1_1_mail_aa6928c70ebce7734d8b21ae2c41065da}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!add\+Cc@{add\+Cc}}
+\index{add\+Cc@{add\+Cc}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{add\+Cc()}{addCc()}}
+{\footnotesize\ttfamily add\+Cc (\begin{DoxyParamCaption}\item[{}]{\$cc }\end{DoxyParamCaption})}
+
+For add a new cc.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$cc} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file Mail.\+php.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_a31cd1494886ccd0d0734bfc229f95d9f}\label{class_zest_1_1_mail_1_1_mail_a31cd1494886ccd0d0734bfc229f95d9f}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!add\+Receiver@{add\+Receiver}}
+\index{add\+Receiver@{add\+Receiver}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{add\+Receiver()}{addReceiver()}}
+{\footnotesize\ttfamily add\+Receiver (\begin{DoxyParamCaption}\item[{}]{\$email }\end{DoxyParamCaption})}
+
+For add reciever.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$email} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file Mail.\+php.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_aa821bec12eaa7e0f649397c9675ff505}\label{class_zest_1_1_mail_1_1_mail_aa821bec12eaa7e0f649397c9675ff505}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!clear@{clear}}
+\index{clear@{clear}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear all the information.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 390 of file Mail.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_a746fee70ac0f3dcd5543ff033dabbc97}\label{class_zest_1_1_mail_1_1_mail_a746fee70ac0f3dcd5543ff033dabbc97}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!is\+File@{is\+File}}
+\index{is\+File@{is\+File}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{is\+File()}{isFile()}}
+{\footnotesize\ttfamily is\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check file exists or not.
+
+
+\begin{DoxyParams}[1]{Parameters}
+resource & {\em \$file} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 376 of file Mail.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_ae48b4d105b2d71bd9c3f88fdf3666058}\label{class_zest_1_1_mail_1_1_mail_ae48b4d105b2d71bd9c3f88fdf3666058}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!is\+Valid\+Email@{is\+Valid\+Email}}
+\index{is\+Valid\+Email@{is\+Valid\+Email}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{is\+Valid\+Email()}{isValidEmail()}}
+{\footnotesize\ttfamily is\+Valid\+Email (\begin{DoxyParamCaption}\item[{}]{\$email }\end{DoxyParamCaption})}
+
+Check is email is valid.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$email} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file Mail.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_af2eba74758819578cec6df5de4a8daf6}\label{class_zest_1_1_mail_1_1_mail_af2eba74758819578cec6df5de4a8daf6}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!prepare\+Attachment@{prepare\+Attachment}}
+\index{prepare\+Attachment@{prepare\+Attachment}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{prepare\+Attachment()}{prepareAttachment()}}
+{\footnotesize\ttfamily prepare\+Attachment (\begin{DoxyParamCaption}\item[{}]{\$attachment }\end{DoxyParamCaption})}
+
+For prepare an attachment for sending with mail.
+
+\begin{DoxyReturn}{Returns}
+mix-\/data 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file Mail.\+php.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_a12bcef5130168b80d3d52dc82213f19a}\label{class_zest_1_1_mail_1_1_mail_a12bcef5130168b80d3d52dc82213f19a}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!send@{send}}
+\index{send@{send}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily send (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+For send the mail.
+
+\begin{DoxyReturn}{Returns}
+boolean. 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file Mail.\+php.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_afeb2c23899fa9c5524de47099eccfa12}\label{class_zest_1_1_mail_1_1_mail_afeb2c23899fa9c5524de47099eccfa12}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!setadd\+Params@{setadd\+Params}}
+\index{setadd\+Params@{setadd\+Params}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{setadd\+Params()}{setaddParams()}}
+{\footnotesize\ttfamily setadd\+Params (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+For set additional parameter for the mail function (4th parameter).
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$parameter} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 294 of file Mail.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_a72cc5793eec52f5f7d25048e7e7c11cf}\label{class_zest_1_1_mail_1_1_mail_a72cc5793eec52f5f7d25048e7e7c11cf}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!set\+Content\+H\+T\+ML@{set\+Content\+H\+T\+ML}}
+\index{set\+Content\+H\+T\+ML@{set\+Content\+H\+T\+ML}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{set\+Content\+H\+T\+M\+L()}{setContentHTML()}}
+{\footnotesize\ttfamily set\+Content\+H\+T\+ML (\begin{DoxyParamCaption}\item[{}]{\$content }\end{DoxyParamCaption})}
+
+For the formatted content (H\+T\+ML) of the mail.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$content} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 306 of file Mail.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_acc1f3676088abeb7ce453636940cde91}\label{class_zest_1_1_mail_1_1_mail_acc1f3676088abeb7ce453636940cde91}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!set\+Content\+Plain@{set\+Content\+Plain}}
+\index{set\+Content\+Plain@{set\+Content\+Plain}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{set\+Content\+Plain()}{setContentPlain()}}
+{\footnotesize\ttfamily set\+Content\+Plain (\begin{DoxyParamCaption}\item[{}]{\$content }\end{DoxyParamCaption})}
+
+For set the plain content of the mail.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$content} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 319 of file Mail.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_a18845dc0e743855fef7e3fd8a2375f4b}\label{class_zest_1_1_mail_1_1_mail_a18845dc0e743855fef7e3fd8a2375f4b}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!set\+Reply\+To@{set\+Reply\+To}}
+\index{set\+Reply\+To@{set\+Reply\+To}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{set\+Reply\+To()}{setReplyTo()}}
+{\footnotesize\ttfamily set\+Reply\+To (\begin{DoxyParamCaption}\item[{}]{\$email }\end{DoxyParamCaption})}
+
+For set reply\+\_\+to in mail.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$subject} & The subject of the mail.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 332 of file Mail.\+php.
+
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_a1a5cb2c6afc792ad117d5ba30e52b5de}\label{class_zest_1_1_mail_1_1_mail_a1a5cb2c6afc792ad117d5ba30e52b5de}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!set\+Sender@{set\+Sender}}
+\index{set\+Sender@{set\+Sender}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{set\+Sender()}{setSender()}}
+{\footnotesize\ttfamily set\+Sender (\begin{DoxyParamCaption}\item[{}]{\$email }\end{DoxyParamCaption})}
+
+For set sender in mail.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$subject} & The subject of the mail.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 348 of file Mail.\+php.
+
+Here is the call graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_zest_1_1_mail_1_1_mail_a971f2abb85a2e0fc85954322896d6b80}\label{class_zest_1_1_mail_1_1_mail_a971f2abb85a2e0fc85954322896d6b80}} 
+\index{Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}!set\+Subject@{set\+Subject}}
+\index{set\+Subject@{set\+Subject}!Zest\+::\+Mail\+::\+Mail@{Zest\+::\+Mail\+::\+Mail}}
+\subsubsection{\texorpdfstring{set\+Subject()}{setSubject()}}
+{\footnotesize\ttfamily set\+Subject (\begin{DoxyParamCaption}\item[{}]{\$subject }\end{DoxyParamCaption})}
+
+For set subject in mail.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$subject} & The subject of the mail.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 364 of file Mail.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Mail/Mail.\+php\end{DoxyCompactItemize}

@@ -1,0 +1,241 @@
+\hypertarget{class_zest_1_1_auth_1_1_user}{}\section{User Class Reference}
+\label{class_zest_1_1_auth_1_1_user}\index{User@{User}}
+
+
+Inheritance diagram for User\+:
+% FIG 0
+
+
+Collaboration diagram for User\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_aba0d5b303383fb5b1fabb5fd01cd3800}{get\+All}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_ae74834371fb77ad40ef0845883352d19}{get\+By\+Where}} (\$where, \$value)
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_a99ae17e029c338ef8559c3d2c64b94cd}{is\+Username}} (\$username)
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_a06e51d64ebd5861dc7728adf64a226d7}{is\+Email}} (\$email)
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_a30f35759659d9838b8eaffb96d7a5d2a}{is\+Token}} (\$token)
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_a5d20a1de4d92b051e389fa8579cb6b07}{is\+Reset\+Token}} (\$token)
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_a6083b365f5ea600dd590280b73cf3f08}{login\+User}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_a94f9bad9e990d4cfcadb21615c859f9a}{session\+User}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_a143c83afc39f4761088db46dc2c9426e}{is\+Login}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_user_a082405d89acd6835c3a7c7a08a7adbab}{logout}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file User.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_aba0d5b303383fb5b1fabb5fd01cd3800}\label{class_zest_1_1_auth_1_1_user_aba0d5b303383fb5b1fabb5fd01cd3800}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!get\+All@{get\+All}}
+\index{get\+All@{get\+All}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{get\+All()}{getAll()}}
+{\footnotesize\ttfamily get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all the users.
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file User.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_ae74834371fb77ad40ef0845883352d19}\label{class_zest_1_1_auth_1_1_user_ae74834371fb77ad40ef0845883352d19}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!get\+By\+Where@{get\+By\+Where}}
+\index{get\+By\+Where@{get\+By\+Where}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{get\+By\+Where()}{getByWhere()}}
+{\footnotesize\ttfamily get\+By\+Where (\begin{DoxyParamCaption}\item[{}]{\$where,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+Get users using specific field.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$where,field} & of user e.\+g username \$value , value fo field like , usr01\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file User.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_a06e51d64ebd5861dc7728adf64a226d7}\label{class_zest_1_1_auth_1_1_user_a06e51d64ebd5861dc7728adf64a226d7}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!is\+Email@{is\+Email}}
+\index{is\+Email@{is\+Email}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{is\+Email()}{isEmail()}}
+{\footnotesize\ttfamily is\+Email (\begin{DoxyParamCaption}\item[{}]{\$email }\end{DoxyParamCaption})}
+
+Check is email is exists or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$email,email} & of user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file User.\+php.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_a143c83afc39f4761088db46dc2c9426e}\label{class_zest_1_1_auth_1_1_user_a143c83afc39f4761088db46dc2c9426e}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!is\+Login@{is\+Login}}
+\index{is\+Login@{is\+Login}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{is\+Login()}{isLogin()}}
+{\footnotesize\ttfamily is\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check user is login or not.
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file User.\+php.
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_a5d20a1de4d92b051e389fa8579cb6b07}\label{class_zest_1_1_auth_1_1_user_a5d20a1de4d92b051e389fa8579cb6b07}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!is\+Reset\+Token@{is\+Reset\+Token}}
+\index{is\+Reset\+Token@{is\+Reset\+Token}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{is\+Reset\+Token()}{isResetToken()}}
+{\footnotesize\ttfamily is\+Reset\+Token (\begin{DoxyParamCaption}\item[{}]{\$token }\end{DoxyParamCaption})}
+
+Check is reset token is exists or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$token,token} & of user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file User.\+php.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_a30f35759659d9838b8eaffb96d7a5d2a}\label{class_zest_1_1_auth_1_1_user_a30f35759659d9838b8eaffb96d7a5d2a}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!is\+Token@{is\+Token}}
+\index{is\+Token@{is\+Token}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{is\+Token()}{isToken()}}
+{\footnotesize\ttfamily is\+Token (\begin{DoxyParamCaption}\item[{}]{\$token }\end{DoxyParamCaption})}
+
+Check is is verification token is exists or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$token,token} & of user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file User.\+php.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_a99ae17e029c338ef8559c3d2c64b94cd}\label{class_zest_1_1_auth_1_1_user_a99ae17e029c338ef8559c3d2c64b94cd}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!is\+Username@{is\+Username}}
+\index{is\+Username@{is\+Username}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{is\+Username()}{isUsername()}}
+{\footnotesize\ttfamily is\+Username (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+Check is username is exists or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$username,username} & of user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file User.\+php.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_a6083b365f5ea600dd590280b73cf3f08}\label{class_zest_1_1_auth_1_1_user_a6083b365f5ea600dd590280b73cf3f08}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!login\+User@{login\+User}}
+\index{login\+User@{login\+User}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{login\+User()}{loginUser()}}
+{\footnotesize\ttfamily login\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the details of login user.
+
+\begin{DoxyReturn}{Returns}
+string$\vert$bool 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file User.\+php.
+
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_a082405d89acd6835c3a7c7a08a7adbab}\label{class_zest_1_1_auth_1_1_user_a082405d89acd6835c3a7c7a08a7adbab}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!logout@{logout}}
+\index{logout@{logout}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_zest_1_1_auth_1_1_logout}{Logout}} the user.
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file User.\+php.
+
+Here is the call graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_user_a94f9bad9e990d4cfcadb21615c859f9a}\label{class_zest_1_1_auth_1_1_user_a94f9bad9e990d4cfcadb21615c859f9a}} 
+\index{Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}!session\+User@{session\+User}}
+\index{session\+User@{session\+User}!Zest\+::\+Auth\+::\+User@{Zest\+::\+Auth\+::\+User}}
+\subsubsection{\texorpdfstring{session\+User()}{sessionUser()}}
+{\footnotesize\ttfamily session\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the current session user.
+
+\begin{DoxyReturn}{Returns}
+string$\vert$bool 
+\end{DoxyReturn}
+
+
+Definition at line 136 of file User.\+php.
+
+Here is the call graph for this function\+:
+% FIG 10
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Auth/User.\+php\end{DoxyCompactItemize}

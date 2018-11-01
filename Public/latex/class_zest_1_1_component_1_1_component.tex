@@ -1,0 +1,433 @@
+\hypertarget{class_zest_1_1_component_1_1_component}{}\section{Component Class Reference}
+\label{class_zest_1_1_component_1_1_component}\index{Component@{Component}}
+
+
+Inheritance diagram for Component\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_ac897e899f8138035a0cffd811e66e511}{add}} (\$route, \$params=\textquotesingle{}\textquotesingle{}, \$methods=\textquotesingle{}G\+ET$\vert$H\+E\+AD\textquotesingle{})
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_aaa3340c31a0589e86c4776ac12728380}{add\+Routes}} (\$\mbox{\hyperlink{class_zest_1_1_component_1_1routes}{routes}})
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_aa429da1bb99f01f3cb6cb852bd5c6d1b}{post}} (\$route, \$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a51dc358f1d8ce5d2e4029c45c2097890}{get}} (\$route, \$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_adf823f3a16fa82141c7933c7ae927f65}{put}} (\$route, \$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a73c86b4094ed082a203f231dccd9bf61}{patch}} (\$route, \$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a893e99daba2c70ee898cb9c89a8e5e81}{delete}} (\$route, \$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a18da86bf318ebe47e501aaad267d59ed}{get\+Routes}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_abd724f6a6c6ad25275026dede10a1495}{match}} (\$url)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a732fd0dc552efc395b1ed94302359743}{method\+Match}} (\$methods, \$request\+Method=null)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_ae32cd7c32721b02d676bb63b4b1366db}{get\+Params}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_aa1582e6a62dc40179f53a4a3705c044e}{dispatch}} (\$url)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a7366d2dcd78903bd5baca0ec280d180e}{parseurl}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a6201cf73444ddfadfca25d437f49fd1b}{convert\+To\+Studly\+Caps}} (\$string)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_ac8113e94342833c6df305638210875f5}{convert\+To\+Camel\+Case}} (\$string)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a3dd72e2d1640550f7a9a083d24a6b0ea}{Remove\+Query\+String}} (\$url)
+\item 
+\mbox{\hyperlink{class_zest_1_1_component_1_1_component_a2614df64646ac71b70b1e1074258052b}{get\+Namespace}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a8f7eb04a54e0f0bfc0cedeb9899ce4a8}\label{class_zest_1_1_component_1_1_component_a8f7eb04a54e0f0bfc0cedeb9899ce4a8}} 
+{\bfseries \$routes} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_afe68e6fbe7acfbffc0af0c84a1996466}\label{class_zest_1_1_component_1_1_component_afe68e6fbe7acfbffc0af0c84a1996466}} 
+{\bfseries \$params} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file Component.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_ac897e899f8138035a0cffd811e66e511}\label{class_zest_1_1_component_1_1_component_ac897e899f8138035a0cffd811e66e511}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!add@{add}}
+\index{add@{add}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily add (\begin{DoxyParamCaption}\item[{}]{\$route,  }\item[{}]{\$params = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$methods = {\ttfamily \textquotesingle{}GET$\vert$HEAD\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Add a route to the routing table.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$route} & The route U\+RL \\
+\hline
+array | string & {\em \$params} & Parameters (controller, action, etc.) or \$params Home \\
+\hline
+string & {\em \$methods} & request method like G\+ET or G\+E\+T$\vert$\+P\+O\+ST\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Component.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_aaa3340c31a0589e86c4776ac12728380}\label{class_zest_1_1_component_1_1_component_aaa3340c31a0589e86c4776ac12728380}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!add\+Routes@{add\+Routes}}
+\index{add\+Routes@{add\+Routes}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{add\+Routes()}{addRoutes()}}
+{\footnotesize\ttfamily add\+Routes (\begin{DoxyParamCaption}\item[{}]{\$routes }\end{DoxyParamCaption})}
+
+Add multiple routes at once from array in the following format\+:.
+
+\$routes = \mbox{[}route,param,method\mbox{]}
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Component.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_ac8113e94342833c6df305638210875f5}\label{class_zest_1_1_component_1_1_component_ac8113e94342833c6df305638210875f5}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!convert\+To\+Camel\+Case@{convert\+To\+Camel\+Case}}
+\index{convert\+To\+Camel\+Case@{convert\+To\+Camel\+Case}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{convert\+To\+Camel\+Case()}{convertToCamelCase()}}
+{\footnotesize\ttfamily convert\+To\+Camel\+Case (\begin{DoxyParamCaption}\item[{}]{\$string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Convert the string with hyphens to camel\+Case,.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$string} & The string to convert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 292 of file Component.\+php.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a6201cf73444ddfadfca25d437f49fd1b}\label{class_zest_1_1_component_1_1_component_a6201cf73444ddfadfca25d437f49fd1b}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!convert\+To\+Studly\+Caps@{convert\+To\+Studly\+Caps}}
+\index{convert\+To\+Studly\+Caps@{convert\+To\+Studly\+Caps}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{convert\+To\+Studly\+Caps()}{convertToStudlyCaps()}}
+{\footnotesize\ttfamily convert\+To\+Studly\+Caps (\begin{DoxyParamCaption}\item[{}]{\$string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Convert the string with hyphens to Studly\+Caps,.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$string} & The string to convert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 280 of file Component.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a893e99daba2c70ee898cb9c89a8e5e81}\label{class_zest_1_1_component_1_1_component_a893e99daba2c70ee898cb9c89a8e5e81}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!delete@{delete}}
+\index{delete@{delete}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$route,  }\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Add a route to the routing table as D\+E\+L\+E\+TE.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$route} & The route U\+RL \\
+\hline
+array | string & {\em \$params} & Parameters (controller, action, etc.) or \$params Home\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 152 of file Component.\+php.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_aa1582e6a62dc40179f53a4a3705c044e}\label{class_zest_1_1_component_1_1_component_aa1582e6a62dc40179f53a4a3705c044e}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!dispatch@{dispatch}}
+\index{dispatch@{dispatch}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{dispatch()}{dispatch()}}
+{\footnotesize\ttfamily dispatch (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})}
+
+Dispatch the route, creating the controller object and running the action method.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & The route U\+RL\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file Component.\+php.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a51dc358f1d8ce5d2e4029c45c2097890}\label{class_zest_1_1_component_1_1_component_a51dc358f1d8ce5d2e4029c45c2097890}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!get@{get}}
+\index{get@{get}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily get (\begin{DoxyParamCaption}\item[{}]{\$route,  }\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Add a route to the routing table as G\+ET.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$route} & The route U\+RL \\
+\hline
+array | string & {\em \$params} & Parameters (controller, action, etc.) or \$params Home\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file Component.\+php.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a2614df64646ac71b70b1e1074258052b}\label{class_zest_1_1_component_1_1_component_a2614df64646ac71b70b1e1074258052b}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!get\+Namespace@{get\+Namespace}}
+\index{get\+Namespace@{get\+Namespace}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{get\+Namespace()}{getNamespace()}}
+{\footnotesize\ttfamily get\+Namespace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Get the namespace for the controller class. The namespace defined in the route parameters is added if present.
+
+\begin{DoxyReturn}{Returns}
+string The request U\+RL 
+\end{DoxyReturn}
+
+
+Definition at line 325 of file Component.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_ae32cd7c32721b02d676bb63b4b1366db}\label{class_zest_1_1_component_1_1_component_ae32cd7c32721b02d676bb63b4b1366db}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!get\+Params@{get\+Params}}
+\index{get\+Params@{get\+Params}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{get\+Params()}{getParams()}}
+{\footnotesize\ttfamily get\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the currently matched parameters.
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 230 of file Component.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a18da86bf318ebe47e501aaad267d59ed}\label{class_zest_1_1_component_1_1_component_a18da86bf318ebe47e501aaad267d59ed}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!get\+Routes@{get\+Routes}}
+\index{get\+Routes@{get\+Routes}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{get\+Routes()}{getRoutes()}}
+{\footnotesize\ttfamily get\+Routes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all the routes from the routing table.
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 162 of file Component.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_abd724f6a6c6ad25275026dede10a1495}\label{class_zest_1_1_component_1_1_component_abd724f6a6c6ad25275026dede10a1495}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!match@{match}}
+\index{match@{match}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily match (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})}
+
+Match the route to the routes in the routing table, setting the \$params property if a route is found.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & The route U\+RL\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true if a match found, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file Component.\+php.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a732fd0dc552efc395b1ed94302359743}\label{class_zest_1_1_component_1_1_component_a732fd0dc552efc395b1ed94302359743}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!method\+Match@{method\+Match}}
+\index{method\+Match@{method\+Match}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{method\+Match()}{methodMatch()}}
+{\footnotesize\ttfamily method\+Match (\begin{DoxyParamCaption}\item[{}]{\$methods,  }\item[{}]{\$request\+Method = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Match the request methods.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$methods} & router request method \\
+\hline
+string & {\em \$request\+Method} & Requested method\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file Component.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a7366d2dcd78903bd5baca0ec280d180e}\label{class_zest_1_1_component_1_1_component_a7366d2dcd78903bd5baca0ec280d180e}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!parseurl@{parseurl}}
+\index{parseurl@{parseurl}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{parseurl()}{parseurl()}}
+{\footnotesize\ttfamily parseurl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Parase the url if need.
+
+\begin{DoxyReturn}{Returns}
+string The request U\+RL 
+\end{DoxyReturn}
+
+
+Definition at line 337 of file Component.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a73c86b4094ed082a203f231dccd9bf61}\label{class_zest_1_1_component_1_1_component_a73c86b4094ed082a203f231dccd9bf61}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!patch@{patch}}
+\index{patch@{patch}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{patch()}{patch()}}
+{\footnotesize\ttfamily patch (\begin{DoxyParamCaption}\item[{}]{\$route,  }\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Add a route to the routing table as P\+A\+T\+CH.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$route} & The route U\+RL \\
+\hline
+array | string & {\em \$params} & Parameters (controller, action, etc.) or \$params Home\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 139 of file Component.\+php.
+
+Here is the call graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_aa429da1bb99f01f3cb6cb852bd5c6d1b}\label{class_zest_1_1_component_1_1_component_aa429da1bb99f01f3cb6cb852bd5c6d1b}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!post@{post}}
+\index{post@{post}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{post()}{post()}}
+{\footnotesize\ttfamily post (\begin{DoxyParamCaption}\item[{}]{\$route,  }\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Add a route to the routing table as P\+O\+ST.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$route} & The route U\+RL \\
+\hline
+array | string & {\em \$params} & Parameters (controller, action, etc.) or \$params Home\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file Component.\+php.
+
+Here is the call graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_adf823f3a16fa82141c7933c7ae927f65}\label{class_zest_1_1_component_1_1_component_adf823f3a16fa82141c7933c7ae927f65}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!put@{put}}
+\index{put@{put}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily put (\begin{DoxyParamCaption}\item[{}]{\$route,  }\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Add a route to the routing table as P\+UT.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$route} & The route U\+RL \\
+\hline
+array | string & {\em \$params} & Parameters (controller, action, etc.) or \$params Home\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file Component.\+php.
+
+Here is the call graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{class_zest_1_1_component_1_1_component_a3dd72e2d1640550f7a9a083d24a6b0ea}\label{class_zest_1_1_component_1_1_component_a3dd72e2d1640550f7a9a083d24a6b0ea}} 
+\index{Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}!Remove\+Query\+String@{Remove\+Query\+String}}
+\index{Remove\+Query\+String@{Remove\+Query\+String}!Zest\+::\+Component\+::\+Component@{Zest\+::\+Component\+::\+Component}}
+\subsubsection{\texorpdfstring{Remove\+Query\+String()}{RemoveQueryString()}}
+{\footnotesize\ttfamily Remove\+Query\+String (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Remove the query string variables from the U\+RL (if any). As the full.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & The full U\+RL\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The U\+RL with the query string variables removed 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file Component.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 15
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Component/Component.\+php\end{DoxyCompactItemize}

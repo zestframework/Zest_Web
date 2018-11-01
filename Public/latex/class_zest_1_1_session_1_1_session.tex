@@ -1,0 +1,173 @@
+\hypertarget{class_zest_1_1_session_1_1_session}{}\section{Session Class Reference}
+\label{class_zest_1_1_session_1_1_session}\index{Session@{Session}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_session_1_1_session_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_zest_1_1_session_1_1_session_a146085d0f3a9d17bdcd7f3d4081d8c0d}{start}} ()
+\item 
+static \mbox{\hyperlink{class_zest_1_1_session_1_1_session_a10b1cecd11adec8f2067f7ed052dbbf0}{session\+Path}} ()
+\item 
+static \mbox{\hyperlink{class_zest_1_1_session_1_1_session_a93da4b5810cd219a403be01d51eaf8ec}{is\+Session}} (string \$name)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_session_1_1_session_acba3a14ff7bb42eedd40d5e8a8f846c2}{get\+Value}} (string \$name)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_session_1_1_session_a5d3c77dc00e3090cbd79986dc2c4d841}{set\+Value}} (string \$name, \$value)
+\item 
+static \mbox{\hyperlink{class_zest_1_1_session_1_1_session_aaea4a8cdb751723a388c9d8df2c374f6}{unset\+Value}} (string \$name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file Session.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_zest_1_1_session_1_1_session_a095c5d389db211932136b53f25f39685}\label{class_zest_1_1_session_1_1_session_a095c5d389db211932136b53f25f39685}} 
+\index{Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\+\_\+\+\_\+\+Construct.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Session.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_session_1_1_session_acba3a14ff7bb42eedd40d5e8a8f846c2}\label{class_zest_1_1_session_1_1_session_acba3a14ff7bb42eedd40d5e8a8f846c2}} 
+\index{Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}}
+\subsubsection{\texorpdfstring{get\+Value()}{getValue()}}
+{\footnotesize\ttfamily static get\+Value (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the session value by providing session name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$name} & (string) name of session e.\+g users\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file Session.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_zest_1_1_session_1_1_session_a93da4b5810cd219a403be01d51eaf8ec}\label{class_zest_1_1_session_1_1_session_a93da4b5810cd219a403be01d51eaf8ec}} 
+\index{Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}!is\+Session@{is\+Session}}
+\index{is\+Session@{is\+Session}!Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}}
+\subsubsection{\texorpdfstring{is\+Session()}{isSession()}}
+{\footnotesize\ttfamily static is\+Session (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check if session is already set with specific name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$name} & (string) name of session e.\+g users\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file Session.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_zest_1_1_session_1_1_session_a10b1cecd11adec8f2067f7ed052dbbf0}\label{class_zest_1_1_session_1_1_session_a10b1cecd11adec8f2067f7ed052dbbf0}} 
+\index{Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}!session\+Path@{session\+Path}}
+\index{session\+Path@{session\+Path}!Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}}
+\subsubsection{\texorpdfstring{session\+Path()}{sessionPath()}}
+{\footnotesize\ttfamily static session\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Change session path.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file Session.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_session_1_1_session_a5d3c77dc00e3090cbd79986dc2c4d841}\label{class_zest_1_1_session_1_1_session_a5d3c77dc00e3090cbd79986dc2c4d841}} 
+\index{Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}}
+\subsubsection{\texorpdfstring{set\+Value()}{setValue()}}
+{\footnotesize\ttfamily static set\+Value (\begin{DoxyParamCaption}\item[{string}]{\$name,  }\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Set/store value in session.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}name\textquotesingle{} =$>$ name of session e.\+g users \textquotesingle{}value\textquotesingle{} =$>$ value store in session e.\+g user token\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file Session.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_zest_1_1_session_1_1_session_a146085d0f3a9d17bdcd7f3d4081d8c0d}\label{class_zest_1_1_session_1_1_session_a146085d0f3a9d17bdcd7f3d4081d8c0d}} 
+\index{Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}!start@{start}}
+\index{start@{start}!Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily static start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Start the session if not already start.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file Session.\+php.
+
+\mbox{\Hypertarget{class_zest_1_1_session_1_1_session_aaea4a8cdb751723a388c9d8df2c374f6}\label{class_zest_1_1_session_1_1_session_aaea4a8cdb751723a388c9d8df2c374f6}} 
+\index{Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}!unset\+Value@{unset\+Value}}
+\index{unset\+Value@{unset\+Value}!Zest\+::\+Session\+::\+Session@{Zest\+::\+Session\+::\+Session}}
+\subsubsection{\texorpdfstring{unset\+Value()}{unsetValue()}}
+{\footnotesize\ttfamily static unset\+Value (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Delete/unset the session.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$name} & (string) name of session e.\+g users\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file Session.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Session/Session.\+php\end{DoxyCompactItemize}

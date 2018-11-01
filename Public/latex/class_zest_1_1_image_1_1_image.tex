@@ -1,0 +1,277 @@
+\hypertarget{class_zest_1_1_image_1_1_image}{}\section{Image Class Reference}
+\label{class_zest_1_1_image_1_1_image}\index{Image@{Image}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a85fdb47486cf604618635df0269a51d6}{set\+Headers}} ()
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a059243633a6de5f63a331aa0128de26a}{image\+Save}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a7c9ed1b4d046d3b7048a341087912253}{image\+Extension}} (\$image)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_ad35abb3d08e6a33f1634bed36d90b3b6}{Image\+Resize}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a57af33285ab49538a532b0891bc28794}{image\+Brightness}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a396a84193e0d452555d48e21fa950faa}{image\+Blur}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a3069cd92bc1230a0ecd5ac0a6dd24853}{image\+Effects}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_ac5079c30e25e4793c492478b097212fb}{image\+Crop}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a8deb9e4b3f1858d4515dad7b6de856d2}{image\+Flip}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a762c46642966686a6d012387b142b117}{image\+Rotate}} (\$params)
+\item 
+\mbox{\hyperlink{class_zest_1_1_image_1_1_image_a2bf10c2919bcc6feffc6acc80d5b1fb6}{image\+Border}} (\$params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file Image.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a396a84193e0d452555d48e21fa950faa}\label{class_zest_1_1_image_1_1_image_a396a84193e0d452555d48e21fa950faa}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Blur@{image\+Blur}}
+\index{image\+Blur@{image\+Blur}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Blur()}{imageBlur()}}
+{\footnotesize\ttfamily image\+Blur (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Resize the \mbox{\hyperlink{class_zest_1_1_image_1_1_image}{Image}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}source\textquotesingle{} =$>$ Source valid image file \textquotesingle{}blur\+\_\+opacity\textquotesingle{} =$>$ blur\+\_\+opacity recommended 100 otherwise you provide whatever you want if you do not want save image these parameter are optional if you want save image \textquotesingle{}save\textquotesingle{} =$>$ true \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file Image.\+php.
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a2bf10c2919bcc6feffc6acc80d5b1fb6}\label{class_zest_1_1_image_1_1_image_a2bf10c2919bcc6feffc6acc80d5b1fb6}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Border@{image\+Border}}
+\index{image\+Border@{image\+Border}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Border()}{imageBorder()}}
+{\footnotesize\ttfamily image\+Border (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Add Border to the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}source\textquotesingle{} =$>$ Source valid image file \textquotesingle{}thickness\textquotesingle{} =$>$ thickness of border \textquotesingle{}bg\+\_\+color\textquotesingle{} =$>$ three argument valid value for rgb \textquotesingle{}red\textquotesingle{} =$>$ red color \textquotesingle{}green\textquotesingle{} =$>$ green color \textquotesingle{}blue\textquotesingle{} =$>$ blue color Learn more about rgb \href{https://en.wikipedia.org/wiki/RGB_color_model}{\tt https\+://en.\+wikipedia.\+org/wiki/\+R\+G\+B\+\_\+color\+\_\+model} if you do not want save image these parameter are optional if you want save image \textquotesingle{}save\textquotesingle{} =$>$ true \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 578 of file Image.\+php.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a57af33285ab49538a532b0891bc28794}\label{class_zest_1_1_image_1_1_image_a57af33285ab49538a532b0891bc28794}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Brightness@{image\+Brightness}}
+\index{image\+Brightness@{image\+Brightness}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Brightness()}{imageBrightness()}}
+{\footnotesize\ttfamily image\+Brightness (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Resize the \mbox{\hyperlink{class_zest_1_1_image_1_1_image}{Image}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}source\textquotesingle{} =$>$ Source valid image file \textquotesingle{}brightness\textquotesingle{} =$>$ Brightnes to-\/be set valid -\/255 to 255 if you do not want save image these parameter are optional if you want save image \textquotesingle{}save\textquotesingle{} =$>$ true \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 132 of file Image.\+php.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_ac5079c30e25e4793c492478b097212fb}\label{class_zest_1_1_image_1_1_image_ac5079c30e25e4793c492478b097212fb}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Crop@{image\+Crop}}
+\index{image\+Crop@{image\+Crop}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Crop()}{imageCrop()}}
+{\footnotesize\ttfamily image\+Crop (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Crop the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}source\textquotesingle{} =$>$ Source valid image file \textquotesingle{}x\textquotesingle{} =$>$ x coordinate of image e.\+g 45 \textquotesingle{}y\textquotesingle{} =$>$ y coordinate of image e.\+g 11 if you do not want save image these parameter are optional if you want save image \textquotesingle{}save\textquotesingle{} =$>$ true \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 433 of file Image.\+php.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a3069cd92bc1230a0ecd5ac0a6dd24853}\label{class_zest_1_1_image_1_1_image_a3069cd92bc1230a0ecd5ac0a6dd24853}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Effects@{image\+Effects}}
+\index{image\+Effects@{image\+Effects}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Effects()}{imageEffects()}}
+{\footnotesize\ttfamily image\+Effects (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Resize the \mbox{\hyperlink{class_zest_1_1_image_1_1_image}{Image}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}source\textquotesingle{} =$>$ Source valid image file \textquotesingle{}effect\textquotesingle{} =$>$ Different effect supported =$>$ blackwhite =$>$ negative =$>$ emboss =$>$ highlight =$>$ edegdetect for bubbles.\+bubbles1,cloud effect opacity is required if you do not want save image these parameter are optional if you want save image \textquotesingle{}save\textquotesingle{} =$>$ true \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 228 of file Image.\+php.
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a7c9ed1b4d046d3b7048a341087912253}\label{class_zest_1_1_image_1_1_image_a7c9ed1b4d046d3b7048a341087912253}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Extension@{image\+Extension}}
+\index{image\+Extension@{image\+Extension}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Extension()}{imageExtension()}}
+{\footnotesize\ttfamily image\+Extension (\begin{DoxyParamCaption}\item[{}]{\$image }\end{DoxyParamCaption})}
+
+Extension of image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (string) \textquotesingle{}image\textquotesingle{} =$>$ Source valid image file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file Image.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a8deb9e4b3f1858d4515dad7b6de856d2}\label{class_zest_1_1_image_1_1_image_a8deb9e4b3f1858d4515dad7b6de856d2}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Flip@{image\+Flip}}
+\index{image\+Flip@{image\+Flip}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Flip()}{imageFlip()}}
+{\footnotesize\ttfamily image\+Flip (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Flip the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}source\textquotesingle{} =$>$ Source valid image file \textquotesingle{}flip\textquotesingle{} =$>$ support two different value \textquotesingle{}horizontal\textquotesingle{} =$>$ flip image horizontally \textquotesingle{}vertical\textquotesingle{} =$>$ flip image vertically if you do not want save image these parameter are optional if you want save image \textquotesingle{}save\textquotesingle{} =$>$ true \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 479 of file Image.\+php.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_ad35abb3d08e6a33f1634bed36d90b3b6}\label{class_zest_1_1_image_1_1_image_ad35abb3d08e6a33f1634bed36d90b3b6}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!Image\+Resize@{Image\+Resize}}
+\index{Image\+Resize@{Image\+Resize}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{Image\+Resize()}{ImageResize()}}
+{\footnotesize\ttfamily Image\+Resize (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Resize the \mbox{\hyperlink{class_zest_1_1_image_1_1_image}{Image}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}source\textquotesingle{} =$>$ Source valid image file \textquotesingle{}w\textquotesingle{} =$>$ New width of image \textquotesingle{}h\textquotesingle{} =$>$ New height of image if you do not want save image these parameter are optional if you want save image \textquotesingle{}save\textquotesingle{} =$>$ true \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file Image.\+php.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a762c46642966686a6d012387b142b117}\label{class_zest_1_1_image_1_1_image_a762c46642966686a6d012387b142b117}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Rotate@{image\+Rotate}}
+\index{image\+Rotate@{image\+Rotate}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Rotate()}{imageRotate()}}
+{\footnotesize\ttfamily image\+Rotate (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Rotate the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}source\textquotesingle{} =$>$ Source valid image file \textquotesingle{}rotate\textquotesingle{} =$>$ Rotate in degree e.\+g 90,150 etc... \textquotesingle{}bg\+\_\+color\textquotesingle{} =$>$ (optional) if you want provide color of the uncovered zone after the rotation support three argument valid value for rgb \textquotesingle{}red\textquotesingle{} =$>$ red color \textquotesingle{}green\textquotesingle{} =$>$ green color \textquotesingle{}blue\textquotesingle{} =$>$ blue color Learn more about rgb \href{https://en.wikipedia.org/wiki/RGB_color_model}{\tt https\+://en.\+wikipedia.\+org/wiki/\+R\+G\+B\+\_\+color\+\_\+model} if you do not want save image these parameter are optional if you want save image \textquotesingle{}save\textquotesingle{} =$>$ true \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 528 of file Image.\+php.
+
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a059243633a6de5f63a331aa0128de26a}\label{class_zest_1_1_image_1_1_image_a059243633a6de5f63a331aa0128de26a}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!image\+Save@{image\+Save}}
+\index{image\+Save@{image\+Save}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{image\+Save()}{imageSave()}}
+{\footnotesize\ttfamily image\+Save (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Save the \mbox{\hyperlink{class_zest_1_1_image_1_1_image}{Image}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$params} & (array) \textquotesingle{}image\textquotesingle{} =$>$ Source valid image file \textquotesingle{}target\textquotesingle{} =$>$ target + new name of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file Image.\+php.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_zest_1_1_image_1_1_image_a85fdb47486cf604618635df0269a51d6}\label{class_zest_1_1_image_1_1_image_a85fdb47486cf604618635df0269a51d6}} 
+\index{Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}!set\+Headers@{set\+Headers}}
+\index{set\+Headers@{set\+Headers}!Zest\+::\+Image\+::\+Image@{Zest\+::\+Image\+::\+Image}}
+\subsubsection{\texorpdfstring{set\+Headers()}{setHeaders()}}
+{\footnotesize\ttfamily set\+Headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Change content-\/header-\/type.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Image.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Image/Image.\+php\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\hypertarget{class_zest_1_1_auth_1_1_auth}{}\section{Auth Class Reference}
+\label{class_zest_1_1_auth_1_1_auth}\index{Auth@{Auth}}
+
+
+Inheritance diagram for Auth\+:
+% FIG 0
+
+
+Collaboration diagram for Auth\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_auth_a852ed40b79f143c1478699d908f46957}\label{class_zest_1_1_auth_1_1_auth_a852ed40b79f143c1478699d908f46957}} 
+{\bfseries signup} ()
+\item 
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_auth_a36facf2084a20f4397a864e69a02c4d6}\label{class_zest_1_1_auth_1_1_auth_a36facf2084a20f4397a864e69a02c4d6}} 
+{\bfseries signin} ()
+\item 
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_auth_a082405d89acd6835c3a7c7a08a7adbab}\label{class_zest_1_1_auth_1_1_auth_a082405d89acd6835c3a7c7a08a7adbab}} 
+{\bfseries logout} ()
+\item 
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_auth_a842e4774e3b3601a005b995c02f7e883}\label{class_zest_1_1_auth_1_1_auth_a842e4774e3b3601a005b995c02f7e883}} 
+{\bfseries update} ()
+\item 
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_auth_aa33600b6a1b28d0c4dfe4d468272aaa4}\label{class_zest_1_1_auth_1_1_auth_aa33600b6a1b28d0c4dfe4d468272aaa4}} 
+{\bfseries verify} ()
+\item 
+\mbox{\Hypertarget{class_zest_1_1_auth_1_1_auth_a4a20559544fdf4dcb457e258dc976cf8}\label{class_zest_1_1_auth_1_1_auth_a4a20559544fdf4dcb457e258dc976cf8}} 
+{\bfseries reset} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file Auth.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Auth/Auth.\+php\end{DoxyCompactItemize}
