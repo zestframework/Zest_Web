@@ -14,7 +14,7 @@ class Account extends \Zest\Controller\Controller
     {
         $user = new User;
         if ($user->isLogin()) {
-            redirect(site_base_url()."account/profile/edit");
+            redirect(site_base_url()."/account/profile/edit");
         } 
     }
     public function login()
@@ -63,7 +63,14 @@ class Account extends \Zest\Controller\Controller
             $password = escape(input('password'));
             $confirm = escape(input('confirm'));
             $auth = new Auth;
-            $auth->signup()->signup($username,$email,$password,['name' => $name, 'passConfirm' => $confirm,'role' => 'normal','ip' => (new \Zest\UserInfo\UserInfo)->ip()]);
+            $avatar = new \Zest\Image\Avatar\Avatar();
+            if (input('name')) {
+                $target = "../Storage/Data/";
+                $avatar_Name = (new \Zest\Site\Site())::salts(10).'.png';
+            } else {
+                $avatar_Name = 'null';
+            } 
+            $auth->signup()->signup($username,$email,$password,['name' => $name, 'passConfirm' => $confirm,'role' => 'normal','ip' => (new \Zest\UserInfo\UserInfo)->ip(),'pimg' => $avatar_Name]);
             if ($auth->fail()) {
                 $errors = $auth->error()->get();
                 foreach ($errors as $error) {
@@ -76,6 +83,7 @@ class Account extends \Zest\Controller\Controller
                     }
                 }
             } else {
+                $avatar->save($name,1024,'','',$target.$avatar_Name);
                 \Zest\Session\Session::setValue('signup',time() + 3600);
                 echo 'Your account has been created login to enjoy in our services';
             }
@@ -87,7 +95,7 @@ class Account extends \Zest\Controller\Controller
     {
         $auth = new Auth;
         $auth->logout();
-        redirect(site_base_url()."account/login");
+        redirect(site_base_url()."/account/login");
     }     
     public function profileEdit()
     {

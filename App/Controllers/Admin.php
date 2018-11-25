@@ -106,7 +106,7 @@ class Admin extends \Zest\Controller\Controller
             if (input('status')) {
                 $status = input('type');
                 \App\Models\Site::siteUpdate($status,1);
-                header("Location:".site_base_url()."admin/site/setting");
+                header("Location:".site_base_url()."/admin/site/setting");
             }
             if (input('site')) {
                 $name = escape(input('name'));
@@ -119,7 +119,7 @@ class Admin extends \Zest\Controller\Controller
                 \App\Models\Site::siteUpdate($description,4);
                 \App\Models\Site::siteUpdate($keyword,5);
                 \App\Models\Site::siteUpdate($gmeta,6);
-                header("Location:".site_base_url()."admin/site/setting");
+                header("Location:".site_base_url()."/admin/site/setting");
             }
         } else {
             View::view("admin/siteSetting");
@@ -134,7 +134,7 @@ class Admin extends \Zest\Controller\Controller
             $type = escape(input('type'));
             $content = escape(input('contents'));
             $result = \App\Models\Pages::pageCreate($title,$keyword,$shortContent,$type,$content);
-            redirect(site_base_url()."admin/page/view");
+            redirect(site_base_url()."/admin/page/view");
         } else {
             View::view("admin/pageAdd");
         }
@@ -155,13 +155,13 @@ class Admin extends \Zest\Controller\Controller
                 $shortContent = escape(input('scontent'));
                 $content = escape(input('contents'));
                 $result = \App\Models\Pages::pageUpdate(['title'=>$title,'keyword' => $keyword,'scontent'=>$shortContent,'content'=>$content,'updated'=>time()],$id);
-                redirect(site_base_url()."admin/view/page/{$id}");
+                redirect(site_base_url()."/admin/view/page/{$id}");
             }
             if (input('ty')) {
                 $id = input('id');
                 $type = input('type');
                 $result = \App\Models\Pages::pageUpdate(['type'=>$type,'updated'=>time()],$id);
-                redirect("Location:".site_base_url()."admin/view/page/{$id}");
+                redirect("Location:".site_base_url()."/admin/view/page/{$id}");
             }
         } else {
             $id = $this->route_params['id'];
@@ -171,7 +171,7 @@ class Admin extends \Zest\Controller\Controller
     }
     public function generateSiteMap()
     {
-            $url = site_base_url();
+            $url = site_base_url().'/';
             $url = str_replace(":443", '', $url);
             $root = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
         '. "<url><loc>$url</loc></url><url><loc>{$url}blogs/1</loc></url><url><loc>{$url}community/1</loc></url><url><loc>{$url}Components/1</loc></url><url><loc>{$url}site/terms</loc></url><url><loc>{$url}site/privacy</loc></url><url><loc>{$url}faqs/1</loc></url><url><loc>{$url}contribute/index</loc></url><url><loc>{$url}contribute/donate</loc></url>

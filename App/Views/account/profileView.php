@@ -5,9 +5,9 @@
       <div class="col m12 s12">
           <div class="col s12 m6">
             <?php if (!empty($args['pImg']) || $args['pImg'] !== null) { ?> 
-             <img src="<?=site_base_url()?>read/image/<?= $args['pImg'] ?>" id='profileImg'>
+             <img src="<?=site_base_url()?>/read/image/<?= $args['pImg'] ?>" id='profileImg'>
            <?php } else { ?>
-             <img src="<?=site_base_url()?>image/user.jpg" id='profileImg'>
+             <img src="<?=site_base_url()?>/image/user.jpg" id='profileImg'>
            <?php } ?> 
           </div>
           <div class="col s12 m6">

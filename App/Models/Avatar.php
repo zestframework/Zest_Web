@@ -20,11 +20,11 @@ class Avatar extends Model
 	{
 		$user = new \Zest\Auth\User();
 		if ($user->isUsername($username)) {
-			$pImg = $user->getByWhere('username',$username)[0]['pimg'];
-			if ($pImg !== null) {
-				$avater = site_base_url() . "read/image/". $pImg;
+			$pImg = $user->getByWhere('username',$username)[0]['pImg'];
+			if ($pImg !== 'null') {
+				$avater = site_base_url() . "/read/image/". $pImg;
 			} else {
-				$avater = site_base_url() . "image/user.jpg";
+				$avater = site_base_url() . "/image/user.jpg";
 			}
 			return $avater;
 		} else {

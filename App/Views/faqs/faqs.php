@@ -25,7 +25,7 @@
           $pages = \App\Models\Pages::viewLimitedPagesfaq($limit,$start);
             foreach ($pages as $page => $value) { ?>
                <div class="container">
-                  <a href="<?=site_base_url()?>faq/view/<?=$value['slug']?>/<?=urlencode($value['title'])?>" style="color:#000!important">
+                  <a href="<?=site_base_url()?>/faq/view/<?=$value['slug']?>/<?=urlencode($value['title'])?>" style="color:#000!important">
                        <h1 id='faq-page-heading'><i class="material-icons" id='faq-icon'>arrow_forward</i> <?=$value['title']?></h1>             
                   </a>
                </div> 

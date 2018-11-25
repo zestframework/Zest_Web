@@ -25,7 +25,7 @@
           $pages = (new \App\Models\Components)->viewLimitedComponent($limit,$start);
             foreach ($pages as $page => $value) { ?>
                <div class="container">
-                  <a href="<?=site_base_url()?>components/view/<?=$value['slug']?>" style="color:#000!important">
+                  <a href="<?=site_base_url()?>/components/view/<?=$value['slug']?>" style="color:#000!important">
 					   <h1 class='' id='faq-page-heading'>
 					   <i class="material-icons" id='faq-icon'>arrow_forward</i>  <?=$value['title']?></h1>             
                   </a>

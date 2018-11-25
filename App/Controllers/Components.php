@@ -23,10 +23,10 @@ class Components extends \Zest\Controller\Controller
                 $contents = escape(input('description'));
                 $com = new \App\Models\Components();
                 $result = $com->create($title,$contents);
-                redirect(site_base_url().'components/1');
+                redirect(site_base_url().'/components/1');
             }
         } else {
-            redirect(site_base_url()."account/login");
+            redirect(site_base_url()."/account/login");
         }    
     }   
     public function index()
@@ -42,20 +42,20 @@ class Components extends \Zest\Controller\Controller
                 $slug = $this->route_params['slug'];
                 $contents = escape(input('description'));
                 $res = (new \App\Models\Components)->reply($slug,$contents);
-                 redirect(site_base_url().'components/view/' .$slug);
+                 redirect(site_base_url().'/components/view/' .$slug);
             } else {
-                redirect(site_base_url().'components/view/' .$slug);
+                redirect(site_base_url().'/components/view/' .$slug);
             }     
          } elseif(input('close')) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Components)->componentWhere('slug',$slug)[0]['id'];
             $res = \App\Models\Components::componentUpdate(['isClosed' => 'yes'],$id);
-            redirect(site_base_url().'components/view/' .$slug);
+            redirect(site_base_url().'/components/view/' .$slug);
          } elseif(input('open')) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Components)->componentWhere('slug',$slug)[0]['id'];
             $res = \App\Models\Community::communityUpdate(['isClosed' => 'no'],$id);
-            redirect(site_base_url().'components/view/' .$slug);
+            redirect(site_base_url().'/components/view/' .$slug);
          } elseif(input('file')) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Components)->componentWhere('slug',$slug)[0]['id'];
@@ -68,7 +68,7 @@ class Components extends \Zest\Controller\Controller
                 ]
             );
             $res = (new \App\Models\Community)->communityUpdate(['componentFile' => $file,'componentVersion' => $version],$id);
-            redirect(site_base_url().'components/view/' .$slug);
+            redirect(site_base_url().'/components/view/' .$slug);
          }else {
              $slug = $this->route_params['slug'];
              if ((new \App\Models\Components)->isComponent($slug) !== 0) {

@@ -7,7 +7,7 @@
     background-color: #fff!important;
   }
 </style>
- <form action='<?=site_base_url()?>components/add/process' method='post' class="row">
+ <form action='<?=site_base_url()?>/components/add/process' method='post' class="row">
     <div class="col m8 s10 offset-m2 offset-s1 form">
           <div class='col m6 s6 offset-m5 offset-s3'>
              <h4>Component</h4>

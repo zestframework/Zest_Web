@@ -53,12 +53,12 @@
       </div>    
     </div>
   </div>
-               <p>By clicking signup, you agree to our <a href='<?=site_base_url()?>site/terms' style=' color: #00576b!important;'>Terms and Conditions</a></p>
+               <p>By clicking signup, you agree to our <a href='<?=site_base_url()?>/site/terms' style=' color: #00576b!important;'>Terms and Conditions</a></p>
                <hr><br>
       <div class='row'>
         <div class='col m12 s12'>
             <div class='col m6 s6'>
-                 <a class='verdana' style=' color: #00576b!important;font-size:12px!important;'href='<?= site_base_url(); ?>account/login'>Already have account?</a>
+                 <a class='verdana' style=' color: #00576b!important;font-size:12px!important;'href='<?= site_base_url(); ?>/account/login'>Already have account?</a>
              </div>   
             <div class='col m6 s6 offset-m10'>
                <a class="btn waves-effect waves-light" type="submit" id="submit-signup" style="width:76px!important;height:35px!important"><span  class='verdana' style='font-size:12px!important'>Signup</span>

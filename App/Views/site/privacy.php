@@ -34,9 +34,6 @@
 	<p class="verdana">If you are under 18, you may use our website only with involvement of a parent or guardian</p>
 	<h5>Changes to This Privacy Policy</h5>
 	<p class="verdana">Wy may change our policy time to time.  It is your responsibility to check our website periodically for changes </p>
-	<h5>Contact Us</h5>
-	<p class="verdana">If you have any questions about this Privacy Policy, please contact us:
-		<a class='btn btn-primary' href='<?=site_base_url();?>site/contact'>Contact Us</a></p>
 </div>
 <br><br><br>
 <?= \Zest\View\View::view('footer'); ?>

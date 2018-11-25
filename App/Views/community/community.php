@@ -25,7 +25,7 @@
           $pages = \App\Models\Community::viewLimitedCommunity($limit,$start);
             foreach ($pages as $page => $value) { ?>
                <div class="container">
-                  <a href="<?=site_base_url()?>community/view/<?=$value['slug']?>" style="color:#000!important">
+                  <a href="<?=site_base_url()?>/community/view/<?=$value['slug']?>" style="color:#000!important">
 					   <?php 
 						 $count = count((new \App\Models\Community)->communityReplies($value['slug']));
 						 $class = 'topic-answer';

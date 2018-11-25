@@ -24,7 +24,7 @@
           }
           $pages = \App\Models\Pages::viewLimitedPagesBlog($limit,$start);
             foreach ($pages as $page => $value) { ?>
-              <a href="<?=site_base_url()?>blog/view/<?=$value['slug']?>/<?=urlencode($value['title'])?>" style="color:#000!important">
+              <a href="<?=site_base_url()?>/blog/view/<?=$value['slug']?>/<?=urlencode($value['title'])?>" style="color:#000!important">
                 <div class="card">
                     <div class="card-content">
                         <h4><?= $value['title'] ?></h4>

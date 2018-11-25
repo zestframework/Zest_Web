@@ -28,7 +28,7 @@
 		if ($user->isLogin()) {
 			if ($args['ownerId'] === $user->loginUser()[0]['id']) { ?>
 		<h5>Upload/Update component file (existing file will be override)</h5>		
-		<form class="" action="<?=site_base_url()?>components/view/<?=$args['slug']?>" method='post' enctype="multipart/form-data">
+		<form class="" action="<?=site_base_url()?>/components/view/<?=$args['slug']?>" method='post' enctype="multipart/form-data">
 			<div class="input-field col s10 offset-s1">
           		<input id="version" name='version' type="number" class="validate" autocomplete="off" placeholder="e.g: 1.2">
           		<label for="version">Version</label>
@@ -60,11 +60,11 @@
 <?php if ((new \App\Models\Account)->isAdmin()) {
 		if ((new \App\Models\Community)->isClose($args['slug'])) {
 	?>
-   <form action="<?=site_base_url()?>components/view/<?=$args['slug']?>" method='post'>
+   <form action="<?=site_base_url()?>/components/view/<?=$args['slug']?>" method='post'>
 		<input type='submit' name='open' class='btn zest' value='Open' style='color:white!important;' />
    </form>
 	<?php } else { ?>
-	    <form action="<?=site_base_url()?>components/view/<?=$args['slug']?>" method='post'>
+	    <form action="<?=site_base_url()?>/components/view/<?=$args['slug']?>" method='post'>
 			<input type='submit' name='close' class='btn zest' value='Close' style='color:white!important;' />
 		</form>
 	<?php }} ?>
@@ -91,7 +91,7 @@
 	<h1 class="zest-title"><span class="page-title">Reply to this topic</span></h1>
 		<div class="card">
 			<div class="card-content">
-				<form action="<?=site_base_url()?>components/view/<?=$args['slug']?>" method='post'>
+				<form action="<?=site_base_url()?>/components/view/<?=$args['slug']?>" method='post'>
 					<div class="row">
 						<div class="input-field col s12">
 							<textarea id="description" name='description' class="materialize-textarea"></textarea>

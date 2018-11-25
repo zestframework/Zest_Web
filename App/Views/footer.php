@@ -7,12 +7,12 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Site</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>site/terms">Terms</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>site/privacy">Privacy</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>faqs/1">Faqs</a></li>
+                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/site/terms">Terms</a></li>
+                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/site/privacy">Privacy</a></li>
+                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/faqs/1">Faqs</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://github.com/Softhub99/Zest_Web">Find me Github</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>contribute/index">Contribute</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>contribute/donate">Donation</a></li>                  
+                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/contribute/index">Contribute</a></li>
+                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/contribute/donate">Donation</a></li>        
                 </ul>
               </div>
             </div>
@@ -39,6 +39,6 @@ window.onload = function() {
 }
 
 </script>   
-<script src="<?= site_base_url(); ?>js/main.js"></script>
+<script src="<?= site_base_url(); ?>/js/main.js"></script>
 </body>
 </html>

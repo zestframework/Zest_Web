@@ -35,10 +35,10 @@
       <div class='row'>
         <div class='col m12 s12'>
             <div class='col m3 s3'>
-                 <a class='verdana' style=' color: #00576b!important;font-size:9px!important;'href='<?= site_base_url(); ?>account/signup'>Don't have account?</a>
+                 <a class='verdana' style=' color: #00576b!important;font-size:9px!important;'href='<?= site_base_url(); ?>/account/signup'>Don't have account?</a>
              </div>   
             <div class='col m3 s3'>
-                 <a  class='verdana' style=' color: #00576b!important;font-size:9px!important;'href='<?= site_base_url(); ?>account/reset-password'>Forget Password</a>
+                 <a  class='verdana' style=' color: #00576b!important;font-size:9px!important;' href='<?= site_base_url(); ?>/account/reset-password'>Forget Password</a>
             </div>
             <div class='col m3 s3 offset-m3'>
                <a class="btn waves-effect waves-light" type="submit" id="submit-login" style="width:76px!important;height:35px!important"><span  class='verdana' style='font-size:12px!important'>Login</span>
