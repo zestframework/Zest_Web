@@ -15,8 +15,7 @@
           $tItems = count(\App\Models\Community::communityAll());
           $page = $args['page'];
           $limit = 10;
-          $url = site_base_url()."/";
-          $paginator = new \App\Classes\Pagination($tItems,10,$url,$page,'faqs');
+          $url = "/community/";
           if($page == 1){
             $start = 0;
           }else{
@@ -39,31 +38,8 @@
                   </a>
                </div> 
     <?php  } ?>
-  </div>
-
-  <?php 
-
-if ($paginator->getNumPages() > 1): ?>
-    <ul class="pagination">
-        <?php if ($paginator->getPrevUrl()): ?>
-            <li><a href="<?php echo $paginator->getPrevUrl(); ?>">&laquo; First</a></li>
-        <?php endif; ?>
-
-        <?php foreach ($paginator->getPages() as $page): ?>
-            <?php if ($page['url']): ?>
-                <li <?php echo $page['isCurrent'] ? 'class="active"' : ''; ?>>
-                    <a href="<?php echo $page['num']; ?>"><?php echo $page['num']; ?></a>
-                </li>
-            <?php else: ?>
-                <li class=""><a href='<?= "$urls/".$page['num'] ?>'><span><?php echo $page['num']; ?></a></span></li>
-            <?php endif; ?>
-        <?php endforeach; ?>
-
-        <?php if ($paginator->getNextUrl()): ?>
-            <li><a href="<?php echo $paginator->getNextUrl(); ?>">Next &raquo;</a></li>
-        <?php endif; ?>
-    </ul>
-<?php endif; ?>
+  </div> <?=pagination($tItems,10,$args['page'],$url);?>
+	
 </div>
 </div>
 <?= \Zest\View\View::view('footer'); ?>
