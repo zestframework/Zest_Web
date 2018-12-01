@@ -47,7 +47,7 @@ $user = new \Zest\Auth\User;
         </ul>           
         <li><a class='dropdown-button' href='#' data-target='dropdown01' >Download &#x25BE</a></li>
         <ul id='dropdown01' class='dropdown-content'>
-          <li><a class="waves-effect" href="<?=site_base_url()?>/Components/1">Components</a></li>     
+          <li><a class="waves-effect" href="<?=site_base_url()?>/components/1">Components</a></li>     
         </ul>            
       <?php if ($user->isLogin()){ ?>
         <li><a class='dropdown-button' href='#' data-target='dropdown1' ><i class="material-icons" style="color:#fff!important">account_circle</i></a></li>
@@ -83,7 +83,7 @@ $user = new \Zest\Auth\User;
         </ul>                   
         <a class='dropdown-button' href='#' data-target='dropdown01-mob' >Downloads &#x25BE</a>
         <ul id='dropdown01-mob' class='dropdown-content'>
-          <li><a class="waves-effect" href="<?=site_base_url()?>/Components/1">Components</a></li>     
+          <li><a class="waves-effect" href="<?=site_base_url()?>/components/1">Components</a></li>     
         </ul>   
       <?php if ($user->isLogin()){ ?>
         <a class='dropdown-button' href='#' data-target='dropdown1-mob'>My account &#x25BE</a>

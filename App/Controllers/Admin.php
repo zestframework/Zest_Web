@@ -174,7 +174,7 @@ class Admin extends \Zest\Controller\Controller
             $url = site_base_url().'/';
             $url = str_replace(":443", '', $url);
             $root = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-        '. "<url><loc>$url</loc></url><url><loc>{$url}blogs/1</loc></url><url><loc>{$url}community/1</loc></url><url><loc>{$url}Components/1</loc></url><url><loc>{$url}site/terms</loc></url><url><loc>{$url}site/privacy</loc></url><url><loc>{$url}faqs/1</loc></url><url><loc>{$url}contribute/index</loc></url><url><loc>{$url}contribute/donate</loc></url>
+        '. "<url><loc>{$url}site/terms</loc></url><url><loc>{$url}site/privacy</loc></url><url><loc>{$url}contribute/index</loc></url><url><loc>{$url}contribute/donate</loc></url>
         ";
         $fh = fopen("../public_html/sitemap.xml", "w");
         fwrite($fh, $root);
@@ -182,7 +182,27 @@ class Admin extends \Zest\Controller\Controller
         $components = (new \App\Models\Components)->componentAll();
         $blogs = (new \App\Models\Pages)->pageWhere('type','blog');
         $faqs = (new \App\Models\Pages)->pageWhere('type','faq');  
-        $users = (new \Zest\Auth\User)->getAll();     
+        $users = (new \Zest\Auth\User)->getAll();  
+		$blogsCount = ceil(count($blogs) / 6);	
+		for ($i = 1; $i <= $blogsCount; $i++) {
+               $links =  "<url><loc>".$url."blogs/".$i."</loc></url>";
+                fwrite($fh, $links);			
+		}
+		$topicsCount = ceil(count($topics) / 10);	
+		for ($i = 1; $i <= $topicsCount; $i++) {
+               $links =  "<url><loc>".$url."community/".$i."</loc></url>";
+                fwrite($fh, $links);			
+		}	
+		$componentsCount = ceil(count($components) / 10);	
+		for ($i = 1; $i <= $componentsCount; $i++) {
+               $links =  "<url><loc>".$url."components/".$i."</loc></url>";
+                fwrite($fh, $links);			
+		}		
+		$faqsCount = ceil(count($faqs) / 10);	
+		for ($i = 1; $i <= $faqsCount; $i++) {
+               $links =  "<url><loc>".$url."faqs/".$i."</loc></url>";
+                fwrite($fh, $links);			
+		}			
         foreach ($topics as $topic => $value) {
                $links =  "<url><loc>".$url."community/view/".$value['slug']."</loc></url>";
                 fwrite($fh, $links);

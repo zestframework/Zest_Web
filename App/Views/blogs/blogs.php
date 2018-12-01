@@ -14,7 +14,7 @@
         <?php
           $tItems = count(\App\Models\Pages::pageWhere('type','blog'));
           $page = $args['page'];
-          $limit = 10;
+          $limit = 6;
           $url = "/blogs/";
           if($page == 1){
             $start = 0;
@@ -32,7 +32,7 @@
                 </div>                  
               </a>
     <?php  } ?>
-  </div> <?=pagination($tItems,10,$args['page'],$url);?>
+  </div> <?=pagination($tItems,$limit,$args['page'],$url);?>
 </div>
 </div>
 <?= \Zest\View\View::view('footer'); ?>
