@@ -13,6 +13,7 @@ background-color: #fff!important;
 </div> 
 <div class='container'>
 <h1 class="zest-title" ><span class="page-title">Terms</span></h1>
+<i>Last Updated: 12/16/2018 2:44PM</i>
 <h5>Overview</h5>
 <p class="verdana">This website is operated by <?=\App\Models\Site::get()[1]['value']?>. Throughout the site, the terms “we”, “us” and “our” refer to <?=\App\Models\Site::get()[1]['value']?>. <?=\App\Models\Site::get()[1]['value']?> offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
 <br> 
