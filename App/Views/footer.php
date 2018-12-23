@@ -7,12 +7,12 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Site</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/site/terms">Terms</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/site/privacy">Privacy</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/faqs/1">Faqs</a></li>
+                  <li><a class="grey-text text-lighten-3 footer-term-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/site/terms">Terms</a></li>
+                  <li><a class="grey-text text-lighten-3 footer-privacy-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/site/privacy">Privacy</a></li>
+                  <li><a class="grey-text text-lighten-3 footer-faq-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/faqs/1">Faqs</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://github.com/Softhub99/Zest_Web">Find me Github</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/contribute/index">Contribute</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<?=site_base_url()?>/contribute/donate">Donation</a></li>        
+                  <li><a class="grey-text text-lighten-3 footer-contribute-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/contribute/index">Contribute</a></li>
+                  <li><a class="grey-text text-lighten-3 footer-donate-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/contribute/donate">Donation</a></li>        
                 </ul>
               </div>
             </div>
@@ -30,15 +30,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
 <script type="text/javascript">
-document.getElementById("overlay").style.display = "block";
-document.getElementById("spinner").style.display = "block";
-window.onload = function() {
-  document.getElementById("spinner").style.display = "none";
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("none").style.display = "block";
-}
-
 </script>   
+<script>
+malik_ajaxLoadContents('.nav-home-link');
+malik_ajaxLoadContents('.nav-community-link');
+malik_ajaxLoadContents('.nav-blog-link');
+malik_ajaxLoadContents('.nav-component-link');
+malik_ajaxLoadContents('.nav-signin-link');
+malik_ajaxLoadContents('.nav-signup-link');
+malik_ajaxLoadContents('.nav-profile-link');
+malik_ajaxLoadContents('.nav-edit-link');
+malik_ajaxLoadContents('.nav-add_com-link');
+malik_ajaxLoadContents('.nav-add_topic-link');
+malik_ajaxLoadContents('.nav-github-link');
+malik_ajaxLoadContents('.nav-home-link-mob');
+malik_ajaxLoadContents('.nav-community-link-mob');
+malik_ajaxLoadContents('.nav-blog-link-mob');
+malik_ajaxLoadContents('.nav-component-link-mob');
+malik_ajaxLoadContents('.nav-signin-link-mob');
+malik_ajaxLoadContents('.nav-signup-link-mob');
+malik_ajaxLoadContents('.nav-profile-link-mob');
+malik_ajaxLoadContents('.nav-edit-link-mob');
+malik_ajaxLoadContents('.nav-add_com-link-mob');
+malik_ajaxLoadContents('.nav-add_topic-link-mob');
+malik_ajaxLoadContents('.nav-github-link-mob');
+malik_ajaxLoadContents('.footer-term-link');
+malik_ajaxLoadContents('.footer-privacy-link');
+malik_ajaxLoadContents('.footer-faq-link');
+malik_ajaxLoadContents('.footer-contribute-link');
+malik_ajaxLoadContents('.footer-donate-link');
+function malik_ajaxLoadContents(button)
+{
+  $(button).click(function
+  (){
+    var url = $(button).attr('data-target');
+    history.pushState(null,null, url);
+    $.get(url,{},function(data){
+
+      $("body").html(data);
+      $("html, body").animate({ scrollTop: 0 }, 100);
+    });
+  });
+}</script>
 <script src="<?= site_base_url(); ?>/js/main.js"></script>
 </body>
 </html>
