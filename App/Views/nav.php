@@ -18,7 +18,7 @@ $user = new \Zest\Auth\User;
       <link rel="stylesheet" href="<?= site_base_url() ?>/css/materialize.min.css">
       <link rel="stylesheet" href="<?= site_base_url() ?>/css/css-master.css">
       <link rel="stylesheet" type="text/css" href="<?= site_base_url() ?>/css/fonts.css">
-      <link rel="stylesheet" href="<?= site_base_url() ?>/css/main.css">
+      <link rel="stylesheet" href="<?= site_base_url() ?>/css/main.min.css">
       <link rel="stylesheet" href="<?= site_base_url() ?>/css/material-override.css">
       <link rel="shortcut icon" type="image/png" href="<?= site_base_url(); ?>/image/icon.png"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -33,11 +33,11 @@ $user = new \Zest\Auth\User;
 <div id=''>  
 <nav class="hide-on-med-and-down desktop-mav">
 	   <div class="nav-wrapper container">
-      <a href="<?= site_base_url(); ?>" class="brand-logo" style="font-size: 18px!important"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'> <b> ZestFramework</b></a>
+      <a class="nav-icon-link"href="<?= site_base_url(); ?>" class="brand-logo" style="font-size: 18px!important"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'> <b> ZestFramework</b></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="waves-effect nav-home-link" href='javascript:void(0)' data-target="<?=site_base_url()?>">Home</a></li>
-        <li><a class="waves-effect nav-blog-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/blogs/1">Blog</a></li>
-        <li><a class="waves-effect nav-community-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/community/1">Community</a></li>
+        <li><a class="waves-effect nav-home-link" href="<?=site_base_url()?>">Home</a></li>
+        <li><a class="waves-effect nav-blog-link" href="<?=site_base_url()?>/blogs/1">Blog</a></li>
+        <li><a class="waves-effect nav-community-link" href="<?=site_base_url()?>/community/1">Community</a></li>
         <li><a class='dropdown-button' href='#' data-target='dropdown02' >Developers &#x25BE</a></li>
         <ul id='dropdown02' class='dropdown-content'>
           <li><a class="waves-effect" href="https://github.com/Softhub99/Zest">Github</a></li>     
@@ -47,7 +47,7 @@ $user = new \Zest\Auth\User;
         </ul>           
         <li><a class='dropdown-button' href='#' data-target='dropdown01' >Download &#x25BE</a></li>
         <ul id='dropdown01' class='dropdown-content'>
-          <li><a class="waves-effect nav-component-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/components/1">Components</a></li>     
+          <li><a class="waves-effect nav-component-link" href="<?=site_base_url()?>/components/1">Components</a></li>     
         </ul>            
       <?php if ($user->isLogin()){ ?>
         <li><a class='dropdown-button' href='#' data-target='dropdown1' ><i class="material-icons" style="color:#fff!important">account_circle</i></a></li>
@@ -55,25 +55,25 @@ $user = new \Zest\Auth\User;
            <?php if ((new \App\Models\Account())->isAdmin()) { ?>
                 <li><a class="waves-effect" href="<?= site_base_url(); ?>/admin/home">Admin</a></li>          
            <?php } ?> 
-            <li><a class="waves-effect nav-add_com-link" href='javascript:void(0)' data-taget="<?= site_base_url(); ?>/components/add">Add Component</a></li>
-            <li><a class="waves-effect nav-add_topic-link" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/community/add">Add Topic</a></li>
-            <li><a class="waves-effect nav-profile-link" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/@<?= $user->loginUser()[0]['username'] ?>">Profile</a></li>
-            <li><a class="waves-effect nav-edit-link" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/account/profile/edit">Edit</a></li>            
+            <li><a class="waves-effect nav-add_com-link" href="<?= site_base_url(); ?>/components/add">Add Component</a></li>
+            <li><a class="waves-effect nav-add_topic-link" href="<?= site_base_url(); ?>/community/add">Add Topic</a></li>
+            <li><a class="waves-effect nav-profile-link" href="<?= site_base_url(); ?>/@<?= $user->loginUser()[0]['username'] ?>">Profile</a></li>
+            <li><a class="waves-effect nav-edit-link" href="<?= site_base_url(); ?>/account/profile/edit">Edit</a></li>            
             <li><a class="waves-effect" href="<?= site_base_url(); ?>/account/logout">Logout</a></li>
         </ul>      
       <?php } else { ?>
-      <li><a class="waves-effect nav-signin-link" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/account/login">Login</a></li>
-      <li><a class="waves-effect nav-signup-link" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/account/signup">Signup</a></li>
+      <li><a class="waves-effect nav-signin-link" href="<?= site_base_url(); ?>/account/login">Login</a></li>
+      <li><a class="waves-effect nav-signup-link" href="<?= site_base_url(); ?>/account/signup">Signup</a></li>
       <?php } ?> 
       </ul>
     </div>
 </nav>
   <div class="hide-on-large-only"> 
    <div class="topnav container" id="myTopnav">
-      <a href="<?=site_base_url()?>" class="active wrh-logo"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'>  Zest</a>
-      <a class = "nav-home-link-mob" href='javascript:void(0)' data-target="<?=site_base_url()?>" class="">Home</a>
-        <a class="waves-effect nav-blog-link-mob" href='javascript:void(0)' data-target="<?=site_base_url()?>/blogs/1">Blog</a>
-        <a class="waves-effect nav-community-link-mob" href='javascript:void(0)' data-target="<?=site_base_url()?>/community/1">Community</a>
+      <a class="nav-icon-link-mob" href="<?=site_base_url()?>" class="active wrh-logo"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'>  Zest</a>
+      <a class="nav-home-link-mob" href="<?=site_base_url()?>" class="">Home</a>
+        <a class="waves-effect nav-blog-link-mob" href="<?=site_base_url()?>/blogs/1">Blog</a>
+        <a class="waves-effect nav-community-link-mob" href="<?=site_base_url()?>/community/1">Community</a>
         <a class='dropdown-button' href='#' data-target='dropdown02-mob' >Developers &#x25BE</a>
         <ul id='dropdown02-mob' class='dropdown-content'>
           <li><a class="waves-effect" href="https://github.com/Softhub99/Zest">Github</a></li>     
@@ -83,7 +83,7 @@ $user = new \Zest\Auth\User;
         </ul>                   
         <a class='dropdown-button' href='#' data-target='dropdown01-mob' >Downloads &#x25BE</a>
         <ul id='dropdown01-mob' class='dropdown-content'>
-          <li><a class="waves-effect nav-component-link-mob" href='javascript:void(0)' data-target="<?=site_base_url()?>/components/1">Components</a></li>     
+          <li><a class="waves-effect nav-component-link-mob" href="<?=site_base_url()?>/components/1">Components</a></li>     
         </ul>   
       <?php if ($user->isLogin()){ ?>
         <a class='dropdown-button' href='#' data-target='dropdown1-mob'>My account &#x25BE</a>
@@ -91,16 +91,16 @@ $user = new \Zest\Auth\User;
             <?php if ((new \App\Models\Account())->isAdmin()) { ?>
                 <li><a class="waves-effect" href="<?= site_base_url(); ?>/admin/home">Admin</a></li>          
            <?php } ?>          
-            <li><a class="waves-effect nav-add_com-link-mob" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/community/add">Add Topic</a></li>
-            <li><a class="waves-effect nav-add_topic-link-mob" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/components/add">Add Component</a></li>
-            <li><a class="waves-effect nav-profile-link-mob" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/@<?= $user->loginUser()[0]['username'] ?>">Profile</a></li>
-            <li><a class="waves-effect nav-edit-link-mob" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/account/profile/edit">Edit</a></li>            
+            <li><a class="waves-effect nav-add_com-link-mob" href="<?= site_base_url(); ?>/community/add">Add Topic</a></li>
+            <li><a class="waves-effect nav-add_topic-link-mob" href="<?= site_base_url(); ?>/components/add">Add Component</a></li>
+            <li><a class="waves-effect nav-profile-link-mob" href="<?= site_base_url(); ?>/@<?= $user->loginUser()[0]['username'] ?>">Profile</a></li>
+            <li><a class="waves-effect nav-edit-link-mob" href="<?= site_base_url(); ?>/account/profile/edit">Edit</a></li>            
             <li><a class="waves-effect" href="<?= site_base_url(); ?>/account/logout">Logout</a></li>
             <br><br><br>
         </ul>      
       <?php } else { ?>        
-        <a class="waves-effect nav-signin-link-mob" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/account/login">Login</a>
-      <a class="waves-effect nav-signup-link-mob" href='javascript:void(0)' data-target="<?= site_base_url(); ?>/account/signup">Signup</a>
+        <a class="waves-effect nav-signin-link-mob" href="<?= site_base_url(); ?>/account/login">Login</a>
+      <a class="waves-effect nav-signup-link-mob" href="<?= site_base_url(); ?>/account/signup">Signup</a>
       <?php } ?> 
     <a href="javascript:void(0);" style="font-size:20px;color:#fff!important" class="icon" onclick="mobilenavbar()">&#9776;</a>
 </div>
@@ -108,8 +108,6 @@ $user = new \Zest\Auth\User;
 <script type="text/javascript">
     url = "<?= site_base_url(); ?>/";
 </script>  
-<!--
-<!-- Global site tag (gtag.js) - Google Analytics 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122570069-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -118,5 +116,4 @@ $user = new \Zest\Auth\User;
 
   gtag('config', 'UA-122570069-2');
 </script>
--->
 <div id='desktop-bottom' class="hide-on-med-and-down"></div>

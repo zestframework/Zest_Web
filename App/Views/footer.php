@@ -7,12 +7,12 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Site</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3 footer-term-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/site/terms">Terms</a></li>
-                  <li><a class="grey-text text-lighten-3 footer-privacy-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/site/privacy">Privacy</a></li>
-                  <li><a class="grey-text text-lighten-3 footer-faq-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/faqs/1">Faqs</a></li>
+                  <li><a class="grey-text text-lighten-3 footer-term-link" href="<?=site_base_url()?>/site/terms">Terms</a></li>
+                  <li><a class="grey-text text-lighten-3 footer-privacy-link" href="<?=site_base_url()?>/site/privacy">Privacy</a></li>
+                  <li><a class="grey-text text-lighten-3 footer-faq-link" href="<?=site_base_url()?>/faqs/1">Faqs</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://github.com/Softhub99/Zest_Web">Find me Github</a></li>
-                  <li><a class="grey-text text-lighten-3 footer-contribute-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/contribute/index">Contribute</a></li>
-                  <li><a class="grey-text text-lighten-3 footer-donate-link" href='javascript:void(0)' data-target="<?=site_base_url()?>/contribute/donate">Donation</a></li>        
+                  <li><a class="grey-text text-lighten-3 footer-contribute-link" href="<?=site_base_url()?>/contribute/index">Contribute</a></li>
+                  <li><a class="grey-text text-lighten-3 footer-donate-link" href="<?=site_base_url()?>/contribute/donate">Donation</a></li>        
                 </ul>
               </div>
             </div>
@@ -28,9 +28,7 @@
       </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
-<script type="text/javascript">
-</script>   
+ <script src="<?= site_base_url(); ?>/js/main.min.js"></script>
 <script>
 malik_ajaxLoadContents('.nav-home-link');
 malik_ajaxLoadContents('.nav-community-link');
@@ -59,19 +57,6 @@ malik_ajaxLoadContents('.footer-privacy-link');
 malik_ajaxLoadContents('.footer-faq-link');
 malik_ajaxLoadContents('.footer-contribute-link');
 malik_ajaxLoadContents('.footer-donate-link');
-function malik_ajaxLoadContents(button)
-{
-  $(button).click(function
-  (){
-    var url = $(button).attr('data-target');
-    history.pushState(null,null, url);
-    $.get(url,{},function(data){
-
-      $("body").html(data);
-      $("html, body").animate({ scrollTop: 0 }, 100);
-    });
-  });
-}</script>
-<script src="<?= site_base_url(); ?>/js/main.js"></script>
+</script>
 </body>
 </html>

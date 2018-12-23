@@ -134,3 +134,16 @@ function mobilenavbar() {
         x.className = "topnav";
     }
 }
+
+function malik_ajaxLoadContents(button)
+{
+  $(button).click(function(e){
+    e.preventDefault();
+    var Address = $(button).attr('href');
+    history.pushState(null,null, Address);
+    $.get(Address,{},function(data){
+      $("body").html(data);
+      $("html, body").animate({ scrollTop: 0 }, 100);
+    });
+  });
+}
