@@ -28,6 +28,7 @@
                             <option value='blog' disabled>Plese Choose one type</option>
                             <option value="blog">Blogs</option>
                             <option value="faq">FAQ's</option>
+                            <option value="news">News </option>
                         </select>
                         </div>   
                         <br><br><br><br>
