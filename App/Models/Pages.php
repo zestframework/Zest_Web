@@ -16,7 +16,7 @@ class Pages extends Model
 	*/
 	protected static $db_tbl = 'pages';
 	
-	public function pageCreate($title,$keyword,$shortContent,$type,$content)
+	public function pageCreate($title,$keyword,$shortContent,$type,$content,$file)
 	{	
 		
 		$db = new Model;
@@ -31,10 +31,12 @@ class Pages extends Model
 			'scontent' => $shortContent,
 			'content' => $content,
 			'created' => $created,
+            'updated' => $created,
 			'views' => 0,
 			'isDelete' => null,
 			'slug' => $slug,
 			'token' => $token,
+            'image' => $file,
 		]]);
 		$db->db()->close();
 		return $result;

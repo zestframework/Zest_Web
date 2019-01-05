@@ -21,7 +21,7 @@
                      <div class="card">
                          <div class="container">
                              <h1>Pages</h1>
-                             <form action="<?= site_base_url() ?>/admin/page/add" method="post">
+                             <form action="<?= site_base_url() ?>/admin/page/add" method="post" enctype="multipart/form-data">
                                 <div class="col-md-8">
                                     <b>Title</b>
                                 <div class="input-group">
@@ -38,6 +38,7 @@
                                     <option value='blog' disabled>Plese Choose one type</option>
                                     <option value="blog">Blog</option>
                                     <option value="faq">FAQ's</option>
+                                    <option value="news">News</option>
                                 </select>
                                 </div>
                                 <div class="col-md-8">
@@ -55,7 +56,15 @@
                                         <input type="text" id="title-text" class="form-control" name='scontent' >
                                     </div>
                                 </div>
-                                </div>                  
+                                </div>   
+                                <div class="col-md-8">
+                                    <b>Image</b>
+                                <div class="input-group">
+                                    <div class="form-line">
+                                        <input type="file" id="file" class="form-control" name='image' >
+                                    </div>
+                                </div>
+                                </div>                                              
                                 <div class="col-md-8">
                                     <b>Contents</b>
                                 <div class="input-group">

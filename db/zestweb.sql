@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2018 at 05:26 AM
+-- Generation Time: Jan 05, 2019 at 05:58 AM
 -- Server version: 10.1.29-MariaDB
--- PHP Version: 7.1.12
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -64,7 +64,8 @@ CREATE TABLE `pages` (
   `views` int(255) NOT NULL DEFAULT '0',
   `isDelete` varchar(255) DEFAULT NULL,
   `slug` varchar(7) NOT NULL,
-  `token` varchar(15) NOT NULL
+  `token` varchar(15) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -117,6 +118,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `salts`, `token`, `resetToken`, `ip`, `role`, `ban`, `close`, `created`, `lastOnline`, `bio`, `pImg`) VALUES
+(39, 'Malik Umer Farooq', 'testtest', 'testtest@gmail.com', '$2y$10$ueF1/f.BaWiQhaJmF0.kD.FfP/IugpTXt28b5JnxC03PFD.gJmoLC', 'CyFYoPLTo0Zi', 'NULL', NULL, '::1', 'admin', 'NULL', 'NULL', 0, 0, NULL, 'Xaz7RzMmRu.png');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -152,13 +160,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `community`
 --
 ALTER TABLE `community`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `sitesetting`
@@ -170,7 +178,7 @@ ALTER TABLE `sitesetting`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

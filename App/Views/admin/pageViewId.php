@@ -36,7 +36,22 @@
                      </form>                     
                 </div>                  
              </div> 
-
+             <?php if (empty(trim($args['image']))): ?>
+             <div class="card">
+                <div class="container">
+                    <h1>Add Image:</h1>
+                    <form action="<?= site_base_url() ?>/admin/view/page/<?= $args['id'] ?>" method="post" enctype="multipart/form-data">
+                        <input type="text" name="id" value="<?=$args['id']?>" hidden>
+                        <div class="col-md-12">
+                            <b>Image</b>
+                           <input type="file" id="file" class="form-control" name='image' > 
+                        </div>   
+                        <br><br><br><br>
+                        <input type="submit" name="img" class="btn btn-primary" value="Add">
+                     </form>                     
+                </div>                  
+             </div> 
+         <?php endif; ?>
              <div class="card">
                 <div class="container">
                     <h1>Edit page :</h1>
@@ -48,15 +63,15 @@
                         </p>
                         <input type="text" name="title" class="form-control" value="<?= $args['title'] ?>" />
                         </div> 
-                                 <div class="col-md-8">
+                                 <div class="col-md-8ss">
                                     <b>Keywords (seperate by comma)</b>
-                                <div class="input-group">
-                                    <div class="form-line">
-                                        <input type="text" id="title-text" class="form-control" name='keyword' value="<?= restore_line_break($args['keyword']) ?>">
+                                <div class="">
+                                    <div class="">
+                                        <input type="text" id="" class="form-control" name='keyword' value="<?= restore_line_break($args['keyword']) ?>">
                                     </div>
                                 </div>
                                 </div>                             
-                        <div class="col-md-12ss">
+                        <div class="col-md-12">
                         <p>
                             <b>Short content</b>
                         </p>
