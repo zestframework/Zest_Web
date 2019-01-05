@@ -83,6 +83,20 @@ class Pages extends Model
         $db->db()->close();
         return $result;
     }    
+    public function viewLimitedPagesNews($limit,$offset)
+    {
+        $db = new Model;
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'limit' => ['start' => $limit , 'end' => $offset],'wheres'=> ['type ='."'news'"],'order_by'=> 'ID DESC']);
+        $db->db()->close();
+        return $result;     
+    }       
+    public function isNews($slug)
+    {
+        $db = new Model;
+        $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND type = 'news'"]]);
+        $db->db()->close();
+        return $result;
+    }      
 	public function pageUpdate($params,$id)
 	{
     	$db = new Model;

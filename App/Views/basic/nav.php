@@ -15,14 +15,14 @@ $user = new \Zest\Auth\User;
 <html>
 <head>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="<?= site_base_url() ?>/css/materialize.min.css">
-      <link rel="stylesheet" href="<?= site_base_url() ?>/css/css-master.css">
+      <link rel="stylesheet" href="<?= site_base_url() ?>/basic/css/materialize.min.css">
+      <link rel="stylesheet" href="<?= site_base_url() ?>/basic/css/css-master.css">
       <link rel="stylesheet" type="text/css" href="<?= site_base_url() ?>/css/fonts.css">
-      <link rel="stylesheet" href="<?= site_base_url() ?>/css/main.min.css">
-      <link rel="stylesheet" href="<?= site_base_url() ?>/css/material-override.css">
-      <link rel="shortcut icon" type="image/png" href="<?= site_base_url(); ?>/image/icon.png"/>
+      <link rel="stylesheet" href="<?= site_base_url() ?>/basic/css/main.min.css">
+      <link rel="stylesheet" href="<?= site_base_url() ?>/basic/css/material-override.css">
+      <link rel="shortcut icon" type="image/png" href="<?= site_base_url(); ?>/basic/image/icon.png"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="manifest" href="<?= site_base_url(); ?>/manifest.json">
+      <link rel="manifest" href="<?= site_base_url(); ?>/basic/manifest.json">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <meta name="theme-color" content="#e89696" />
       <meta name="google-site-verification" content="<?= $args[5]['value'] ?>" />
@@ -33,7 +33,7 @@ $user = new \Zest\Auth\User;
 <div id=''>  
 <nav class="hide-on-med-and-down desktop-mav">
 	   <div class="nav-wrapper container">
-      <a class="nav-icon-link"href="<?= site_base_url(); ?>" class="brand-logo" style="font-size: 18px!important"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'> <b> ZestFramework</b></a>
+      <a class="nav-icon-link"href="<?= site_base_url(); ?>" class="brand-logo" style="font-size: 18px!important"><img src="<?= site_base_url(); ?>/basic/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'> <b> ZestFramework</b></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="waves-effect nav-home-link" href="<?=site_base_url()?>">Home</a></li>
         <li><a class="waves-effect nav-blog-link" href="<?=site_base_url()?>/blogs/1">Blog</a></li>
@@ -70,7 +70,7 @@ $user = new \Zest\Auth\User;
 </nav>
   <div class="hide-on-large-only"> 
    <div class="topnav container" id="myTopnav">
-      <a class="nav-icon-link-mob" href="<?=site_base_url()?>" class="active wrh-logo"><img src="<?= site_base_url(); ?>/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'>  Zest</a>
+      <a class="nav-icon-link-mob" href="<?=site_base_url()?>" class="active wrh-logo"><img src="<?= site_base_url(); ?>/basic/image/icon.png" style='width: 25px;height:25px;margin-bottom:-6px'>  Zest</a>
       <a class="nav-home-link-mob" href="<?=site_base_url()?>" class="">Home</a>
         <a class="waves-effect nav-blog-link-mob" href="<?=site_base_url()?>/blogs/1">Blog</a>
         <a class="waves-effect nav-community-link-mob" href="<?=site_base_url()?>/community/1">Community</a>

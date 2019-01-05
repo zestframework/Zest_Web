@@ -61,7 +61,7 @@ class Config
      *
      * @var string
      */
-    const THEME_PATH = '../App/Views';
+    const THEME_PATH = '../App/Views/basic';
     /**
      * Default time for csrf token expire.
      *

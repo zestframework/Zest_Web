@@ -25,7 +25,7 @@ $router->get('admin/generate/sitemap',"Admin@generateSiteMap");
 
 //blogs 
 $router->get('blogs/{page:[0-9]+}',"Blogs@blog");
-$router->get('blog/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+.-]+}',"Blogs@view");
+$router->get('blog/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+-.]+}',"Blogs@view");
 
 //faqs 
 $router->get('faqs/{page:[0-9]+}',"Faq@faq");
@@ -53,6 +53,7 @@ $router->add('components/view/{slug:[A-Za-z0-9]+}',"Components@view","GET|POST|H
 
 //Readers
 $router->get('read/image/{image:[a-z0-9.]+}',"Reader@image");
+$router->get('read/image/{folder:[A-Za-z0-9.]+}/{image:[a-z0-9.]+}',"Reader@folderImage");
 $router->get('read/zip/{zip:[a-z0-9.]+}',"Reader@zip");
 
 //Cache the routes

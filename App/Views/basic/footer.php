@@ -28,7 +28,7 @@
       </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
- <script src="<?= site_base_url(); ?>/js/main.min.js"></script>
+ <script src="<?= site_base_url(); ?>/basic/js/main.min.js"></script>
 <script>
 malik_ajaxLoadContents('.nav-home-link');
 malik_ajaxLoadContents('.nav-community-link');
