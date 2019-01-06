@@ -45,7 +45,7 @@
                 <div class="col-lg-3 col-md-3 meta-details">
                   <div class="user-details row">
                     <p class="user-name col-lg-12 col-md-12 col-6"><a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['username'] ?>"><?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['name'] ?></a> <span class="lnr lnr-user"></span></p>
-                    <p class="date col-lg-12 col-md-12 col-6"><a href="#"><=$value['created']?></a> <span class="lnr lnr-calendar-full"></span></p>
+                    <p class="date col-lg-12 col-md-12 col-6"><a href="#"><?=$value['created']?></a> <span class="lnr lnr-calendar-full"></span></p>
                     <p class="comments col-lg-12 col-md-12 col-6"><a href="<?=site_base_url()?>/community/add">Any Question?</a> <span class="fa fa-question"></span></p>
                     <ul class="social-links col-lg-12 col-md-12 col-6">
                       <div class="fb-share-button" data-href="<?=site_base_url();?>/blog/view/<?=$value['slug']?>/<?=urlencode($value['title'])?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
