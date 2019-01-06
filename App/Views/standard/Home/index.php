@@ -13,7 +13,7 @@
               <p>
                 Zest is a simple yet powerful PHP MVC framework for rapid application development that is suited for small to medium scale apps and APIs.
               </p>
-              <a href="https://zest.readthedocs.io/en/latest/" class="genric-btn primary radius">Get Start</a>
+              <a href="https://zest.readthedocs.io/en/latest/" class="genric-btn primary radius">Get Started</a>
             </div>
           </div>
         </div>          
