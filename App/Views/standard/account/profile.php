@@ -3,134 +3,75 @@
 <meta name="author" content="<?=$args['name']?>">
 <meta name="keywords" lang="en" content="account,profile,<?=$args['name']?>,signin,open,zest,framework,php,php7,php7.2,Zest framework">
 <br>
-  <div class="row">
-    <div class="col s10 offset-s1">
-      <div class="card">
-        <div class="card-content">
-            <span class="card-title center-align"><b><i class="material-icons prefix" style="font-size: 100px !important;">edit</i></b></span>
-            <div class="row">
-                <div class="col s12">
-                  <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                      <i class="material-icons prefix">nature_people</i>
-                      <input id="name" type="text"  class="validate" value="<?= $args['name'] ?>">
-                      <input type="text" id="id" value="<?= $args['id'] ?>" hidden >
-                      <label for="name">Name</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                      <i class="material-icons prefix">people</i>
-                      <input id="username-update" type="text" class="validate" value="<?= $args['username'] ?>" disabled>
-                      <label for="username-update">Username</label>
-                    </div>
-                  </div>        
-                  <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                      <i class="material-icons prefix">email</i>
-                      <input id="email" type="email" class="validate" value="<?= $args['email'] ?>" disabled >
-                      <label for="email">Email</label>
-                    </div>
-                  </div> 
-                </div>
-              </div>
-            </div>
-        <div class="card-action">
-      <div class='row'>
-        <div class="input-field col s8 offset-s2">
-          <button class="btn waves-effect waves-light" type="submit" id="submit-update">Submit
-          <i class="material-icons right" style="color: #fff">send</i>
-          </button>
-         </div> 
-      </div>  
-    </div>
-    </div>
-
-     <div class="card">
-        <div class="card-content">
-            <span class="card-title center-align"><b><i class="material-icons prefix" style="font-size: 100px !important;">security</i></b></span>
-            <div class="row">
-                <div class="col s12">   
-                  <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                      <i class="material-icons prefix">security</i>
-                      <input id="password" type="password" class="validate">
-                      <label for="password">Password</label>
-                    </div>
-                  </div> 
-                  <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                      <i class="material-icons prefix">security</i>
-                      <input id="confirm" type="password" class="validate">
-                      <label for="confirm">Password</label>
-                    </div>
-                  </div>                   
-                </div>
-              </div>
-            </div>
-        <div class="card-action">
-      <div class='row'>
-        <div class="input-field col s8 offset-s2">
-          <button class="btn waves-effect waves-light" type="submit" id="submit-update-password">Submit
-          <i class="material-icons right" style="color: #fff">send</i>
-          </button>
-         </div> 
-      </div>  
-    </div>
-    </div>
-
-      <div class="card">
-        <div class="card-content">
-            <span class="card-title center-align"><b><i class="material-icons prefix" style="font-size: 100px !important;">details</i></b></span>
-            <div class="row">
-                <div class="col s12">
-                  <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                      <input id="bio" type="text"  class="validate" value="<?= $args['bio'] ?>">
-                      <label for="bio">Bio</label>
-                    </div>
-                  </div>        
-                </div>
-              </div>
-            </div>
-        <div class="card-action">
-      <div class='row'>
-        <div class="input-field col s8 offset-s2">
-          <button class="btn waves-effect waves-light" type="submit" id="submit-detail">Submit
-          <i class="material-icons right" style="color: #fff">send</i>
-          </button>
-         </div> 
-      </div>  
-    </div>
-    </div>
-
-     <!-- <div class="card">
-          <form id='profile-img'>
-           <div class="card-content">
-              <span class="card-title center-align"><b><i class="material-icons prefix" style="font-size: 100px !important;">file_upload</i></b></span>
-              <div class="row">
-                  <div class="col s12">      
-                    <div class="row">
-                      <div class="input-field col s10 offset-s1">
-                        <input type="file" name='profileImg' class="validate">
-                      </div>
-                    </div> 
-                  </div>
-                </div>
-              </div>
-           <div class="card-action">
-                <div class='row'>
-                  <div class="input-field col s8 offset-s2">
-                    <button class="btn waves-effect waves-light" type="submit" id="submit-profile">Submit
-                    <i class="material-icons right" style="color: #fff">send</i>
-                    </button>
-                   </div> 
-                </div>  
-            </div>         
-          </form>
-         </div> -->
 
 
+
+
+<section class="about-banner">
+<div class="container">       
+  <div class="row d-flex align-items-center justify-content-center">
+    <div class="about-content col-lg-12">
+      <h1 class="text-white">
+        Edit     
+      </h1> 
+      <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#!">Edit</a></p>
+    </div>  
   </div>
 </div>
+</section>
+<div class='sample-text-area'>
+  <div class="container">
+     <h3 class="mb-10">Update profile</h3>
+        <div class="mt-10">
+          <input type="text" id="id" value="<?= $args['id'] ?>" hidden >
+          <input type="text" name="name" id='name' placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" value="<?= $args['name'] ?>" required class="single-input">
+        </div>
+        <div class="mt-10">
+          <input type="text" name="username-signup" id='username-signup' placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" value="<?= $args['username'] ?>" required class="single-input" disabled>
+        </div>     
+        <div class="mt-10">
+          <input type="email" name="email" id='email' placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'"  value="<?= $args['email'] ?>" required class="single-input" disabled>
+        </div>                   
+        <p class="mb-20"></p>
+        <p class="" id='status-update'></p>
+          <div class="button-group-area mt-40 text-right">
+            <a href="javascript:void(0)" id="submit-update" class="genric-btn primary radius">Update</a>
+          </div>               
+    </div>    
+</div>
+<hr class="mb-20">
+<div class='sample-text-area'>
+  <div class="container">
+        <h3 class="mb-10">Update password</h3>
+        <input type="text" id="id" value="<?= $args['id'] ?>" hidden >
+        <div class="mt-10">
+          <input type="password" name="password" id='password' placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" " required class="single-input" >
+        </div>     
+        <div class="mt-10">
+          <input type="password" name="confirm" id='confirm' placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input" >
+        </div>                   
+        <p class="mb-20"></p>
+        <p class="" id='status-update-password'></p>
+          <div class="button-group-area mt-40 text-right">
+            <a href="javascript:void(0)" id="submit-update-password" class="genric-btn primary radius">Update</a>
+          </div>               
+    </div>    
+</div>
+<hr class="mb-20">
+<div class='sample-text-area'>
+  <div class="container">
+        <h3 class="mb-10">Update Bio</h3>
+        <div class="mt-10">
+          <textarea class="single-textarea" id='bio' placeholder="Bio" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Bio'" required><?=$args['bio']?></textarea>
+        </div>                     
+        <p class="mb-20"></p>
+        <p class="" id='status-detail'></p>
+          <div class="button-group-area mt-40 text-right">
+            <a href="javascript:void(0)" id="submit-detail" class="genric-btn primary radius">Update</a>
+          </div>               
+    </div>    
+</div>
+
+
+
 <?= Zest\View\View::view('footer'); ?>

@@ -3,71 +3,48 @@
 <meta name="author" content="Malik Umer Farooq">
 <meta name="description" lang="en" content="Register to enjoy in our services, to ask question upload your component in our components store">
 <meta name="keywords" lang="en" content="signup,register,create an account,open,zest,framework,php,php7,php7.2,Zest framework">
-<br><br>
-<style type="text/css">
-  .form {
-    background-color: #fff!important;
-  }
-</style>
- <div class="row">
-    <div class="col m8 s10 offset-m2 offset-s1 form">
-          <div class='col m6 s6 offset-m5 offset-s3'>
-             <h4>Signup</h4>
-          </div>
-<div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s10 offset-s1">
-          <i class="material-icons prefix">nature_people</i>
-          <input id="name" type="text"  class="validate">
-          <label for="name">Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s10 offset-s1">
-          <i class="material-icons prefix">people</i>
-          <input id="username-signup" type="text" class="validate">
-          <label for="username-signup">Username</label>
-        </div>
-      </div>        
-      <div class="row">
-        <div class="input-field col s10 offset-s1">
-          <i class="material-icons prefix">email</i>
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>      
-      <div class="row">
-        <div class="input-field col s10 offset-s1">
-          <i class="material-icons prefix">security</i>
-          <input id="password-signup" type="password" class="validate">
-          <label for="password-signup">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s10 offset-s1">
-           <i class="material-icons prefix">security</i>
-          <input id="confirm" type="password" class="validate">
-          <label for="confirm">Password-Repeat</label>
-        </div>
-      </div>    
-    </div>
+
+<section class="about-banner">
+<div class="container">       
+  <div class="row d-flex align-items-center justify-content-center">
+    <div class="about-content col-lg-12">
+      <h1 class="text-white">
+        Signup        
+      </h1> 
+      <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#!"> Signup</a></p>
+    </div>  
   </div>
-               <p>By clicking signup, you agree to our <a href='<?=site_base_url()?>/site/terms' style=' color: #00576b!important;'>Terms and Conditions</a></p>
-               <hr><br>
-      <div class='row'>
-        <div class='col m12 s12'>
-            <div class='col m6 s6'>
-                 <a class='verdana' style=' color: #00576b!important;font-size:12px!important;'href='<?= site_base_url(); ?>/account/login'>Already have account?</a>
-             </div>   
-            <div class='col m6 s6 offset-m10'>
-               <a class="btn waves-effect waves-light" type="submit" id="submit-signup" style="width:76px!important;height:35px!important"><span  class='verdana' style='font-size:12px!important'>Signup</span>
-              </a>
-            </div>
+</div>
+</section>
+<div class='sample-text-area'>
+  <div class="container">
+        <div class="mt-10">
+          <input type="text" name="name" id='name' placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required class="single-input">
+        </div>
+        <div class="mt-10">
+          <input type="text" name="username-signup" id='username-signup' placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" required class="single-input">
+        </div>     
+        <div class="mt-10">
+          <input type="email" name="email" id='email' placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required class="single-input">
+        </div>                   
+        <div class="mt-10">
+          <input type="password" name="password-signup" id='password-signup' placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input">
         </div> 
-      </div> 
+        <div class="mt-10">
+          <input type="password" name="confirm" id='confirm' placeholder="Password-Repeat" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password-Repeat'" required class="single-input">
+        </div>         
+        <p class="mb-20"></p>
+        <p class="" id='status'></p>
+        <p class="mb-10">By clicking signup, you agree to our <a href='<?=site_base_url()?>/site/terms' style=' color: #00576b!important;'>Terms and Conditions</a></p>
+               <hr>
+          <div class="button-group-area mt-40 text-right">
+            <a href="<?= site_base_url(); ?>/account/login" class="genric-btn link radius">Already have account?</a>         
+            <a href="javascript:void(0)" id="submit-signup" class="genric-btn primary radius">Signup</a>
+          </div>               
+    </div>    
+</div>
 
 
-</div>
-</div>
+
+
 <?= Zest\View\View::view('footer'); ?>

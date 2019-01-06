@@ -2,6 +2,12 @@
             <footer class="footer-area section-gap">
                 <div class="container">
                     <div class="row">
+                      <div class="col-lg-5 col-md-6 col-sm-6">
+                            <div class="single-footer-widget">
+                                <h4>Message from us</h4>
+                                <blockquote class="generic-blockquote">The message of unity and equality and humanity for all of us. Instead of following racism we should follow human rights.</blockquote>              
+                            </div>
+                        </div>
                         <div class="col-lg-5 col-md-6 col-sm-6">
                             <div class="single-footer-widget">
                               <h4>Useful links</h4>
@@ -44,7 +50,7 @@ Copyright &copy; Zest Framework 2018-<script>document.write(new Date().getFullYe
                                 </ul>
                                 <p>Let us be social</p>
                                 <div class="footer-social d-flex align-items-center">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://web.facebook.com/zestframework/"><i class="fa fa-facebook"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -54,6 +60,7 @@ Copyright &copy; Zest Framework 2018-<script>document.write(new Date().getFullYe
             <!-- End footer Area -->    
 
       <script src="<?=site_base_url()?>/standard/assets/js/vendor/jquery-2.2.4.min.js"></script>
+      <script src="<?=site_base_url()?>/standard/assets/js/ajax.js"></script> 
       <script src="<?=site_base_url()?>/standard/assets/js/popper.min.js"></script>
       <script src="<?=site_base_url()?>/standard/assets/js/vendor/bootstrap.min.js"></script>      
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>     

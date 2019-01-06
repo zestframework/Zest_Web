@@ -8,13 +8,13 @@
         <?=$args['name']?>        
       </h1> 
                  <?php if (!empty($args['pImg']) || $args['pImg'] !== null) { ?> 
-             <img src="<?=site_base_url()?>/read/image/<?= $args['pImg'] ?>" id='profileImg'>
+             <img class='single-gallery-image' src="<?=site_base_url()?>/read/image/<?= $args['pImg'] ?>" id='profileImg'>
            <?php } else { ?>
-             <img src="<?=site_base_url()?>/image/user.jpg" id='profileImg'>
+             <img class='single-gallery-image' src="<?=site_base_url()?>/standard/image/user.jpg" id='profileImg'>
            <?php } ?>
       <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#!"> <?=$args['name']?></a></p>
     </div>  
-    <p><?=$args['bio']?></p>
+    <p class="mb-10 text-center text-white container"><?=$args['bio']?></p>
   </div>
 </div>
 </section>

@@ -206,7 +206,8 @@ class Admin extends \Zest\Controller\Controller
         $topics = (new \App\Models\Community)->communityAll();
         $components = (new \App\Models\Components)->componentAll();
         $blogs = (new \App\Models\Pages)->pageWhere('type','blog');
-        $faqs = (new \App\Models\Pages)->pageWhere('type','faq');  
+        $faqs = (new \App\Models\Pages)->pageWhere('type','faq');
+        $news = (new \App\Models\Pages)->pageWhere('type','news');    
         $users = (new \Zest\Auth\User)->getAll();  
 		$blogsCount = ceil(count($blogs) / 6);	
 		for ($i = 1; $i <= $blogsCount; $i++) {
@@ -243,7 +244,11 @@ class Admin extends \Zest\Controller\Controller
         foreach ($faqs as $faq => $value) {
                $links =  "<url><loc>".$url."faq/view/".$value['slug']. '/' .  urlencode($value['title'])  ."</loc></url>";
                 fwrite($fh, $links);
-        }        
+        }  
+        foreach ($news as $new => $value) {
+               $links =  "<url><loc>".$url."new/view/".$value['slug']. '/' .  urlencode($value['title'])  ."</loc></url>";
+                fwrite($fh, $links);
+        }              
         foreach ($users as $faq => $value) {
                $links =  "<url><loc>".$url."@".$value['username']."</loc></url>";
                 fwrite($fh, $links);

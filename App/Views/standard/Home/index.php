@@ -4,187 +4,137 @@
 <neta name="keyword" content="<?= $args[4]['value'] ?>"/>
 <title>Zest Framework</title>
 <body>
-  <div id='profile-plater'>
-    <h3>PHP Zest Framework</h3>
-    <p>Zest is a simple yet powerful PHP MVC framework for rapid application development that is suited for small to medium scale apps and APIs.</p>
-  </div>  
-  <div id='relax'></div>
-  <div id='white-board'>
-    <h4>How we are different from others</h4>
-          <table class="responsive-table">
-        <thead>
-          <tr>
-              <th></th>
-              <th>Zest</th>
-              <th>Others</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Very Light in weight (core filesize less then 1MB)</td>
-            <td><i class="material-icons prefix">check</i></td>
-            <td><i class="material-icons prefix" style='color:red!important'>close</i></td>
-          </tr>
-          <tr>
-            <td>Without external dependencies (expect core and autoload)</td>
-            <td><i class="material-icons prefix">check</i></td>
-            <td><i class="material-icons prefix" style='color:red!important'>close</i></td>
-          </tr>
-          <tr>
-            <td>Support Components</td>
-            <td><i class="material-icons prefix">check</i></td>
-            <td><i class="material-icons prefix" style='color:red!important'>close</i></td>     
-          </tr>             
+      <section class="banner-area">
+        <div class="container">
+          <div class="row fullscreen align-items-center justify-content-between">
+            <div class="col-lg-6 col-md-6 banner-left">
+              <h6>PHP</h6>
+              <h1>Zest Framework</h1>
+              <p>
+                Zest is a simple yet powerful PHP MVC framework for rapid application development that is suited for small to medium scale apps and APIs.
+              </p>
+              <a href="https://zest.readthedocs.io/en/latest/" class="genric-btn primary radius">Get Start</a>
+            </div>
+          </div>
+        </div>          
+      </section>
 
-        </tbody>
-      </table>
-   </div>   
-   <div id='relax'></div>
-   <div id='white-board'>
-    <h4>Features</h4>
-      <table class="responsive-table">
-        <thead>
-          <tr>
-              <th>Features</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Advance Routing system.</td>
-          </tr>     
-          <tr>
-            <td>Router Caching Support.</td>
-          </tr>  
-          <tr>
-            <td>Dependency Injection.</td>
-          </tr>  
-          <tr>
-            <td>Validation.</td>
-          </tr>     
-          <tr>
-            <td>Cryptography.</td>
-          </tr>  
-          <tr>
-            <td>Security: csrf,xss,Database injection protections.</td>
-          </tr>                                         
-           <tr>
-            <td>And Much More.</td>
-          </tr>                        
-        </tbody>
-      </table>
-   </div>   
-   <div id='relax'></div>
-   <div id='white-board'>
-    <h4 id='#comparision'>Comparison</h4>
-      <table class="responsive-table">
-        <thead>
-          <tr>
-              <th></th>
-              <th>Zest</th>
-              <th>Laravel</th>
-              <th>Slim</th>
-              <th>codeigniter</th>
-              <th>Symfony</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Router Caching.</th>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>No</td>
-            <td>Yes</td>
-          </tr>     
-          <tr>
-            <th>Cache storage.</th>
-            <td>File system, Memcache , APC, Opcache</td>
-            <td>File System, Database, Memcached, APC, Redis, Xcache, WinCache, Memory (Arrays) </td>
-            <td>No</td>
-            <td>File, apc, memcached, xcache  </td>
-            <td>Yes</td>
-          <tr>
-          <tr>
-            <th>Validator.</th>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>No</td>
-            <td>Yes</td>
-            <td>Yes</td>
-          <tr>            
-            <th>Dependency injection container.</th>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>No</td>
-            <td>Yes</td>
-          </tr>  
-          <tr>
-            <th>Template System.</th>
-            <td>Zest , PHP custom</td>
-            <td>Blade, PHP, Custom</td>
-            <td>Twig</td>
-            <td>PHP, Simple template parser "{var_name}"</td>
-            <td>Twig</td>
-          </tr>     
-          <tr>
-            <th>Testing library.</th>
-            <td>No</td>
-            <td>PHPUnit</td>
-            <td>No</td>
-            <td>PHPUnit (In development)</td>
-            <td>Yes</td>
-          </tr>  
-          <tr>
-            <th>Logging management.</th>
-            <td>Yes (psr-3 without interface)</td>
-            <td>yes</td>
-            <td>Yes</td>
-            <td>No</td>
-            <td>Yes</td>
-          </tr>   
-          <tr>
-            <th>Auth.</th>
-            <td>Yes</td>
-            <td>yes</td>
-            <td>No</td>
-            <td>No</td>
-            <td>Yes</td>
-          </tr>                                                 
-           <tr>
-            <th>Core file size including depencies.</th>
-            <td>691 KB</td>
-            <td>7.69 MB++</td>
-            <td>636 KB</td>
-            <td>1.80 MB</td>
-            <td>17.1 MB++</td>
-          </tr>  
-           <tr>
-            <th>MVC.</th>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>            
-          </tr>  
-           <tr>
-            <th>PHP7.</th>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>            
-          </tr>                             
-            <th>License.</th>
-            <td>MIT</td>
-            <td>MIT</td>
-            <td>MIT</td>
-            <td>Apache</td>
-            <td>MIT</td>                             
-        </tbody>
-      </table>
-   </div>
-</body> 
+      <!-- Blogs -->
+      <section class="recent-blog-area section-gap">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 pb-30 header-text">
+              <h1>Latest posts from our blog</h1>
+              <p>
+                Read blogs to increase knowledge about Zest framework.
+              </p>
+            </div>
+          </div>
+          <div class="row"> 
+            <?php          
+             $pages = \App\Models\Pages::viewLimitedPagesBlog(3,0);
+            foreach ($pages as $page => $value) { ?>
+
+            <div class="single-recent-blog col-lg-4 col-md-4">
+              <div class="thumb">
+                <img class="f-img img-fluid mx-auto" src="<?=site_base_url()?>/read/image/<?=$value['image']?>" alt=""> 
+              </div>
+              <div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                  <a href="#"><span> <p><a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['username'] ?>"><?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['name'] ?></a> </p></span></a>
+                </div>
+                <div class="meta">
+                  <?=$value['created']?>
+                </div>
+              </div>              
+              <a href="<?=site_base_url()?>/blog/view/<?=$value['slug']?>/<?=urlencode($value['title'])?>">
+                <h4><?=$value['title']?></h4>
+              </a>
+              <p>
+                  <?= substr($value['scontent'], 0, 255) ?> </p>
+            </div>
+          <?php } ?>                                       
+          </div>
+        </div>  
+      </section>
+
+
+      <!-- Topics -->
+      <section class="recent-blog-area section-gap">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 pb-30 header-text">
+              <h1>Latest posts from our Community</h1>
+              <p>
+                Reply to topics to help others.
+              </p>
+            </div>
+          </div>
+          <div class="row"> 
+            <?php          
+             $pages = \App\Models\Community::viewLimitedCommunity(3,0);
+            foreach ($pages as $page => $value) { ?>
+
+            <div class="single-recent-blog col-lg-4 col-md-4">
+              <div class="thumb">
+                <img class="f-img img-fluid mx-auto" src="<?=site_base_url()?>/read/image/<?=$value['image']?>" alt=""> 
+              </div>
+              <div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                  <a href="#"><span> <p><a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['username'] ?>"><?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['name'] ?></a> </p></span></a>
+                </div>
+                <div class="meta">
+                  <?=$value['created']?>
+                </div>
+              </div>              
+              <a href="<?=site_base_url()?>/community/view/<?=$value['slug']?>">
+                <h4><?=$value['title']?></h4>
+              </a>
+              <p>
+                  <?= substr($value['contents'], 0, 255) ?> </p>
+            </div>
+          <?php } ?>                                       
+          </div>
+        </div>  
+      </section>
+      <!-- News -->
+      <section class="recent-blog-area section-gap">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 pb-30 header-text">
+              <h1>Latest posts from our News</h1>
+              <p>
+                Read news to stay connected with Zest Framework.
+              </p>
+            </div>
+          </div>
+          <div class="row"> 
+            <?php          
+             $pages = \App\Models\Pages::viewLimitedPagesNews(3,0);
+            foreach ($pages as $page => $value) { ?>
+
+            <div class="single-recent-blog col-lg-4 col-md-4">
+              <div class="thumb">
+                <img class="f-img img-fluid mx-auto" src="<?=site_base_url()?>/read/image/<?=$value['image']?>" alt=""> 
+              </div>
+              <div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                  <a href="#"><span> <p><a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['username'] ?>"><?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['name'] ?></a> </p></span></a>
+                </div>
+                <div class="meta">
+                  <?=$value['created']?>
+                </div>
+              </div>              
+              <a href="<?=site_base_url()?>/news/view/<?=$value['slug']?>/<?=urlencode($value['title'])?>">
+                <h4><?=$value['title']?></h4>
+              </a>
+              <p>
+                  <?= substr($value['scontent'], 0, 255) ?> </p>
+            </div>
+          <?php } ?>                                       
+          </div>
+        </div>  
+      </section>
 <?= \Zest\View\View::view('footer'); ?>
 
 

@@ -22,13 +22,13 @@
                         <input type="text" name="id" value="<?=$args['id']?>" hidden>
                         <div class="col-md-12">
                         <p>
-                            <b>Role</b>
+                            <b>Role (current => <?=$args['type']?>)</b>
                         </p>
                         <select class="form-control show-tick" name='type'>
                             <option value='blog' disabled>Plese Choose one type</option>
                             <option value="blog">Blogs</option>
                             <option value="faq">FAQ's</option>
-                            <option value="news">News </option>
+                            <option value='news'>News</option>
                         </select>
                         </div>   
                         <br><br><br><br>
@@ -37,9 +37,10 @@
                      </form>                     
                 </div>                  
              </div> 
-             <?php if (empty(trim($args['image']))): ?>
              <div class="card">
                 <div class="container">
+                    <h1>Preview Image</h1>
+                    <img style='width:50%' src="<?=site_base_url()?>/read/image/<?=$args['image']?>" class="image-responsive">
                     <h1>Add Image:</h1>
                     <form action="<?= site_base_url() ?>/admin/view/page/<?= $args['id'] ?>" method="post" enctype="multipart/form-data">
                         <input type="text" name="id" value="<?=$args['id']?>" hidden>
@@ -52,7 +53,6 @@
                      </form>                     
                 </div>                  
              </div> 
-         <?php endif; ?>
              <div class="card">
                 <div class="container">
                     <h1>Edit page :</h1>

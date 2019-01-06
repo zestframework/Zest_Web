@@ -25,11 +25,15 @@ $router->get('admin/generate/sitemap',"Admin@generateSiteMap");
 
 //blogs 
 $router->get('blogs/{page:[0-9]+}',"Blogs@blog");
-$router->get('blog/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+-.]+}',"Blogs@view");
+$router->get('blog/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+.-]+}',"Blogs@view");
 
 //faqs 
 $router->get('faqs/{page:[0-9]+}',"Faq@faq");
 $router->get('faq/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+]+}',"Faq@view");
+
+//News
+$router->get('news/{page:[0-9]+}',"News@index");
+$router->get('news/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9\+\.-]+}',"News@view");
 
 //Site
 $router->get('site/terms',"Site@terms");
@@ -42,7 +46,7 @@ $router->get('contribute/donate',"Contribute@donation");
 //Community
 $router->get('community/add',"Community@add");
 $router->post('community/add/process',"Community@addProcess");
-$router->get('community/{page:[0-9]+}',"Community@index");
+$router->get('community/{page:[0-9\.\-]+}',"Community@index");
 $router->add('community/view/{slug:[A-Za-z0-9]+}',"Community@view","GET|POST|HEAD");
 
 //Components
@@ -53,7 +57,7 @@ $router->add('components/view/{slug:[A-Za-z0-9]+}',"Components@view","GET|POST|H
 
 //Readers
 $router->get('read/image/{image:[a-z0-9.]+}',"Reader@image");
-$router->get('read/image/{folder:[A-Za-z0-9.]+}/{image:[a-z0-9.]+}',"Reader@folderImage");
+$router->get('read/image/{folder:[A-Za-z]+}/{image:[a-z0-9.]+}',"Reader@folderImage");
 $router->get('read/zip/{zip:[a-z0-9.]+}',"Reader@zip");
 
 //Cache the routes

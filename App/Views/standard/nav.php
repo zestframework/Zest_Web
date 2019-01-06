@@ -12,7 +12,7 @@ $user = new \Zest\Auth\User;
    }   
 ?>      
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <head>
 
       <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
@@ -28,7 +28,6 @@ $user = new \Zest\Auth\User;
       <link rel="shortcut icon" type="image/png" href="<?= site_base_url(); ?>/standard/image/icon.png"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <meta name="theme-color" content="#e89696" />
       <meta name="google-site-verification" content="<?= $args[5]['value'] ?>" />
 </head>
 <body>
@@ -38,14 +37,15 @@ $user = new \Zest\Auth\User;
         <div class="container main-menu">
           <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-              <a href="<?=site_base_url()?>"><img src="<?=site_base_url();?>/standard/image/icon1.png" alt="" title="" /></a>
+              <a href="<?=site_base_url()?>"><img src="<?=site_base_url();?>/standard/image/icon.png" alt="" title="" /></a>
             </div>
             <nav id="nav-menu-container">
               <ul class="nav-menu">
                 <li><a href="<?=site_base_url()?>">Home</a></li>
                 <li><a href="<?=site_base_url()?>/blogs/1">Blogs</a></li>
+                <li><a href="<?=site_base_url()?>/news/1">News</a></li>
                 <li><a href="<?=site_base_url()?>/community/1">Community</a></li>
-                <li class="menu-has-children"><a href="">Developers</a>
+                <li class="menu-has-children"><a href="javascript:void(0)">Developers</a>
                   <ul>
                       <li><a class="" href="https://github.com/Softhub99/Zest">Github</a></li>     
                       <li><a class="" href="https://zest.readthedocs.io/en/latest/">Documentation</a></li> 
@@ -53,13 +53,13 @@ $user = new \Zest\Auth\User;
                       <li><a class="" href="https://github.com/Softhub99/Zest/issues/new/">Report issue</a></li>
                   </ul>
                 </li>   
-                <li class="menu-has-children"><a href="">Download</a>
+                <li class="menu-has-children"><a href="javascript:void(0)">Download</a>
                   <ul>
                       <li><a class="" href="<?=site_base_url()?>/components/1">Components</a></li>
                   </ul>
                 </li>            
                 <?php if ($user->isLogin()) { ?>
-                <li class="menu-has-children"><a href="">My Account</a>
+                <li class="menu-has-children"><a href="javascript:void(0)">My Account</a>
                   <ul>
                  <?php if ((new \App\Models\Account())->isAdmin()): ?>
                       <li><a class="" href="<?= site_base_url(); ?>/admin/home">Admin</a></li>          

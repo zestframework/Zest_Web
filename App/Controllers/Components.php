@@ -60,13 +60,7 @@ class Components extends \Zest\Controller\Controller
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Components)->componentWhere('slug',$slug)[0]['id'];
             $version = escape(input('version'));
-            $file = (new \Zest\Files\Files())->fileUpload(
-                [
-                    'filetype' => 'zip',
-                    'target' => '',
-                    'file' => $_FILES['file'],
-                ]
-            );
+            $file = (new \Zest\Files\Files())->fileUpload( $_FILES['file'],'../Storage/Data/','zip');
             $res = (new \App\Models\Community)->communityUpdate(['componentFile' => $file,'componentVersion' => $version],$id);
             redirect(site_base_url().'/components/view/' .$slug);
          }else {
