@@ -1,7 +1,10 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title><?=$args['title']?></title>
+<meta property="site_name" content="Zest Framework" />
+<meta property="type" content="news" />
 <meta name="author" content="<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?>">
 <meta name="description" lang="en" content="<?=$args['scontent']?>">
+<meta property="news:published_time" content="<?=$args['created']?>" />
 <meta name="keywords" lang="en" content="<?=$args['keyword']?>">
 <style type="text/css">
   p img {

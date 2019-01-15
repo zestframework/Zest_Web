@@ -1,8 +1,8 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title>Frequency Ask Questions</title>
 <meta name="author" content="Malik Umer Farooq">
-<meta name="description" lang="en" content="Read all news related to zest framework free of cost if any question feel free to ask in our community">
-<meta name="keywords" lang="en" content="News,latest,live,free,zest,framework,master,articles,article">
+<meta name="description" lang="en" content="Read all frequency ask question/questions related to zest framework free of cost if any question feel free to ask in our community">
+<meta name="keywords" lang="en" content="faqs,latest,live,free,zest,framework,master,articles,article">
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

@@ -1,7 +1,10 @@
 <?= \Zest\View\View::view('nav'); ?>
 <title><?=$args['title']?></title>
+<meta property="site_name" content="Zest Framework" />
+<meta property="type" content="article" />
 <meta name="author" content="<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?>">
 <meta name="description" lang="en" content="<?=$args['scontent']?>">
+<meta property="article:published_time" content="<?=$args['created']?>" />
 <meta name="keywords" lang="en" content="<?=$args['keyword']?>">
 <style type="text/css">
   p img {
@@ -41,7 +44,7 @@ p img:hover {
               <h1 class="text-white">
                 <?=$args['title']?>   
               </h1> 
-              <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="<?=site_base_url()?>/news/1">Blogs </a> <span class="lnr lnr-arrow-right"></span> <a href="javascript:void(0)"> <?=$args['title']?></a></p>
+              <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="<?=site_base_url()?>/blogs/1">Blogs </a> <span class="lnr lnr-arrow-right"></span> <a href="javascript:void(0)"> <?=$args['title']?></a></p>
             </div>  
           </div>
         </div>
