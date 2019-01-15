@@ -13,9 +13,9 @@
   <div class="row d-flex align-items-center justify-content-center">
     <div class="about-content col-lg-12">
       <h1 class="text-white">
-        Add Component        
+        Add Toptic        
       </h1> 
-      <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#!"> Add Component</a></p>
+      <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#!"> Add Toptic</a></p>
     </div>  
   </div>
 </div>
@@ -34,6 +34,9 @@
               <option value="help">Help</option>
               <option value="component development">Component Development</option>
               <option value="issue">Issue</option>
+			  <option value="request feature">Request Feature</option>
+			  <option value="request">Request</option>
+			  <option value="development">Development</option>
             </select>
           </div>
         </div>        
