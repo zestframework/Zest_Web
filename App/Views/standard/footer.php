@@ -11,7 +11,7 @@
                         <div class="col-lg-5 col-md-6 col-sm-6">
                             <div class="single-footer-widget">
                               <h4>Useful links</h4>
-                                <ul>
+                                <ul style='list-style-type: none!important;'>
                                   <li><a href="<?=site_base_url()?>/site/terms">Terms</a></li>
                                   <li><a href="<?=site_base_url()?>/site/privacy">Privacy</a></li>
                                   <li><a href="<?=site_base_url()?>/faqs/1">Faqs</a></li>
@@ -45,7 +45,7 @@ Copyright &copy; Zest Framework 2018-<script>document.write(new Date().getFullYe
                         <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
                             <div class="single-footer-widget">
                                 <h4>Like Us</h4>
-                                  <ul>
+                                  <ul style='list-style-type: none!important;'>
                                     <li><a href="https://github.com/Softhub99/Zest_Web">Find me on github</a></li>
                                 </ul>
                                 <p>Let us be social</p>
