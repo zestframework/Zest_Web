@@ -4467,4 +4467,6 @@ pre code {
 #cummunity-time {
    opacity: 0.6;
 } 
-
+ul {
+    list-style-type: disc!important;
+}
