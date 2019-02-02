@@ -1,11 +1,13 @@
-<?= \Zest\View\View::view('nav'); ?>
-<title><?=$args['title']?></title>
-<meta property="site_name" content="Zest Framework" />
+<?= \Zest\View\View::view('nav',
+[
+  'title' => $args['title'],
+  'ownerId' => $args['ownerId'],
+  'keyword' => $args['keyword'],
+  'scontent' => $args['scontent'],
+]
+); ?>
 <meta property="type" content="article" />
-<meta name="author" content="<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?>">
-<meta name="description" lang="en" content="<?=$args['scontent']?>">
 <meta property="article:published_time" content="<?=$args['created']?>" />
-<meta name="keywords" lang="en" content="<?=$args['keyword']?>">
 <style type="text/css">
   p img {
   margin-top: 30px;

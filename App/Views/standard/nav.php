@@ -1,4 +1,3 @@
-<?php  $args = \App\Models\Site::get(); ?>
 <?php
 $user = new \Zest\Auth\User;
  if (!$user->isLogin()) {
@@ -14,7 +13,18 @@ $user = new \Zest\Auth\User;
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-
+      <?php if (isset($args['title'])) : ?>
+        <title><?=$args['title']?></title>
+        <meta charset="utf-8">
+        <meta property="site_name" content="Zest Framework" />
+        <meta name="author" content="<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?>">
+        <meta name="description" lang="en" content="<?=$args['scontent']?>">
+        <meta name="keywords" lang="en" content="<?=$args['keyword']?>">    
+      <?php endif;?>  
+      <?php  $args = \App\Models\Site::get(); ?>
+      <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
       <link rel="stylesheet" href="<?= site_base_url(); ?>/standard/assets/css/linearicons.css">
       <link rel="stylesheet" href="<?= site_base_url(); ?>/standard/assets/css/font-awesome.min.css">
