@@ -18,87 +18,44 @@ class Admin extends \Zest\Controller\Controller
         self::isAdmin();
         View::view('admin/admin');
     }
-    /*
-    public function usersList()
+
+    public function users()
     {
-        self::isAdmin();
-        View::view("admin/userList");
+        view('admin/users/view');
     }
-    public function userBanned()
+
+    public function userViewId()
     {
         self::isAdmin();
-        View::view("admin/userBanned");
-    }
-    public function userAdd()
-    {
-        self::isAdmin();
-       if (input("submit")) {
-            $name = escape(input('name'));
-            $username = escape(input('username'));
-            $email = escape(input('email'));
-            $password = escape(input('password'));
-            $confirm = $password;
-            $role = escape(input('status'));
-            \App\Models\Account::signup($name,$username,$email,$password,$confirm,$role);
-            header("Location:".site_base_url()."admin/list/users");
-       } else {
-            View::view("admin/userAdd");
-       } 
-    }
-    public function userView()
-    {
-        self::isAdmin();
-        if (input('edit') || input('ban') || input('unban') || input('close') || input('open') || input('role')){
-            if (input('ban')) {
-                $id = input('id');
-                $ban = "banned";
-                \App\Models\Account::updateUser(['ban'=>$ban],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                
-            }
-            if (input('unban')) {
-                $id = input('id');
-                $unban = "NULL";
-                \App\Models\Account::updateUser(['ban'=>$unban],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                
-            }    
-            if (input('close')) {
-                $id = input('id');
-                $close = "closed";
-                \App\Models\Account::updateUser(['close'=>$close],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                
-            }
-            if (input('open')) {
-                $id = input('id');
-                $open = "NULL";
-                \App\Models\Account::updateUser(['close'=>$open],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                
-            }                      
-            if (input("role")) {
-                $id = input('id');
-                $status = input("type");
-                \App\Models\Account::updateUser(['role'=>$status],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");
-            }
-            if (input('edit')){
+        if (input('edit') || input('ty') || input('status')) {
+            if (input('edit')) {
                 $id = input('id');
                 $name = escape(input('name'));
-                $username = escape(input('username'));
-                $email = escape(input('email'));
-                \App\Models\Account::updateUser(['name'=>$name,'username'=>$username,'email'=>$email],$id);
-                header("Location:".site_base_url()."admin/user/view/{$id}");                                
+                $auth = new Auth;
+                $auth->update()->update(['name'=>$name],$id);
+                redirect(site_base_url()."/admin/view/user/{$id}");
+            }
+            if (input('ty')) {
+                $id = input('id');
+                $role = input('role');
+                $auth = new Auth;
+                $auth->update()->update(['role'=>$role],$id);
+                redirect(site_base_url()."/admin/view/user/{$id}");
+            }
+            if (input('status')) {
+                $id = input('id');
+                $status = input('st');
+                $auth = new Auth;
+                $auth->update()->update(['status'=>$status],$id);
+                redirect(site_base_url()."/admin/view/user/{$id}");                
             }
         } else {
             $id = $this->route_params['id'];
-            $user = \App\Models\Account::userWhere('id',$id);
-            View::view("admin/userView",$user[0]);
+            $user = new User;
+            $users = $user->getByWhere('id',$id);
+            view("admin/users/viewId",$users[0],false);
         }
-    } 
-    public function userClosed()
-    {
-        self::isAdmin();
-        View::view("admin/userClosed");
-    }
-    */
+    }   
     public function siteSetting()
     {
         self::isAdmin();

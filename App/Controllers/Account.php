@@ -70,7 +70,7 @@ class Account extends \Zest\Controller\Controller
             } else {
                 $avatar_Name = 'null';
             } 
-            $auth->signup()->signup($username,$email,$password,['name' => $name, 'passConfirm' => $confirm,'role' => 'normal','ip' => (new \Zest\UserInfo\UserInfo)->ip(),'pimg' => $avatar_Name]);
+            $auth->signup()->signup($username,$email,$password,['name' => $name, 'passConfirm' => $confirm,'role' => 'normal','created' => time(),'ip' => (new \Zest\UserInfo\UserInfo)->ip(),'pimg' => $avatar_Name]);
             if ($auth->fail()) {
                 $errors = $auth->error()->get();
                 foreach ($errors as $error) {

@@ -96,7 +96,18 @@
                             <i class="material-icons">map</i>
                             <span>Generate Sitemap</span>
                         </a>
-                    </li>                    
+                    </li>   
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">account_circle</i>
+                            <span>Users</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?= site_base_url(); ?>/admin/users/view">Views</a>
+                            </li>
+                        </ul>
+                    </li>                                     
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">settings</i>
@@ -108,6 +119,20 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">assignment</i>
+                            <span>Documents</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?= site_base_url(); ?>/admin/site/setting">Create</a>
+                            </li>
+                            <li>
+                                <a href="<?= site_base_url(); ?>/admin/site/setting">View</a>
+                            </li>
+                        </ul>
+                    </li>                    
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">assignment</i>
