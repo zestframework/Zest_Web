@@ -10,7 +10,7 @@
             <div class="col-lg-6 col-md-6 banner-left">
               <h6>PHP</h6>
               <h1>Zest Framework</h1>
-              <p>
+              <img src='<?=site_base_url()?>/standard/image/cover.jpg' class='image-responsive' style='width:250px' /><br\><p>
                 Zest is a simple yet powerful PHP MVC framework for rapid application development that is suited for small to medium scale apps and APIs.
               </p>
               <a href="https://zest.readthedocs.io/en/latest/" class="genric-btn primary radius">Get Started</a>
