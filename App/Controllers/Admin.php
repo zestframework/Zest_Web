@@ -7,15 +7,9 @@ use Zest\Auth\User;
 
 class Admin extends \Zest\Controller\Controller
 {
-    public function isAdmin(){
-         $user = new User;
-        if (!$user->isLogin() || $user->loginUser()[0]['role'] !== 'admin') {
-            redirect(site_base_url());
-        }     
-    }    
+  
     public function index()
     {
-        self::isAdmin();
         View::view('admin/admin');
     }
 
@@ -26,7 +20,6 @@ class Admin extends \Zest\Controller\Controller
 
     public function userViewId()
     {
-        self::isAdmin();
         if (input('edit') || input('ty') || input('status')) {
             if (input('edit')) {
                 $id = input('id');
@@ -58,7 +51,6 @@ class Admin extends \Zest\Controller\Controller
     }   
     public function siteSetting()
     {
-        self::isAdmin();
         if (input('status') || input('site')) {
             if (input('status')) {
                 $status = input('type');
@@ -83,7 +75,6 @@ class Admin extends \Zest\Controller\Controller
         }
     }
     public function pageAdd(){
-        self::isAdmin();
         if (input("page")) {
             $title = escape(input('title'));
             $keyword = escape(input('keyword'));
@@ -108,12 +99,10 @@ class Admin extends \Zest\Controller\Controller
     }
     public function pageView()
     {
-        self::isAdmin();
         View::view("admin/pageView");
     }
     public function pageViewId()
     {
-        self::isAdmin();
         if (input('edit') || input('ty') || input('img')) {
             if (input('edit')) {
                 $id = input('id');
@@ -151,6 +140,22 @@ class Admin extends \Zest\Controller\Controller
             View::view("admin/pageViewId",$page[0],false);
         }
     }
+    public function sendMails()
+    {
+        if (input('submit')) {
+            $sub = input('sub');
+            $msg = input('msg');
+            $users = (new \Zest\Auth\User)->getAll();
+            foreach ($users as $key => $value) {
+                model("Mailer")->send($value['email'],$subject,$msg);
+            }
+            redirect(site_base_url().'/admin/send/mail');
+        } else {
+            View::view('admin/sendMail');
+        }
+    }
+
+
     public function generateSiteMap()
     {
             $url = site_base_url().'/';

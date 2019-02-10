@@ -3,7 +3,6 @@
 <neta name="description" content="<?= $args[3]['value'] ?>"/>
 <neta name="keyword" content="<?= $args[4]['value'] ?>"/>
 <title>Zest Framework</title>
-<body>
       <section class="banner-area">
         <div class="container">
           <div class="row fullscreen align-items-center justify-content-between">

@@ -41,6 +41,7 @@ class Account extends \Zest\Controller\Controller
                 }
             }
         } else {
+            add_system_message("Your account has been loggedIn", "success");
             echo '1';
         }
     }

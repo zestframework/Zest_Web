@@ -23,9 +23,11 @@ class Components extends \Zest\Controller\Controller
                 $contents = escape(input('description'));
                 $com = new \App\Models\Components();
                 $result = $com->create($title,$contents);
+                add_system_message("The component topic has been created", "success");
                 redirect(site_base_url().'/components/1');
             }
         } else {
+            add_system_message("You should be login, in order to create topic", "error");
             redirect(site_base_url()."/account/login");
         }    
     }   

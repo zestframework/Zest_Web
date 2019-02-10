@@ -92,6 +92,12 @@
                         </a>
                     </li>
                     <li class="active">
+                        <a href="<?=site_base_url()?>/admin/send/mail">
+                            <i class="material-icons">mail</i>
+                            <span>Send Email</span>
+                        </a>
+                    </li>                    
+                    <li class="active">
                         <a href="<?=site_base_url()?>/admin/generate/sitemap">
                             <i class="material-icons">map</i>
                             <span>Generate Sitemap</span>

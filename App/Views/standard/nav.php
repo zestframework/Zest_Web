@@ -89,8 +89,15 @@ $user = new \Zest\Auth\User;
             </nav><!-- #nav-menu-container -->            
           </div>
         </div>
+        <?php 
+          $msg = view_system_message();
+          if (!empty($msg)) :
+             echo $msg;
+           endif;   
+        ?>
       </header><!-- #header -->
 <script type="text/javascript">
     url = "<?= site_base_url(); ?>/";
 </script>  
+
 

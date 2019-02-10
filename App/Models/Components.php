@@ -35,15 +35,10 @@ class Components extends Model
 			'slug' => $slug,
             'isComponent' => 'yes',
 		]]);
-        $mail = new Mail();
         $email = (new User())->loginUser()[0]['email'];
         $link = site_base_url() . "components/view/" . $slug;
-        $html = "Dear {$email} your component project topic has been created<br><a href='{$link}'>topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
-        $mail->setSubject("Component topic");
-        $mail->setSender(Email::SITE_EMAIL);
-        $mail->setContentHTML($html);
-        $mail->addReceiver($email);
-        $mail->send();             
+        $html = "Dear {$email} your component project topic has been created<br><a href='{$link}'>My component</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
+        model("Mailer")->send($email,"Component created", $html);            
 		$db->db()->close();
 		return $result;
 	}
@@ -60,15 +55,10 @@ class Components extends Model
             'created' => $created,
             'slug' => $slug,
         ]]);
-        $mail = new Mail();
         $email = (new User())->getByWhere('id',$ownerId)[0]['email'];
         $link = site_base_url() . "components/view/" . $slug;
         $html = "Dear {$email} Someone reply in your component project topic<br><a href='{$link}'>topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
-        $mail->setSubject("Component topic reply");
-        $mail->setSender(Email::SITE_EMAIL);
-        $mail->setContentHTML($html);
-        $mail->addReceiver($email);
-        $mail->send();
+        model("Mailer")->send($email,"Component topic reply", $html); 
         $db->db()->close();
         return $result;
     }    

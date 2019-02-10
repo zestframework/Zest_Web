@@ -24,9 +24,11 @@ class Community extends \Zest\Controller\Controller
 				$contents = escape(input('description'));
 				$com = new \App\Models\Community();
 				$result = $com->create($title,$cat,$contents);
+                add_system_message("The topic has been created", "success");
 				redirect(site_base_url().'/community/1');
 			}
 		} else {
+            add_system_message("You should be login, in order to create topic", "error");
 			redirect(site_base_url()."/account/login");
 		}			
     }   
@@ -39,14 +41,20 @@ class Community extends \Zest\Controller\Controller
     public function view()
     {
          if (input('submit')) {
-            $slug = $this->route_params['slug'];
-			if (!(new \App\Models\Community)->isClose($slug)) {
-				$contents = escape(input('description'));
-				$res = (new \App\Models\Community)->reply($slug,$contents);
-				redirect(site_base_url().'/community/view/' .$slug);
-			} else {
-				redirect(site_base_url().'/community/view/' .$slug);
-			}
+            if ((new \Zest\Auth\User())->isLogin()) {
+                $slug = $this->route_params['slug'];
+    			if (!(new \App\Models\Community)->isClose($slug)) {
+    				$contents = escape(input('description'));
+    				$res = (new \App\Models\Community)->reply($slug,$contents);
+                    add_system_message("You reply, had been added", 'success');
+    				redirect(site_base_url().'/community/view/' .$slug);
+    			} else {
+    				redirect(site_base_url().'/community/view/' .$slug);
+    			}
+             } else {
+                add_system_message("You should be login, in order to reply in any topic", "error");
+                redirect(site_base_url()."/account/login");
+             }   
          } elseif(input('close')) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];

@@ -9,7 +9,7 @@ return [
    'Config' => [
         'APP_NAME'                => 'Zest Framework',
         'APP_VERSION'             => '3.0.0',
-        'SHOW_ERRORS'             => false,
+        'SHOW_ERRORS'             => true,
         'LANGUAGE'                => 'en',
         'DATA_DIR'                => '../Storage/Data/',
         'CACHE_DIR'               => '../Storage/Cache/',
@@ -91,11 +91,11 @@ return [
         /* Database DRIVE */
         'DB_DRIVER' => 'mysql', // mysql is recommendeds
         /* Database NAME */
-        'DB_NAME' => '',
+        'DB_NAME' => 'zestweb',
         /* MYSQL HOST */
         'MYSQL_HOST' => 'localhost',
         /* MYSQL PASS */
-        'MYSQL_USER' => '',
+        'MYSQL_USER' => 'root',
         /* MYSQL PASS*/
         'MYSQL_PASS' => '',
         /* SQLite name with path */
@@ -107,7 +107,7 @@ return [
      */
     'Auth' => [
         /* Auth database name */
-        'DB_NAME' => '',
+        'DB_NAME' => 'zestweb',
         /* Auth database table name*/
         'DB_TABLE' => 'users',
         /* Auth default verification link */
