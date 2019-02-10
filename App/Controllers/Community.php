@@ -55,16 +55,21 @@ class Community extends \Zest\Controller\Controller
                 add_system_message("You should be login, in order to reply in any topic", "error");
                 redirect(site_base_url()."/account/login");
              }   
-         } elseif(input('close')) {
+         } elseif(input('close') && (new \App\Models\Account)->isAdmin()) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
             $res = \App\Models\Community::communityUpdate(['isClosed' => 'yes'],$id);
             redirect(site_base_url().'/community/view/' .$slug);
-         }elseif(input('open')) {
+         } elseif(input('open') && (new \App\Models\Account)->isAdmin()) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
             $res = \App\Models\Community::communityUpdate(['isClosed' => 'no'],$id);
             redirect(site_base_url().'/community/view/' .$slug);
+         } elseif(input('delete') && (new \App\Models\Account)->isAdmin()) {
+            $slug = $this->route_params['slug'];
+            $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
+            $res = \App\Models\Community::communityUpdate(['isDelete' => 'yes'],$id);
+            redirect(site_base_url().'/community/1');
          } else {
              $slug = $this->route_params['slug'];
              if (( new \App\Models\Community)->isCommunity($slug) !== 0) {

@@ -14,6 +14,10 @@ $router->get('account/profile/edit',"Account@profileEdit","Auth");
 $router->post('account/update/action',"Account@profileUpdate","Auth");
 $router->post('account/update/bio/action',"Account@profileBioUpdate","Auth");
 $router->post('account/update/password/action',"Account@profilePasswordUpdate","Auth");
+$router->get('account/reset-password',"Account@passwordReset");
+$router->post('account/reset-password/process',"Account@passwordResetProcess");
+$router->get('account/password/reset/{token:([a-zA-Z0-9])+}',"Account@resetMyPassword");
+$router->post('account/password/reset/process',"Account@resetMyPasswordProcess");
 
 //Admin
 

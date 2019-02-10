@@ -2,11 +2,9 @@
 
 namespace App\Controllers;
 
-//for using View
-use Zest\View\View;
-//for using auth
 use Zest\Auth\Auth;
 use Zest\Auth\User;
+use Zest\Site\Site;
 
 class Account extends \Zest\Controller\Controller
 {
@@ -20,7 +18,7 @@ class Account extends \Zest\Controller\Controller
     public function login()
     {
         $this->isLogin();
-        View::view("account/login");
+        view("account/login");
     }
     public function loginProcess() 
     {
@@ -48,7 +46,7 @@ class Account extends \Zest\Controller\Controller
     public function signup()
     {
         $this->isLogin();
-        View::view("account/signup");
+        view("account/signup");
     } 
     public function signupProcess() 
     {
@@ -103,9 +101,9 @@ class Account extends \Zest\Controller\Controller
         $user = new User;
         if ($user->isLogin()) {
             $args = $user->loginUser();
-            View::View('account/profile',$args[0]);
+            View('account/profile',$args[0]);
         } else {
-            View::view('errors/404');
+            view('errors/404');
         }
     }      
     public function profileUpdate()
@@ -192,9 +190,105 @@ class Account extends \Zest\Controller\Controller
        $user = new User;
        if ($user->isUsername($username)) {
             $args = $user->getByWhere('username',$username);
-            View::view('account/profileView',$args[0]);
+            view('account/profileView',$args[0]);
        } else {
-            View::view('errors/404');
+            view('errors/404');
        } 
     }  
+
+    public function passwordReset()
+    {
+        if (!(new \Zest\Auth\User())->isLogin()) {
+            view("account/password_reset");
+        } else {
+            view("errors/404");
+        }
+         
+    }
+
+    public function passwordResetProcess()
+    {
+        if (input('submit')) {
+            $email = escape(input('email'));
+            $user = new User();
+            if ($user->isEmail($email)) {
+                $auth = new Auth();
+                $id = $user->getByWhere('email',$email)[0]['id'];
+                $token = Site::salts(10);
+                $link = site_base_url().'/account/password/reset/'.$token;
+                $auth->update()->update(['resetToken'=> $token],$id);
+                $html = "Dear {$email} we receive password reset request from your accont <br>
+                 <a href='{$link}'>Reset my password</a> <br>
+                 if you unable to click above copy paste below link <br> 
+                 $link
+                 <br>
+                 if you don't do this simply, ignore this mail.
+                ";
+                model("Mailer")->send($email,"Password reset request",$html);
+                add_system_message("Your password reset request has been received, check your email.","success");
+                redirect(site_base_url());
+            } else {
+                add_system_message('Sorry, the email "'.$email. '" doesn\'t exist','error');
+                redirect(site_base_url());
+            }
+        }
+    }
+    public function resetMyPassword()
+    {
+        if (!(new \Zest\Auth\User())->isLogin()) {
+            $token = $this->route_params['token'];
+            $user = new User();
+            if (count($user->getByWhere('resetToken',$token)) > 0) {
+                $id = $user->getByWhere('resetToken',$token)[0]['id'];
+                view("account/reset",['id' => $id, 'token' => $token]);
+            } else {
+                add_system_message("Sorry, You can not perform this action",'error');
+                redirect(site_base_url());
+            }
+        } else {
+            view("errors/404");
+        }    
+    }
+    public function resetMyPasswordProcess()
+    {
+        if (input('submit')) {
+            $token = input('token');
+            $error = false;
+            if (!input('password') || !input('confirm')) {
+                $error = true;
+                add_system_message("Password fields are required");
+                redirect(site_base_url().'/account/password/reset/'.$token);
+            }
+            if (!$error) {
+                $id = input('id');
+                $password = escape(input('password'));
+                $confirm = escape(input('confirm'));
+                $auth = new Auth;
+                $auth->update()->updatePassword($password,$confirm,$id);
+                if ($auth->fail()) {
+                    $errors = $auth->error()->get();
+                    foreach ($errors as $error) {
+                        if (is_array($error)) {
+                            foreach ($error as $value) {
+                                add_system_message($value."<br>",'error');
+                            }
+                        } else {
+                            add_system_message($error."<br>",'error');
+                        }
+                    }
+                    redirect(site_base_url().'/account/password/reset/'.$token);
+                } else {
+                    $auth->update()->update(['resetToken'=> 'NULL'],$id);
+                    $user = new User();
+                    $email = $user->getByWhere('id',$id)[0]['email'];
+                    $html = "Dear {$email} your password has been updated <br>
+                    if you do not do this and think its a mistake then contact us at email <br> lablnet01@gmail.com
+                    ";
+                    model("Mailer")->send($email,"Your password has been updated",$html);
+                    add_system_message("Your account password has been updated successfully",'success');
+                    redirect(site_base_url());
+                } 
+            } 
+        }
+    }
 }

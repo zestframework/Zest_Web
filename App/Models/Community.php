@@ -64,14 +64,14 @@ class Community extends Model
     public function communityAll()
     {
         $db = new Model;
-        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'order_by'=> 'ID DESC','wheres' => ['title IS NOT NULL AND isComponent IS NULL']]);
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'order_by'=> 'ID DESC','wheres' => ['title IS NOT NULL AND isComponent IS NULL AND isDelete IS NULL']]);
         $db->db()->close();
         return $result;     
     }
     public function communityWhere($where,$value)
     {
         $db = new Model;
-        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ["{$where} ="."'{$value}'" . 'AND title IS NOT NULL AND isComponent IS NULL'],'order_by'=> 'ID DESC']);
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ["{$where} ="."'{$value}'" . 'AND title IS NOT NULL AND isComponent IS NULL AND isDelete IS NULL'],'order_by'=> 'ID DESC']);
         $db->db()->close();
         return $result;
     }   
@@ -87,21 +87,21 @@ class Community extends Model
     public function communityReplies($slug)
     {
         $db = new Model;
-        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NULL AND isComponent IS NULL" ],'order_by'=> 'ID DESC']);
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NULL AND isComponent IS NULL AND isDelete IS NULL" ],'order_by'=> 'ID DESC']);
         $db->db()->close();
         return $result;        
     }
     public function viewLimitedCommunity($limit,$offset)
     {
         $db = new Model;
-        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NULL AND isDelete IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
         $db->db()->close();
         return $result;     
     }    
     public function isCommunity($slug)
     {
         $db = new Model;
-        $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NULL"]]);
+        $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NULL AND isDelete IS NULL"]]);
         $db->db()->close();
         return $result;
     }
