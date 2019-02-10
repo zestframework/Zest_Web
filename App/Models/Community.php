@@ -36,7 +36,7 @@ class Community extends Model
             'slug' => $slug,
         ]]);
         $email = (new User())->loginUser()[0]['email'];
-        $link = site_base_url() . "community/view/" . $slug;
+        $link = site_base_url() . "/community/view/" . $slug;
         $html = "Dear {$email} your discussion topic has been created<br><a href='{$link}'>My Topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
         model("Mailer")->send($email,"Community topic created", $html);   
         $db->db()->close();
@@ -55,7 +55,7 @@ class Community extends Model
             'slug' => $slug,
         ]]);
         $email = (new User())->getByWhere('id',$ownerId)[0]['email'];
-        $link = site_base_url() . "community/view/" . $slug;
+        $link = site_base_url() . "/community/view/" . $slug;
         $html = "Dear {$email} Someone reply in your discussion topic<br><a href='{$link}'>topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
         model("Mailer")->send($email,"Community topic reply", $html); 
         $db->db()->close();
