@@ -36,7 +36,7 @@ class Components extends Model
             'isComponent' => 'yes',
 		]]);
         $email = (new User())->loginUser()[0]['email'];
-        $link = site_base_url() . "components/view/" . $slug;
+        $link = site_base_url() . "/components/view/" . $slug;
         $html = "Dear {$email} your component project topic has been created<br><a href='{$link}'>My component</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
         model("Mailer")->send($email,"Component created", $html);            
 		$db->db()->close();
@@ -56,7 +56,7 @@ class Components extends Model
             'slug' => $slug,
         ]]);
         $email = (new User())->getByWhere('id',$ownerId)[0]['email'];
-        $link = site_base_url() . "components/view/" . $slug;
+        $link = site_base_url() . "/components/view/" . $slug;
         $html = "Dear {$email} Someone reply in your component project topic<br><a href='{$link}'>topic</a><br>Click above link if you unable to open copy paste below link <br>{$link}";
         model("Mailer")->send($email,"Component topic reply", $html); 
         $db->db()->close();
