@@ -8,7 +8,6 @@ class Auth
 {
     public function before($request, $response, $params)
     {
-        echo "Fuck";
         $user = new User();
         if ($user->isLogin() !== true) {
             if ($request->isXhr() !== true) {
