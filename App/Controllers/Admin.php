@@ -80,7 +80,7 @@ class Admin extends \Zest\Controller\Controller
             $keyword = escape(input('keyword'));
             $shortContent = escape(input('scontent'));
             $type = escape(input('type'));
-            $content = escape(input('contents'));
+            $content = $this->cleanPages(input('contents'));
             $files = new \Zest\Files\Files();
             $dir = "../Storage/Data/";
             $files->mkdir($dir."Blogs/");
@@ -109,7 +109,7 @@ class Admin extends \Zest\Controller\Controller
                 $title = escape(input('title'));
                 $keyword = escape(input('keyword'));
                 $shortContent = escape(input('scontent'));
-                $content = escape(input('contents'));
+                $content = input('contents');
                 $result = \App\Models\Pages::pageUpdate(['title'=>$title,'keyword' => $keyword,'scontent'=>$shortContent,'content'=>$content,'updated'=>date("Y-m-d H:i:s")],$id);
                 redirect(site_base_url()."/admin/view/page/{$id}");
             }
@@ -173,26 +173,26 @@ class Admin extends \Zest\Controller\Controller
         $faqs = (new \App\Models\Pages)->pageWhere('type','faq');
         $news = (new \App\Models\Pages)->pageWhere('type','news');    
         $users = (new \Zest\Auth\User)->getAll();  
-        $blogsCount = ceil(count($blogs) / 6);  
-        for ($i = 1; $i <= $blogsCount; $i++) {
+		$blogsCount = ceil(count($blogs) / 6);	
+		for ($i = 1; $i <= $blogsCount; $i++) {
                $links =  "<url><loc>".$url."blogs/".$i."</loc></url>";
-                fwrite($fh, $links);            
-        }
-        $topicsCount = ceil(count($topics) / 10);   
-        for ($i = 1; $i <= $topicsCount; $i++) {
+                fwrite($fh, $links);			
+		}
+		$topicsCount = ceil(count($topics) / 10);	
+		for ($i = 1; $i <= $topicsCount; $i++) {
                $links =  "<url><loc>".$url."community/".$i."</loc></url>";
-                fwrite($fh, $links);            
-        }   
-        $componentsCount = ceil(count($components) / 10);   
-        for ($i = 1; $i <= $componentsCount; $i++) {
+                fwrite($fh, $links);			
+		}	
+		$componentsCount = ceil(count($components) / 10);	
+		for ($i = 1; $i <= $componentsCount; $i++) {
                $links =  "<url><loc>".$url."components/".$i."</loc></url>";
-                fwrite($fh, $links);            
-        }       
-        $faqsCount = ceil(count($faqs) / 10);   
-        for ($i = 1; $i <= $faqsCount; $i++) {
+                fwrite($fh, $links);			
+		}		
+		$faqsCount = ceil(count($faqs) / 10);	
+		for ($i = 1; $i <= $faqsCount; $i++) {
                $links =  "<url><loc>".$url."faqs/".$i."</loc></url>";
-                fwrite($fh, $links);            
-        }           
+                fwrite($fh, $links);			
+		}			
         foreach ($topics as $topic => $value) {
                $links =  "<url><loc>".$url."community/view/".$value['slug']."</loc></url>";
                 fwrite($fh, $links);
@@ -220,5 +220,11 @@ class Admin extends \Zest\Controller\Controller
         $endroot = "</urlset>";
         fwrite($fh, $endroot);
         redirect($url."admin/home");
+    }
+    
+    public function cleanPages($input)
+    {
+        if (!empty($input))
+             return trim(htmlspecialchars($input, ENT_QUOTES));
     }
 }
