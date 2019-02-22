@@ -178,21 +178,26 @@ class Admin extends \Zest\Controller\Controller
                $links =  "<url><loc>".$url."blogs/".$i."</loc></url>";
                 fwrite($fh, $links);			
 		}
-		$topicsCount = ceil(count($topics) / 10);	
+		$topicsCount = ceil(count($topics) / 6);	
 		for ($i = 1; $i <= $topicsCount; $i++) {
                $links =  "<url><loc>".$url."community/".$i."</loc></url>";
                 fwrite($fh, $links);			
 		}	
-		$componentsCount = ceil(count($components) / 10);	
+		$componentsCount = ceil(count($components) / 6);	
 		for ($i = 1; $i <= $componentsCount; $i++) {
                $links =  "<url><loc>".$url."components/".$i."</loc></url>";
                 fwrite($fh, $links);			
 		}		
-		$faqsCount = ceil(count($faqs) / 10);	
+		$faqsCount = ceil(count($faqs) / 6);	
 		for ($i = 1; $i <= $faqsCount; $i++) {
                $links =  "<url><loc>".$url."faqs/".$i."</loc></url>";
                 fwrite($fh, $links);			
-		}			
+		}
+		$newsCount = ceil(count($news) / 6);	
+		for ($i = 1; $i <= $newsCount; $i++) {
+               $links =  "<url><loc>".$url."news/".$i."</loc></url>";
+                fwrite($fh, $links);			
+		}		
         foreach ($topics as $topic => $value) {
                $links =  "<url><loc>".$url."community/view/".$value['slug']."</loc></url>";
                 fwrite($fh, $links);
@@ -210,7 +215,7 @@ class Admin extends \Zest\Controller\Controller
                 fwrite($fh, $links);
         }  
         foreach ($news as $new => $value) {
-               $links =  "<url><loc>".$url."new/view/".$value['slug']. '/' .  urlencode($value['title'])  ."</loc></url>";
+               $links =  "<url><loc>".$url."news/view/".$value['slug']. '/' .  urlencode($value['title'])  ."</loc></url>";
                 fwrite($fh, $links);
         }              
         foreach ($users as $faq => $value) {
