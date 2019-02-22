@@ -35,7 +35,7 @@
                         <td><?= $value['name'] ?></td>
                         <td><?= $value['role'] ?></td>
                         <td><?= $value['status'] ?></td>
-                        <td><?=(new \Zest\Common\Formats())->friendlyTime($value['created'])?></td>
+                        <td><?=(new \Zest\Common\Formats())->friendlyTime((int) $value['created'])?></td>
                         <td><a href='<?=site_base_url()?>/admin/view/user/<?=$value['id']?>'>More</a></td>
                     </tr>
                    <?php } ?> 
