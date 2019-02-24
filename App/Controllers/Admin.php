@@ -109,7 +109,7 @@ class Admin extends \Zest\Controller\Controller
                 $title = escape(input('title'));
                 $keyword = escape(input('keyword'));
                 $shortContent = escape(input('scontent'));
-                $content = input('contents');
+                $content = $this->cleanPages(input('contents'));
                 $result = \App\Models\Pages::pageUpdate(['title'=>$title,'keyword' => $keyword,'scontent'=>$shortContent,'content'=>$content,'updated'=>date("Y-m-d H:i:s")],$id);
                 redirect(site_base_url()."/admin/view/page/{$id}");
             }
