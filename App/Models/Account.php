@@ -21,7 +21,7 @@ class Account extends Model
 
 	public function isSignup()
 	{
-		return (Session::isSession('signup')) ? true : false;
+		return (Session::has('signup')) ? true : false;
 	}		
     public function isAdmin(){
          $user = new User;

@@ -27,7 +27,7 @@ class Site extends Model
 	 *
 	 * @return array
 	 */		
-    public function get()
+    public static function get()
     {
     	$db = new Model;
 		$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl]);

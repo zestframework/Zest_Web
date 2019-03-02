@@ -51,9 +51,9 @@ class Account extends \Zest\Controller\Controller
     public function signupProcess() 
     {
         $this->isLogin();
-         $value = \Zest\Session\Session::getValue('signup');
+         $value = \Zest\Session\Session::get('signup');
          if (time() > $value) {
-            \Zest\Session\Session::unsetValue('signup');
+            \Zest\Session\Session::delete('signup');
          }        
         if (!(new \App\Models\Account)->isSignup()) {
             $name = escape(input('name'));
@@ -83,7 +83,7 @@ class Account extends \Zest\Controller\Controller
                 }
             } else {
                 $avatar->save($name,1024,'','',$target.$avatar_Name);
-                \Zest\Session\Session::setValue('signup',time() + 3600);
+                \Zest\Session\Session::set('signup',time() + 3600);
                 echo 'Your account has been created login to enjoy in our services';
             }
         } else {

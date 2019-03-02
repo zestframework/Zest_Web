@@ -67,8 +67,3 @@ $router->add('components/view/{slug:[A-Za-z0-9]+}',"Components@view","GET|POST|H
 $router->get('read/image/{image:[a-z0-9.]+}',"Reader@image");
 $router->get('read/image/{folder:[A-Za-z]+}/{image:[a-z0-9.]+}',"Reader@folderImage");
 $router->get('read/zip/{zip:[a-z0-9.]+}',"Reader@zip");
-
-//Cache the routes
-$router->cacheRouters();
-//Dispatch the request
-$router->dispatch($_SERVER['QUERY_STRING']);
