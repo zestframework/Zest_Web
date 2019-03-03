@@ -203,7 +203,7 @@ return t=a?function(t){return t&&a(r(t))}:function(t){return t&&r(t)}}function e
 			self.context.clearRect( 0, 0, self.width, self.height );
 			self.context.lineWidth = 5;
 			self.context.fillStyle = "#000";
-			self.context.strokeStyle = "#4a7aec";
+			self.context.strokeStyle = "#103860";
 			self.context.textAlign = "center";
 			self.context.fillText( self.loaded + "%", self.width * .5, self.height * .5 + 2, self.width );
 			self.context.beginPath();

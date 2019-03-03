@@ -23,7 +23,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
     .navbar-toggler {
         border: 2px solid #fff;
-        background-color: #f2f4f6;
+        background-color: #2687bd;
         margin: 32px 0;
     }
     .sticky .navbar-toggler {
@@ -35,7 +35,7 @@
     #zest-navbar {
         padding: 30px;
         border-radius: 5px;
-        background-color: #211b31;
+        background-color: #103860;
         text-align: left;
     }
     .header_area.sticky .navbar {
@@ -110,7 +110,7 @@
     #zest-navbar {
         padding: 30px;
         border-radius: 5px;
-        background-color: #211b31;
+        background-color: #103860;
         text-align: left;
     }
     .header_area.sticky .navbar {

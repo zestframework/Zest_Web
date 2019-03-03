@@ -121,53 +121,28 @@
         $('#bar1').barfiller({
             tooltip: true,
             duration: 1000,
-            barColor: '#4a7aec',
+            barColor: '#103860',
             animateOnResize: true
         });
         $('#bar2').barfiller({
             tooltip: true,
             duration: 1000,
-            barColor: '#4a7aec',
+            barColor: '#103860',
             animateOnResize: true
         });
         $('#bar3').barfiller({
             tooltip: true,
             duration: 1000,
-            barColor: '#4a7aec',
+            barColor: '#103860',
             animateOnResize: true
         });
         $('#bar4').barfiller({
             tooltip: true,
             duration: 1000,
-            barColor: '#4a7aec',
+            barColor: '#103860',
             animateOnResize: true
         });
     }
-
-    if ($.fn.imagesLoaded) {
-        $('.zest-portfolio').imagesLoaded(function () {
-            // filter items on button click
-            $('.portfolio-menu').on('click', 'p', function () {
-                var filterValue = $(this).attr('data-filter');
-                $grid.isotope({
-                    filter: filterValue
-                });
-            });
-            // init Isotope
-            var $grid = $('.zest-portfolio').isotope({
-                itemSelector: '.single_gallery_item',
-                percentPosition: true,
-                masonry: {
-                    columnWidth: '.single_gallery_item'
-                }
-            });
-        });
-    }
-
-    $('.portfolio-menu button.btn').on('click', function () {
-        $('.portfolio-menu button.btn').removeClass('active');
-        $(this).addClass('active');
-    })
 
     if ($.fn.scrollUp) {
         $.scrollUp({
@@ -202,7 +177,7 @@
     });
 
     $window.on('load', function () {
-        $('#preloader').fadeOut('slow', function () {
+        $('#preloader').fadeOut(500, function () {
             $(this).remove();
         });
     });

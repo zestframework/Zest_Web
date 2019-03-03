@@ -194,7 +194,7 @@ img {
 }
 #preloader {
     overflow: hidden;
-    background-color: #211b31;
+    background-color: #103860;
     height: 100%;
     left: 0;
     position: fixed;
@@ -208,7 +208,7 @@ img {
     -webkit-animation: 3000ms linear 0s normal none infinite running zest-preloader;
     animation: 3000ms linear 0s normal none infinite running zest-preloader;
     background-color: transparent;
-    border-color: #f1f2f3 #f1f2f3 #4a7aec;
+    border-color: #2867bd #015e9a #37a2d7;
     border-radius: 50%;
     border-style: solid;
     border-width: 4px;
@@ -247,7 +247,7 @@ img {
     font-size: 24px;
     right: 30px;
     width: 40px;
-    background: #4a7aec;
+    background: #103860;
     color: #fff;
     text-align: center;
     height: 40px;
@@ -298,7 +298,7 @@ img {
 }
 
 .zest-btn {
-    background-color: #4a7aec;
+    background-color: #103860;
     min-width: 150px;
     height: 54px;
     padding: 0 30px;
@@ -313,7 +313,7 @@ img {
 }
 
 .zest-btn:hover {
-    background-color: #1a3c8d;
+    background-color: #2887bd;
     color: #fff;
 }
 
@@ -390,17 +390,7 @@ img {
 .menu_area #nav .nav-link:hover,
 .menu_area #nav .nav-item.active .nav-link,
 .menu_area .dropdown-item:hover {
-    color: #4a7aec;
-}
-
-.login-register-btn a {
-    color: #4a7aec;
-    display: inline-block;
-    font-weight: 500;
-}
-
-.login-register-btn a:hover {
-    color: #fff;
+    color: #2867bd;
 }
 
 .search-button > a {
@@ -446,7 +436,7 @@ img {
 /* Sticky CSS */
 
 .header_area.sticky {
-    background-color: #25499f;
+    background-color: #103864;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     height: 80px;
     position: fixed;
@@ -521,7 +511,7 @@ img {
 
 .hero-slides .owl-prev:hover,
 .hero-slides .owl-next:hover {
-    background-color: #4a7aec;
+    background-color: #103860;
 }
 
 /* -------------------------
@@ -544,7 +534,7 @@ img {
 
 .zest-service-slides .center .single-service-area h2,
 .single-service-area:hover h2 {
-    color: #4a7aec;
+    color: #103860;
 }
 
 .single-service-area h4 {
@@ -587,7 +577,7 @@ img {
 ------------------------- */
 
 .zest-features-area {
-    background-color: #211b31;
+    background-color: #103890;
     position: relative;
     z-index: 1;
 }
@@ -624,7 +614,7 @@ img {
     position: relative;
     width: 0px;
     height: 100%;
-    background: #4a7aec;
+    background: #103860;
     z-index: 1;
 }
 
@@ -636,7 +626,7 @@ img {
     margin-top: -35px;
     padding: 2px 4px;
     font-size: 15px;
-    color: #4a7aec;
+    color: #103860;
     left: 0px;
     position: absolute;
     z-index: 2;
@@ -682,81 +672,6 @@ img {
 }
 
 /* -------------------------
-:: 8.0 Portfolio Area
-------------------------- */
-
-.portfolio-menu {
-    margin-bottom: 100px;
-    margin-top: -10px;
-}
-
-.portfolio-menu > p {
-    display: inline-block;
-    padding: 0 15px;
-    cursor: pointer;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    margin-bottom: 0;
-}
-
-.portfolio-menu > p:hover {
-    color: #4a7aec;
-}
-
-.single_gallery_item {
-    width: 25%;
-    display: inline-block;
-    float: left;
-    z-index: 3;
-    position: relative;
-    overflow: hidden
-}
-
-.single_gallery_item > img {
-    width: 100%;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.single_gallery_item:hover > img {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="8" /></filter></svg>#filter');
-    -webkit-filter: blur(8px);
-    filter: blur(8px);
-    filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=8);
-}
-
-.gallery-hover-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-    left: 0;
-    top: 0;
-    background-color: rgba(74, 122, 236, 0.85);
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.single_gallery_item:hover .gallery-hover-overlay {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
-}
-
-.port-hover-text h4 {
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.port-hover-text > a {
-    color: #fff;
-    font-size: 15px;
-}
-
-/* -------------------------
 :: 9.0 Workflow Area
 ------------------------- */
 
@@ -788,7 +703,7 @@ img {
 }
 
 .single-workflow-area:hover h2 {
-    background-color: #4a7aec;
+    background-color: #103860;
     color: #fff;
 }
 
@@ -813,7 +728,7 @@ img {
 }
 
 .zest-workflow-slides .owl-dot.active {
-    background-color: #4a7aec;
+    background-color: #103860;
 }
 
 /* -------------------------
@@ -853,7 +768,7 @@ img {
 }
 
 .single-accordion h6 a {
-    background-color: #4a7aec;
+    background-color: #103860;
     border-radius: 0;
     color: #fff;
     display: block;
@@ -866,7 +781,7 @@ img {
 }
 
 .single-accordion h6 a.collapsed {
-    background-color: #4a7aec;
+    background-color: #103860;
     color: #fff;
 }
 
@@ -918,7 +833,7 @@ span.accor-open {
 .footer-area {
     position: relative;
     z-index: 1;
-    background-color: #211b31;
+    background-color: #103860;
 }
 
 .single-footer-widget h5 {
@@ -981,7 +896,7 @@ span.accor-open {
 
 .footer-single--blog-post .blog-post-date > p:hover,
 .footer-single--blog-post .blog-post-title > h6:hover {
-    color: #4a7aec;
+    color: #103860;
 }
 
 .footer-single-contact-info .contact-icon {
@@ -989,7 +904,7 @@ span.accor-open {
 }
 
 .footer-bottom-area {
-    background-color: #191426;
+    background-color: #103860;
     height: 60px;
 }
 
@@ -1047,7 +962,7 @@ span.accor-open {
 }
 
 .few-words-contents {
-    background-color: #211b31;
+    background-color: #103860;
 }
 
 .few-words-text .section-heading {
@@ -1176,7 +1091,7 @@ span.accor-open {
 
 .single-team-slide:hover .team-meta-info span,
 .team-social-info > a:hover {
-    color: #4a7aec;
+    color: #103860;
 }
 
 .single-team-slide:hover .team-thumbnail:after {
@@ -1251,7 +1166,7 @@ span.accor-open {
     padding: 0 30px;
     font-size: 14px;
     color: #fff;
-    background-color: #4a7aec;
+    background-color: #103860;
     position: absolute;
     right: 20%;
     font-weight: 700;
@@ -1272,7 +1187,7 @@ span.accor-open {
 ------------------------- */
 
 .zest-clients-testimonials-area {
-    background-color: #211b31;
+    background-color: #103860;
     position: relative;
     z-index: 1;
 }
@@ -1297,7 +1212,7 @@ span.accor-open {
     height: 52px;
     margin: 0 auto 20px;
     border-radius: 50%;
-    border: 3px solid #211b31;
+    border: 3px solid #103860;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     position: relative;
@@ -1385,7 +1300,7 @@ span.accor-open {
 }
 
 .single-testimonial-area:hover .testimonials-meta .testimonial-thumb {
-    border: 3px solid #4a7aec;
+    border: 3px solid #103860;
 }
 
 /* Sonar CSS */
@@ -1416,10 +1331,10 @@ span.accor-open {
     50% {
         opacity: 0.5;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-        box-shadow: 0 0 0 3px #4a7aec, 0 0 5px 5px #4a7aec, 0 0 0 5px #4a7aec;
+        box-shadow: 0 0 0 3px #103860, 0 0 5px 5px #103860, 0 0 0 5px #103860;
     }
     100% {
-        box-shadow: 0 0 0 3px #4a7aec, 0 0 5px 5px #4a7aec, 0 0 0 5px #4a7aec;
+        box-shadow: 0 0 0 3px #103860, 0 0 5px 5px #103860, 0 0 0 5px #103860;
         -webkit-transform: scale(1.4);
         transform: scale(1.4);
         opacity: 0;
@@ -1436,10 +1351,10 @@ span.accor-open {
     50% {
         opacity: 0.5;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-        box-shadow: 0 0 0 3px #4a7aec, 0 0 5px 5px #4a7aec, 0 0 0 5px #4a7aec;
+        box-shadow: 0 0 0 3px #103860, 0 0 5px 5px #103860, 0 0 0 5px #103860;
     }
     100% {
-        box-shadow: 0 0 0 3px #4a7aec, 0 0 5px 5px #4a7aec, 0 0 0 5px #4a7aec;
+        box-shadow: 0 0 0 3px #103860, 0 0 5px 5px #103860, 0 0 0 5px #103860;
         -webkit-transform: scale(1.4);
         transform: scale(1.4);
         opacity: 0;
@@ -1507,7 +1422,7 @@ span.accor-open {
 }
 
 .post-meta h6 a:hover {
-    color: #4a7aec;
+    color: #103860;
 }
 
 .single-blog > a {
@@ -1590,7 +1505,7 @@ span.accor-open {
 .latest-blog-post-content h6 > a:hover,
 .blog-post-archives ul > li > a:hover,
 .blog-post-categories ul > li > a:hover {
-    color: #4a7aec;
+    color: #103860;
 }
 
 .single-latest-blog-post {
@@ -1603,13 +1518,6 @@ span.accor-open {
     -ms-flex: 0 0 70px;
     flex: 0 0 70px;
     margin-right: 20px;
-}
-
-.instagram-feeds ul > li {
-    width: calc(33.3333333% - 8px);
-    margin: 4px;
-    display: inline-block;
-    float: left;
 }
 
 /* ----------------------
@@ -1654,7 +1562,7 @@ span.accor-open {
 }
 
 .contact-social-info > a:hover {
-    color: #4a7aec;
+    color: #103860;
 }
 
 #googleMap {
@@ -1672,16 +1580,16 @@ span.accor-open {
 }
 
 .zest-btn.zest-btn-2 {
-    border: 2px solid #4a7aec;
+    border: 2px solid #103860;
     color: #404551;
     background-color: #fff;
 }
 
 .zest-btn.zest-btn-2:hover,
 .zest-btn.zest-btn-2:focus {
-    border: 2px solid #4a7aec;
+    border: 2px solid #103860;
     color: #fff;
-    background-color: #4a7aec;
+    background-color: #103860;
 }
 
 .zest-btn.zest-btn-3 {
@@ -1694,7 +1602,7 @@ span.accor-open {
 .zest-btn.zest-btn-3:hover,
 .zest-btn.zest-btn-3:focus {
     color: #fff;
-    background-color: #4a7aec;
+    background-color: #103860;
 }
 
 .zest-cool-facts-area {
@@ -1702,7 +1610,7 @@ span.accor-open {
 }
 
 .zest-cool-facts-area .counter-area > h3 {
-    color: #4a7aec;
+    color: #103860;
     font-size: 60px;
     margin-bottom: 0;
     line-height: 1;
@@ -1711,7 +1619,9 @@ span.accor-open {
 .zest-cool-facts-area .cool-facts-content > p {
     color: #292d4f;
 }
-
+.single-blog ul li, .single-blog ol li {
+    list-style-type: square!important;
+}
 /* --------------------------------
 ============= The End =============
 ---------------------------------*/

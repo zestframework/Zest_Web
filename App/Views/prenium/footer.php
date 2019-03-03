@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+        <hr style="background:white!important">
           <!-- Fotter Bottom Area -->
         <div class="footer-bottom-area">
             <div class="container h-100">

@@ -8,23 +8,7 @@
 ); ?>
 <meta property="type" content="article" />
 <meta property="article:published_time" content="<?=$args['created']?>" />
-<style type="text/css">
-  p img {
-  margin-top: 30px;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  height: 200px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
 
-p img:hover {
-  opacity: .8;
-}
-</style>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -35,73 +19,60 @@ p img:hover {
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
-
-      
-      <!-- start banner Area -->
-      <section class="relative about-banner"> 
-        <div class="overlay overlay-bg"></div>
-        <div class="container">       
-          <div class="row d-flex align-items-center justify-content-center">
-            <div class="about-content col-lg-12">
-              <h1 class="text-white">
-                <?=$args['title']?>   
-              </h1> 
-              <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="<?=site_base_url()?>/blogs/1">Blogs </a> <span class="lnr lnr-arrow-right"></span> <a href="javascript:void(0)"> <?=$args['title']?></a></p>
-            </div>  
-          </div>
+        <!-- ***** Breadcumb Area Start ***** -->
+    <div class="zest-breadcumb-area" style="background-image: url(<?=site_base_url()?>/prenium/img/cover-small.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumbContent">
+                        <h2><?=$args['title']?></h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?=site_base_url()?>">Home</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-      <!-- End banner Area -->            
-      
-      <!-- Start post-content Area -->
-      <section class="post-content-area single-post-area">
+    </div>
+    <!-- ***** Breadcumb Area End ***** -->
+    <section class="blog-area section_padding_100">
         <div class="container">
           <div class="row">
-            <div class="col-lg-8 posts-list">
-              <div class="single-post row">
-                <div class="col-lg-12">
-                  <div class="feature-img">
-                    <img class="img-fluid" src="<?=site_base_url()?>/read/image/<?=$args['image']?>" alt="">
-                  </div>                  
-                </div>
-                <div class="col-lg-3  col-md-3 meta-details">
-                  <div class="user-details row">
-                    <p class="user-name col-lg-12 col-md-12 col-6"><a href="#"><?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?></a> <span class="lnr lnr-user"></span></p>
-                    <p class="date col-lg-12 col-md-12 col-6"><a href="#"><?=$args['created']?></a> <span class="lnr lnr-calendar-full"></span></p>
-                    <p class="comments col-lg-12 col-md-12 col-6"><a href="<?=site_base_url()?>/community/add">Any Question?</a> <span class="fa fa-question"></span></p>
-                    <ul class="social-links col-lg-12 col-md-12 col-6">
-  <div class="fb-share-button" data-href="<?=site_base_url();?>/blog/view/<?=$args['slug']?>/<?=urlencode($args['title'])?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-                    </ul>                                       
-                  </div>
-                </div>
-                <div class="col-lg-9 col-md-9">
-                  <h3 class="mt-20 mb-20"><?=$args['title']?></h3>
-                  <p class="excert"><?php
+            <div class="col-lg-8 zest-blog-posts">
+                              <div class="col-12">
+                                <div class="single-blog wow fadeInUp" data-wow-delay="0.1s">
+                                    <!-- Post Thumb -->
+                                    <div class="blog-post-thumb">
+                                        <img src="<?=site_base_url()?>/read/image/<?=$args['image']?>" alt="">
+                                    </div>
+                                    <!-- Post Meta -->
+                                    <div class="post-meta">
+                                        <h6>By <a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['username'] ?>"><?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?></a></a><a href="#!"><?=$args['created']?></a><a href="#"><a href="<?=site_base_url()?>/community/add">Any Question?</a></p><div class="fb-share-button" data-href="<?=site_base_url();?>/blog/view/<?=$value['slug']?>/<?=urlencode($args['title'])?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></h6>
+                                    </div>
+                                    <!-- Post Excerpt -->
+                                    <p class="page-view"><?php
                   $html = (new \Parsedown())->text($args['content']);
                   echo html_entity_decode($html);
-                    ?>
-                  </p>
-                </div>
-              </div>
+                    ?></p>
+                                </div>
+                            </div>             
             </div>
-            <div class="col-lg-4 sidebar-widgets">
-              <div class="widget-wrap">
-                <div class="single-sidebar-widget user-info-widget">
-                  <img src="img/blog/user-info.png" alt="">
-                  <a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['username'] ?>"><h4><?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?></h4></a>
+                                        <div class="col-12 col-md-4">
+                    <div class="zest-blog-sidebar">
+                        <div class="blog-post-archives mb-100">
+<a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['username'] ?>"><h4><?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?></h4></a>
                   <p>
                     Founder and CEO
                   </p>
                   <p>
                     <?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['bio'] ?>
                   </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>  
-      </section>
-      <!-- End post-content Area -->
-
-
+           </div>
+         </div>
+      </section>     
 <?= \Zest\View\View::view('footer'); ?>
