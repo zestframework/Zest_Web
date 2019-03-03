@@ -18,6 +18,14 @@
         </div>
     </div>
     <!-- ***** Breadcumb Area End ***** -->
+    <section class="blog-area section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <h3><?=$args['name']?></h3>
+                    <img src="<?=model('Avatar')->getAvaterUrlByUsername($args['username'])?>" class="img-circle" style="width: 250px; height: 200px">
+                    <p><?=$args['bio']?>.</p>
+                 </div> </div></div></section>                      
 
 
 <?= Zest\View\View::view('footer'); ?>

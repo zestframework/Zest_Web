@@ -20,9 +20,10 @@ class Components extends \Zest\Controller\Controller
         if ((new \Zest\Auth\User())->isLogin()) {
             if (input('submit')) {
                 $title = escape(input('title'));
+                $cat = escape(input('cat'));
                 $contents = escape(input('description'));
                 $com = new \App\Models\Components();
-                $result = $com->create($title,$contents);
+                $result = $com->create($title,$cat,$contents);
                 add_system_message("The component topic has been created", "success");
                 redirect(site_base_url().'/components/1');
             }
@@ -51,7 +52,7 @@ class Components extends \Zest\Controller\Controller
          } elseif(input('close')) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Components)->componentWhere('slug',$slug)[0]['id'];
-            $res = \App\Models\Components::componentUpdate(['isClosed' => 'yes'],$id);
+            $res = \App\Models\Components::communityUpdate(['isClosed' => 'yes'],$id);
             redirect(site_base_url().'/components/view/' .$slug);
          } elseif(input('open')) {
             $slug = $this->route_params['slug'];
@@ -61,11 +62,23 @@ class Components extends \Zest\Controller\Controller
          } elseif(input('file')) {
             $slug = $this->route_params['slug'];
             $id = (new \App\Models\Components)->componentWhere('slug',$slug)[0]['id'];
+            $prevFile = (new \App\Models\Components)->componentWhere('slug',$slug)[0]['componentFile'];
             $version = escape(input('version'));
             $file = (new \Zest\Files\Files())->fileUpload( $_FILES['file'],'../Storage/Data/','zip');
-            $res = (new \App\Models\Community)->communityUpdate(['componentFile' => $file,'componentVersion' => $version],$id);
+            if ($file['status'] === 'success') {
+                add_system_message("Component file uploaded successfully", 'success');
+                unlink(route()->storage_data.'/'.$prevFile);
+                $res = (new \App\Models\Community)->communityUpdate(['componentFile' => $file['code'],'componentVersion' => $version],$id);
+            } else {
+                add_system_message("Sorry, file not uploaded", 'error');
+            }
             redirect(site_base_url().'/components/view/' .$slug);
-         }else {
+         } elseif(input('delete') && (new \App\Models\Account)->isAdmin()) {
+            $slug = $this->route_params['slug'];
+            $id = (new \App\Models\Components)->componentWhere('slug',$slug)[0]['id'];
+            $res = \App\Models\Community::communityUpdate(['isDelete' => 'yes'],$id);
+            redirect(site_base_url().'/components/1');
+         } else {
              $slug = $this->route_params['slug'];
              if ((new \App\Models\Components)->isComponent($slug) !== 0) {
                 $pages = (new \App\Models\Components)->componentWhere('slug',$slug);

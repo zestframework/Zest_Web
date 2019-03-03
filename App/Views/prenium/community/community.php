@@ -3,20 +3,25 @@
 <meta name="author" content="Malik Umer Farooq">
 <meta name="description" content="This is free community about Zest Framework ask any question that is in your mind">
 <meta name="keywords" lang="en" content="community,zest,framework,php,php7,php7.2,Zest framework">
-       <section class="relative about-banner"> 
-        <div class="overlay overlay-bg"></div>
-        <div class="container">       
-          <div class="row d-flex align-items-center justify-content-center">
-            <div class="about-content col-lg-12">
-              <h1 class="text-white">
-                Community
-              </h1> 
-              <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span> <a href="javascript:void(0)"> Community</a></p>
-            </div>  
-          </div>
+        <!-- ***** Breadcumb Area Start ***** -->
+    <div class="zest-breadcumb-area" style="background-image: url(<?=site_base_url()?>/prenium/img/cover-small.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumbContent">
+                        <h2>Community</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?=site_base_url()?>">Home</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-            <section class="post-content-area">
+    </div>
+    <!-- ***** Breadcumb Area End ***** -->
+    <section class="blog-area section_padding_100">
         <div class="container">
           <div class="row">
             <div class="col-lg-8 posts-list">
@@ -45,9 +50,13 @@
               </div>    
               <hr>                        
     <?php  } ?>
+      <div class="zest-pagination-area">
+          <nav>
+             <?=pagination($tItems,$limit,$args['page'],$url);?>
+          </nav>
+      </div>  
 
   </div></div></div></section> 
 
-      <div class="blog-pagination justify-content-center d-flex"><?=pagination($tItems,$limit,$args['page'],$url);?></div>
 	
 <?= \Zest\View\View::view('footer'); ?>

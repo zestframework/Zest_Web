@@ -19,7 +19,7 @@ class Components extends Model
 	*/
 	protected static $db_tbl = 'community';
 	
-	public function create($title,$contents)
+	public function create($title,$cat,$contents)
 	{	
 		
 		$db = new Model;
@@ -29,6 +29,7 @@ class Components extends Model
 		$result = $db->db()->insert(['table'=>static::$db_tbl,'db_name'=>static::$db_name,'columns' => [
             'ownerId' => (new User())->loginUser()[0]['id'],
 			'title' => $title,
+            'category' => $cat,
 			'contents' => $contents,
 			'created' => $created,
 			'views' => 0,
@@ -72,21 +73,21 @@ class Components extends Model
     public function componentWhere($where,$value)
     {
     	$db = new Model;
-    	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ["{$where} ="."'{$value}'" . 'AND title IS NOT NULL AND isComponent IS NOT NULL'],'order_by'=> 'ID DESC']);
+    	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ["{$where} ="."'{$value}'" . 'AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;
 	}  	
     public function viewLimitedComponent($limit,$offset)
     {
     	$db = new Model;
-    	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NOT NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
+    	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;    	
     }    
     public function isComponent($slug)
     {
         $db = new Model;
-        $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NOT NULL"]]);
+        $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL"]]);
         $db->db()->close();
         return $result;
     }

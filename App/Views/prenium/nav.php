@@ -23,9 +23,11 @@ $user = new \Zest\Auth\User;
         <meta name="keywords" lang="en" content="<?=$args['keyword']?>">    
       <?php endif;?>  
       <?php  $args = \App\Models\Site::get(); ?>
+      <link rel="shortcut icon" type="image/png" href="<?= site_base_url(); ?>/prenium/image/icon.png"/>
       <meta name="google-site-verification" content="<?= $args[5]['value'] ?>" />
       <link href="<?=site_base_url()?>/prenium/style.css" rel="stylesheet">
       <link href="<?=site_base_url()?>/prenium/css/responsive.css" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
@@ -101,16 +103,16 @@ $user = new \Zest\Auth\User;
                                <?php } ?> 
                              </ul>
                                 <!-- Search Form Area Start -->
-                                <div class="search-form-area animated">
+                                <!--<div class="search-form-area animated">
                                     <form action="#" method="post">
                                         <input type="search" name="search" id="search" placeholder="Type keywords &amp; hit enter">
                                         <button type="submit" class="d-none"><img src="img/core-img/search-icon.png" alt="Search"></button>
                                     </form>
                                 </div>
-                                <!-- Search btn -->
+                                //Search btn 
                                 <div class="search-button">
                                     <a href="#" id="search-btn"><img src="<?=site_base_url()?>/prenium/img/search-icon.png" alt="Search"></a>
-                                </div>
+                                </div> -->
                             </div>
                         </nav>
                     </div>

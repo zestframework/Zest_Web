@@ -95,3 +95,21 @@ $(document).on('submit',"#profile-img",function(e){
     },
     }); 
 });
+
+function zestRealLinks() {
+    var links = document.getElementsByTagName('a');
+    for(var i = 0; i < links.length; i++) {
+        var thisLink = links[i];
+        var source = thisLink.getAttribute('href'); 
+         $(thisLink).click(function(e){
+          e.preventDefault();
+          var Address = $(this).attr('href');
+          history.pushState(null,null, Address);
+          $.get(Address,{},function(data){
+            console.log(data);
+            $("body").html(data);
+            $("html, body").animate({ scrollTop: 0 }, 100);
+          });
+        });
+    }
+}

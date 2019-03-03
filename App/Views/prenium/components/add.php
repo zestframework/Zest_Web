@@ -27,6 +27,16 @@
               <input type="text" class="form-control" id="title" name="title" placeholder="Title">
           </div>
           <div class="col-12">
+               <select class="form-control" name="cat" id='cat'>
+              <option value="general">General</option>
+              <option value="site_admin">Site Admin</option>
+              <option value="seo">SEO</option>
+              <option value="feature">Feature</option>
+              <option value="other">Other</option>
+              </select>
+              </div>
+
+          <div class="col-12">
               <textarea id="description" name='description' class="materialize-textarea"></textarea>   
           </div>
           <div class="col-12">

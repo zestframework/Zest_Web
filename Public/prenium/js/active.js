@@ -177,7 +177,7 @@
     });
 
     $window.on('load', function () {
-        $('#preloader').fadeOut(500, function () {
+        $('#preloader').fadeOut('slow', function () {
             $(this).remove();
         });
     });

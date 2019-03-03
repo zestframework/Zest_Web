@@ -3,30 +3,41 @@
 <title><?=$args['title']?></title>
 <meta name="author" content="<?=(new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['name']?>">
 <meta name="keywords" lang="en" content="community,forum,free , questions , parts , ,<?= $args['title'] ?>,zest,framework,php,php7,php7.2,Zest framework">
-
-      <section class="relative about-banner"> 
-        <div class="overlay overlay-bg"></div>
-        <div class="container">       
-          <div class="row d-flex align-items-center justify-content-center">
-            <div class="about-content col-lg-12">
-              <h1 class="text-white">
-                <?=$args['title']?>   
-              </h1> 
-              <p class="text-white link-nav"><a href="<?=site_base_url()?>">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="<?=site_base_url()?>/community/1">Community </a> <span class="lnr lnr-arrow-right"></span> <a href="javascript:void(0)"> <?=$args['title']?></a></p>
-            </div>  
-          </div>
+<style type="text/css">
+	body {
+		background-color: #f9f9ff!important;
+	}
+</style>
+        <!-- ***** Breadcumb Area Start ***** -->
+    <div class="zest-breadcumb-area" style="background-image: url(<?=site_base_url()?>/prenium/img/cover-small.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumbContent">
+                        <h2><?=$args['title']?></h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?=site_base_url()?>">Home</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-
+    </div>
+    <br>
+    <!-- ***** Breadcumb Area End ***** -->
+<div class="container">
 <div class="card">
 	<div class="card-body">
 	<img class="" src='<?=\App\Models\Avatar::getAvaterUrlByUsername((new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['username']);?>' id='community-user-image'>
   	<div id='community-topic'>
 	  	<h5 id=''><b><a href="<?=site_base_url()?>/@<?=(new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['username']?>" ><?=(new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['name']?></a></b>	</h5>
+	  		<i>Posted in - <?=$args['category']?></i>
 		<h5 id='cummunity-time'><i><?=$args['created']?></i></h5>
 		<?php if ((new \App\Models\Account)->isAdmin()) { ?>
 	  <div class="dropdown">
-    <span class="lnr lnr-arrow-down" style='cursor: pointer;' data-toggle="dropdown"></span>
+  <button class="btn zest-btn pull-right" type="button" data-toggle="dropdown">Actions</button>
     <ul class="dropdown-menu" style="list-style-type: none!important;color:black!important; padding: 6px!important;">
                   	<?php if ((new \App\Models\Community)->isClose($args['slug'])) { ?>
                       <li><a class="" id='community-top-open-topic' href='javascript:void(0)' data-id="<?=site_base_url()?>/community/view/<?=$args['slug']?>">Open</a></li>
@@ -46,7 +57,7 @@
 <span class="mt-10"></span>  
 </div> 
 
-<div class='sample-text-area'>
+<div class='blog-area section_padding_100'>
 	<div class="container">
 		<h2 class="mb-10">Replies</h2>
 		 <?php
@@ -71,7 +82,7 @@
 		<div class="card-body">
 			<form action="<?=site_base_url()?>/community/view/<?=$args['slug']?>" method="post">
 				<textarea id="description" name='description' class="materialize-textarea"></textarea>
-				<input type='submit' name='submit' class='genric-btn primary radius' value='submit' style='color:white!important;' />
+				<input type='submit' name='submit' class='btn zest-btn mt-50 pull-right' value='Reply'/>
 			</form>
 		</div>	
 	</div>
@@ -79,7 +90,9 @@
 		<div class='alert alert-info' style='color:black'>You should login in order to reply in this topic</div>		
 	<?php } ?>
 	</div>		
+</div>	
 </div>
+
 <?= \Zest\View\View::view('footer'); ?>
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script>

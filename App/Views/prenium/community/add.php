@@ -27,9 +27,7 @@
               <input type="text" class="form-control" id="title" name="title" placeholder="Title">
           </div>
           <div class="col-12">
-            <div class="form-group">
-              <label for="cat">Category:</label>
-              <select class="form-control" id="cat">
+               <select class="form-control" name="cat" id='cat'>
               <option value="general">General</option>
               <option value="support">Support</option>
               <option value="help">Help</option>
@@ -39,8 +37,7 @@
               <option value="request">Request</option>
               <option value="development">Development</option>
               </select>
-            </div>
-          </div>
+              </div>
           <div class="col-12">
               <textarea id="description" name='description' class="materialize-textarea"></textarea>   
           </div>
@@ -48,8 +45,8 @@
              <input type="submit" name="submit" class="zest-btn mt-50 pull-right" value="Create">
           </div>
         </div>
-      </div>
-      </section>   
+      </div></form>
+    </form></section>
 <?= \Zest\View\View::view('footer'); ?>
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script>

@@ -75,6 +75,18 @@ class Community extends Model
         $db->db()->close();
         return $result;
     }   
+
+    /**
+     * @bug? not working.
+    */
+    public function viewLimitedCommunityByUser($limit,$offset, $ownerId)
+    {
+        $db = new Model;
+        $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres ' => ["ownerId = $ownerId".' title IS NOT NULL AND isComponent IS NULL AND isDelete IS NULL '],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC ', 'debug' => 'on']);
+        $db->db()->close();
+        return $result;     
+    }    
+
     public function isClose($slug)
     {
         $result = $this->communityWhere('slug',$slug);
@@ -98,6 +110,7 @@ class Community extends Model
         $db->db()->close();
         return $result;     
     }    
+
     public function isCommunity($slug)
     {
         $db = new Model;
