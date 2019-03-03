@@ -30,7 +30,7 @@ $router->get('admin/users/view',"Admin@users",'AdminMiddleware');
 $router->add('admin/view/user/{id:[0-9]+}',"Admin@userViewId","GET|POST|HEAD",'AdminMiddleware');
 $router->get('admin/generate/sitemap',"Admin@generateSiteMap",'AdminMiddleware');
 $router->add('admin/send/mail',"Admin@sendMails","GET|POST|HEAD",'AdminMiddleware');
-
+$router->add('admin/announcement',"Admin@announcement","GET|POST|HEAD",'AdminMiddleware');
 //blogs 
 $router->get('blogs/{page:[0-9]+}',"Blogs@blog");
 $router->get('blog/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+.-]+}',"Blogs@view");

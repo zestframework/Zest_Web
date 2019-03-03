@@ -127,6 +127,17 @@
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">announcement</i>
+                            <span>Announcement</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?= site_base_url(); ?>/admin/announcement">Announcement</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">assignment</i>
                             <span>Documents</span>
                         </a>

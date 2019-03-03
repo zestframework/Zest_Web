@@ -18,6 +18,25 @@ class Admin extends \Zest\Controller\Controller
         view('admin/users/view');
     }
 
+    public function announcement()
+    {
+        if (input('submit')) {
+            $title = input('title');
+            $type  = input('type');
+            $detail = input('detail');
+            model('Announcement')->add($title,$type,$detail);
+            redirect(site_base_url().'/admin/announcement');
+        } elseif (input('update')) {
+            $title = input('title');
+            $type  = input('type');
+            $detail = input('detail');
+            model('Announcement')->update($title,$type,$detail);
+            redirect(site_base_url().'/admin/announcement');
+        } else {
+            $args['arg'] = model('Announcement')->get()[0];
+            view('admin/announcement', $args);
+        }
+    }
     public function userViewId()
     {
         if (input('edit') || input('ty') || input('status')) {

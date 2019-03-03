@@ -16,7 +16,6 @@ $user = new \Zest\Auth\User;
       <?php if (isset($args['title'])) : ?>
         <title><?=$args['title']?></title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta property="site_name" content="Zest Framework" />
         <meta name="author" content="<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?>">
         <meta name="description" lang="en" content="<?=$args['scontent']?>">
@@ -27,7 +26,7 @@ $user = new \Zest\Auth\User;
       <meta name="google-site-verification" content="<?= $args[5]['value'] ?>" />
       <link href="<?=site_base_url()?>/prenium/style.css" rel="stylesheet">
       <link href="<?=site_base_url()?>/prenium/css/responsive.css" rel="stylesheet">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
@@ -120,6 +119,10 @@ $user = new \Zest\Auth\User;
             </div>
         </div>
        <?php 
+          $announcement = model('Announcement')->get()[0];
+          if (!empty($announcement['detail'])) {
+            echo "<span class='alert alert-".$announcement['type']."'>".$announcement['detail']."</span><br>";
+         }
           $msg = view_system_message();
           if (!empty($msg)) :
              echo $msg;
