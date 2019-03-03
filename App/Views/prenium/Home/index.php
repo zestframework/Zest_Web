@@ -3,6 +3,11 @@
 <neta name="description" content="<?= $args[3]['value'] ?>"/>
 <neta name="keyword" content="<?= $args[4]['value'] ?>"/>
 <title>Zest Framework</title>
+<style type="text/css">
+  .card {
+    padding: 25px;
+  }
+</style>
         <!-- ***** Breadcumb Area Start ***** -->
     <div class="zest-breadcumb-area" style="background-image: url(<?=site_base_url()?>/prenium/img/cover-small.jpg);">
         <div class="container h-100">
