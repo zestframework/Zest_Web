@@ -50,7 +50,7 @@ $user = new \Zest\Auth\User;
                     <div class="menu_area h-100">
                         <nav class="navbar h-100 navbar-expand-lg align-items-center">
                             <!-- Logo -->
-                            <a class="navbar-brand" href="<?=site_base_url()?>"><img src="<?=site_base_url()?>/prenium/img/icon.png" alt="logo"></a>
+                            <a class="navbar-brand" href="<?=site_base_url()?>"><img src="<?=site_base_url()?>/prenium/img/nav-icon.png" alt="logo"></a>
 
                             <!-- Menu Area -->
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#zest-navbar" aria-controls="zest-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
