@@ -7,7 +7,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-100">
                             <h5>Message from us.</h5>
-                            <blockquote class="text-white">The message of unity and equality and humanity for all of us. Instead of following racism we should follow human rights.</blockquote>
+                            <blockquote class="text-white">The message of unitym equality and humanity for all of us. Instead of following racism we should follow human rights.</blockquote>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3">
