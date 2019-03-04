@@ -17,10 +17,10 @@
 		
 		<h2>Zest Framework System information</h1>
 		<h3>General</h3>
-		<table class='table table-responsive'>
+		<table class='table table-strip'>
 			<tr>
 				<th>Operating System</th>
-				<td><?= (new \Zest\Common\OperatingSystem())::get() ?></td>
+				<td><?= PHP_OS_FAMILY ?></td>
 			</tr>
 			<tr>
 				<th>PHP Version</th>
@@ -28,11 +28,11 @@
 			</tr>			
 			<tr>
 				<th>Server</th>
-				<td><?= (new \Zest\Common\Server())::determineServer() ?></td>
+				<td><?= $_SERVER['SERVER_SOFTWARE'] ?></td>
 			</tr>	
 			<tr>
 				<th>Error Reporting</th>
-				<?php if ((new Config\Config())::SHOW_ERRORS) {?>	
+				<?php if (__config()->config->show_errors) {?>	
 				<td>On</td>
 				<?php } else { ?>
 				<td>Off</td>
@@ -40,7 +40,7 @@
 			</tr>
 			<tr>
 				<th>Router Cache</th>
-				<?php if ((new Config\Config())::ROUTER_CACHE) {?>	
+				<?php if (__config()->config->router_cache) {?>	
 				<td>On</td>
 				<?php } else { ?>
 				<td>Off</td>
@@ -65,7 +65,15 @@
 			<tr>
 				<th>Framework Version (core)</th>
 				<td><?= (new \Zest\Common\Version())::VERSION ?></td>
-			</tr>																				
+			</tr>										
+			<tr>
+				<th>Base Url</th>
+				<td><?= site_base_url() ?></td>
+			</tr>										
+			<tr>
+				<th>Time Zone</th>
+				<td><?= date_default_timezone_get() ?></td>
+			</tr>				
 		</table>
 
 	</div>
