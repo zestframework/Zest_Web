@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2019 at 05:58 AM
+-- Generation Time: Mar 04, 2019 at 05:19 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.3.0
 
@@ -20,6 +20,16 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `zestweb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `announcement`
+--
+
+--
+-- Dumping data for table `announcement`
 --
 
 -- --------------------------------------------------------
@@ -45,6 +55,9 @@ CREATE TABLE `community` (
   `extra` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `community`
+--
 -- --------------------------------------------------------
 
 --
@@ -68,7 +81,9 @@ CREATE TABLE `pages` (
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+--
+-- Dumping data for table `pages`
+--
 
 --
 -- Table structure for table `sitesetting`
@@ -86,11 +101,11 @@ CREATE TABLE `sitesetting` (
 
 INSERT INTO `sitesetting` (`id`, `name`, `value`) VALUES
 (1, 'status', 'online'),
-(2, 'name', 'Zest Framework'),
-(3, 'email', 'noreply@gmail.com'),
-(4, 'description', 'This is a website'),
-(5, 'keywords', 'website,web'),
-(6, 'gmeta', 'fsdfgzs4gfs54zg5s4g5s4ggszdga74g5ad6g4');
+(2, 'name', ''),
+(3, 'email', ''),
+(4, 'description', ''),
+(5, 'keywords', ''),
+(6, 'gmeta', '');
 
 -- --------------------------------------------------------
 
@@ -110,6 +125,7 @@ CREATE TABLE `users` (
   `ip` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL,
   `ban` varchar(255) DEFAULT 'NULL',
+  `status` varchar(255) NOT NULL DEFAULT 'running',
   `close` varchar(255) DEFAULT 'NULL',
   `created` int(255) NOT NULL,
   `lastOnline` int(255) NOT NULL,
@@ -120,9 +136,6 @@ CREATE TABLE `users` (
 --
 -- Dumping data for table `users`
 --
-
-INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `salts`, `token`, `resetToken`, `ip`, `role`, `ban`, `close`, `created`, `lastOnline`, `bio`, `pImg`) VALUES
-(39, 'Malik Umer Farooq', 'testtest', 'testtest@gmail.com', '$2y$10$ueF1/f.BaWiQhaJmF0.kD.FfP/IugpTXt28b5JnxC03PFD.gJmoLC', 'CyFYoPLTo0Zi', 'NULL', NULL, '::1', 'admin', 'NULL', 'NULL', 0, 0, NULL, 'Xaz7RzMmRu.png');
 
 --
 -- Indexes for dumped tables
@@ -160,13 +173,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `community`
 --
 ALTER TABLE `community`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `sitesetting`
@@ -178,7 +191,7 @@ ALTER TABLE `sitesetting`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
