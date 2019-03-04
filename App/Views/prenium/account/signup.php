@@ -32,7 +32,7 @@
               <input type="text" class="form-control" id="username-signup" placeholder="Username">
           </div>
           <div class="col-12">
-              <input type="email" class="form-control" id="email" placeholder="Email">
+              <input type="email" class="form-control" id="email" name='email' placeholder="Email">
           </div>          
           <div class="col-12">
               <input type="password" class="form-control" id="password-signup" placeholder="Password">
