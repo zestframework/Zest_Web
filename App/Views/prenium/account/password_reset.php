@@ -27,7 +27,7 @@
       <form action="<?=site_base_url()?>/account/reset-password/process" method='post' class="contact-form-area container">
         <div class="row">
           <div class="col-12">
-              <input type="email" class="form-control" id="email" placeholder="Email">
+              <input type="email" class="form-control" id="email" name='email' placeholder="Email">
           </div>
           <div class="col-12">
             <input type="submit" name="submit" class="btn zest-btn mt-50 pull-right" value="Reset password" >
