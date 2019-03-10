@@ -48,56 +48,56 @@ class Pages extends Model
 		$db->db()->close();
 		return $result;		
 	}
-    public function pageWhere($where,$value)
+    public static function pageWhere($where,$value)
     {
     	$db = new Model;
     	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ["{$where} ="."'{$value}'"],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;
     }  	
-    public function viewLimitedPagesBlog($limit,$offset)
+    public static function viewLimitedPagesBlog($limit,$offset)
     {
     	$db = new Model;
     	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'limit' => ['start' => $limit , 'end' => $offset],'wheres'=> ['type ='."'blog'"],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;    	
     } 
-    public function viewLimitedPagesfaq($limit,$offset)
+    public static function viewLimitedPagesfaq($limit,$offset)
     {
     	$db = new Model;
     	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'limit' => ['start' => $limit , 'end' => $offset],'wheres'=> ['type ='."'faq'"],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;    	
     }       
-    public function isBlog($slug)
+    public static function isBlog($slug)
     {
         $db = new Model;
         $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND type = 'blog'"]]);
         $db->db()->close();
         return $result;
     }
-    public function isFaq($slug)
+    public static function isFaq($slug)
     {
         $db = new Model;
         $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND type = 'faq'"]]);
         $db->db()->close();
         return $result;
     }    
-    public function viewLimitedPagesNews($limit,$offset)
+    public static function viewLimitedPagesNews($limit,$offset)
     {
         $db = new Model;
         $result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'limit' => ['start' => $limit , 'end' => $offset],'wheres'=> ['type ='."'news'"],'order_by'=> 'ID DESC']);
         $db->db()->close();
         return $result;     
     }       
-    public function isNews($slug)
+    public static function isNews($slug)
     {
         $db = new Model;
         $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND type = 'news'"]]);
         $db->db()->close();
         return $result;
     }      
-	public function pageUpdate($params,$id)
+	public static function pageUpdate($params,$id)
 	{
     	$db = new Model;
     	$update = $db->db()->update(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'columns'=>$params,'wheres'=>['id ='.$id]]);
