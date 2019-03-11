@@ -1,7 +1,7 @@
 <?= \Zest\View\View::view('nav'); ?>
 <meta name="author" content="Malik umer Farooq">
-<neta name="description" content="<?= $args[3]['value'] ?>"/>
-<neta name="keyword" content="<?= $args[4]['value'] ?>"/>
+<meta name="description" content="<?= $args[3]['value'] ?>"/>
+<meta name="keyword" content="<?= $args[4]['value'] ?>"/>
 <title>Zest Framework</title>
 <style type="text/css">
   .card {
