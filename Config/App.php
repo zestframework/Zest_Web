@@ -179,4 +179,8 @@ return [
             'media' => ['mp4', 'mp3', 'wav', '3gp'],
         ],
     ],    
+    
+    'class_aliases' => [
+
+    ],
 ];
