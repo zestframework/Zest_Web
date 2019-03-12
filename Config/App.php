@@ -18,7 +18,7 @@ return [
         'ROUTER_CACHE'            => false,
         'ROUTER_CACHE_REGENERATE' => 3600,
         'MAINTENANCE'             => false,
-        'timeZone'                => 'UTC',
+        'time_zone'                => 'UTC',
     ],
 
     /* Encryption */
