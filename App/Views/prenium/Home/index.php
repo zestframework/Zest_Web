@@ -1,7 +1,5 @@
 <?= \Zest\View\View::view('nav'); ?>
 <meta name="author" content="Malik umer Farooq">
-<meta name="description" content="<?= $args[3]['value'] ?>"/>
-<meta name="keyword" content="<?= $args[4]['value'] ?>"/>
 <title>Zest Framework</title>
 <style type="text/css">
   .card {
@@ -63,7 +61,7 @@
                             <h5>Latest Blogs</h5>
 
                             <?php          
-                      $pages = \App\Models\Pages::viewLimitedPagesBlog(7,0);
+                      $pages = model('Pages')->viewLimitedPagesBlog(7,0);
                     foreach ($pages as $page => $value) { ?>
                             <div class="single-latest-blog-post d-flex">
                                 <div class="latest-blog-post-thumb">
@@ -94,7 +92,7 @@
                             <h5>Latest Blogs</h5>
 
                             <?php          
-             $pages = \App\Models\Pages::viewLimitedPagesNews(2,0);
+             $pages = model('Pages')->viewLimitedPagesNews(2,0);
             foreach ($pages as $page => $value) { ?>
                             <div class="single-latest-blog-post d-flex">
                                 <div class="latest-blog-post-thumb">

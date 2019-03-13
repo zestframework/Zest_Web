@@ -46,6 +46,7 @@ $router->get('news/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9\+\.-]+}',"News@vie
 //Site
 $router->get('site/terms',"Site@terms");
 $router->get('site/privacy',"Site@privacy");
+$router->get('site/contact',"Site@contact");
 
 //Contribute
 $router->get('contribute/index',"Contribute@index");

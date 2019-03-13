@@ -16,8 +16,8 @@ class Faq extends \Zest\Controller\Controller
     public function view()
     {
          $slug = $this->route_params['slug'];
-         if (\App\Models\Pages::isFaq($slug) !== 0) {
-            $pages = \App\Models\Pages::pageWhere('slug',$slug);
+         if (model('Pages')->isFaq($slug) !== 0) {
+            $pages = model('Pages')->pageWhere('slug',$slug);
             View::view('faqs/view',$pages[0],false);
          } else {
             View::View("errors/404");

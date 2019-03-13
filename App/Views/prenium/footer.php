@@ -16,6 +16,7 @@
                             <ul>
                                 <li><a href="<?=site_base_url()?>/site/terms">Terms</a></li>
                                 <li><a href="<?=site_base_url()?>/site/privacy">Privacy</a></li>
+                                <li><a href="<?=site_base_url()?>/site/contact">Contact Us</a></li>
                                 <li><a href="<?=site_base_url()?>/faqs/1">Faqs</a></li>
                                 <li><a href="<?=site_base_url()?>/contribute/index">Contribution</a></li>
                                 <li><a href="<?=site_base_url()?>/contribute/donate">Donate</a></li>

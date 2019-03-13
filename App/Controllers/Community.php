@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controllers;
-use Zest\View\View;
 
 class Community extends \Zest\Controller\Controller
 {
@@ -9,9 +8,10 @@ class Community extends \Zest\Controller\Controller
     public function add()
     {
         if ((new \Zest\Auth\User())->isLogin()) {
-            View::view('community/add');
+            view('community/add');
         } else {
-            View::view('errors/404');
+            add_system_message("Sorry, you should login to add topic in discussion", 'error');
+            redirect(site_base_url());
         }
     }
     
@@ -22,8 +22,7 @@ class Community extends \Zest\Controller\Controller
 				$title = escape(input('title'));
 				$cat = escape(input('cat'));
 				$contents = escape(input('description'));
-				$com = new \App\Models\Community();
-				$result = $com->create($title,$cat,$contents);
+				$result = model('Community')->create($title,$cat,$contents);
                 add_system_message("The topic has been created", "success");
 				redirect(site_base_url().'/community/1');
 			}
@@ -36,16 +35,16 @@ class Community extends \Zest\Controller\Controller
     {
          $page = $this->route_params['page'];
          $args = ['page' => $page];
-         View::view('community/community',$args);
+         view('community/community',$args);
     }
     public function view()
     {
          if (input('submit')) {
             if ((new \Zest\Auth\User())->isLogin()) {
                 $slug = $this->route_params['slug'];
-    			if (!(new \App\Models\Community)->isClose($slug)) {
+    			if (!model('Community')->isClose($slug)) {
     				$contents = escape(input('description'));
-    				$res = (new \App\Models\Community)->reply($slug,$contents);
+    				$res = model('Community')->reply($slug,$contents);
                     add_system_message("You reply, had been added", 'success');
     				redirect(site_base_url().'/community/view/' .$slug);
     			} else {
@@ -57,26 +56,26 @@ class Community extends \Zest\Controller\Controller
              }   
          } elseif(input('close') && (new \App\Models\Account)->isAdmin()) {
             $slug = $this->route_params['slug'];
-            $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
-            $res = \App\Models\Community::communityUpdate(['isClosed' => 'yes'],$id);
+            $id = model('Community')->communityWhere('slug',$slug)[0]['id'];
+            $res = model('Community')->communityUpdate(['isClosed' => 'yes'],$id);
             redirect(site_base_url().'/community/view/' .$slug);
          } elseif(input('open') && (new \App\Models\Account)->isAdmin()) {
             $slug = $this->route_params['slug'];
-            $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
-            $res = \App\Models\Community::communityUpdate(['isClosed' => 'no'],$id);
+            $id = model('Community')->communityWhere('slug',$slug)[0]['id'];
+            $res = model('Community')->communityUpdate(['isClosed' => 'no'],$id);
             redirect(site_base_url().'/community/view/' .$slug);
          } elseif(input('delete') && (new \App\Models\Account)->isAdmin()) {
             $slug = $this->route_params['slug'];
-            $id = (new \App\Models\Community)->communityWhere('slug',$slug)[0]['id'];
-            $res = \App\Models\Community::communityUpdate(['isDelete' => 'yes'],$id);
+            $id = model('Community')->communityWhere('slug',$slug)[0]['id'];
+            $res = model('Community')->communityUpdate(['isDelete' => 'yes'],$id);
             redirect(site_base_url().'/community/1');
          } else {
              $slug = $this->route_params['slug'];
-             if (( new \App\Models\Community)->isCommunity($slug) !== 0) {
-                $pages = (new \App\Models\Community)->communityWhere('slug',$slug);
-                View::view('/community/view',$pages[0],false);
+             if (model('Community')->isCommunity($slug) !== 0) {
+                $pages = model('Community')->communityWhere('slug',$slug);
+                view('/community/view',$pages[0],false);
              } else {
-                View::View("errors/404");
+                view("errors/404");
              }
          }
     }     

@@ -16,13 +16,14 @@ class Avatar extends Model
 	*/
 	protected static $db_tbl = 'users';
 	
-	public function getAvaterUrlByUsername($username) 
+	public static function getAvaterUrlByUsername($username) 
 	{
 		$user = new \Zest\Auth\User();
 		if ($user->isUsername($username)) {
 			$pImg = $user->getByWhere('username',$username)[0]['pImg'];
 			if ($pImg !== 'null') {
-				$avater = site_base_url() . "/read/image/". $pImg;
+				//$avater = site_base_url() . "/read/image/". $pImg;
+				$avater = site_base_url() . "/image/user.jpg";
 			} else {
 				$avater = site_base_url() . "/image/user.jpg";
 			}

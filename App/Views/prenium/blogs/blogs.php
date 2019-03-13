@@ -35,7 +35,7 @@
           <div class="row">
             <div class="col-lg-8 zest-blog-posts">
         <?php
-          $tItems = count(\App\Models\Pages::pageWhere('type','blog'));
+          $tItems = count(model('Pages')->pageWhere('type','blog'));
           $page = $args['page'];
           $limit = 6;
           $url = "/blogs/";
@@ -44,7 +44,7 @@
           }else{
             $start = ($page - 1) * $limit;
           }
-          $pages = \App\Models\Pages::viewLimitedPagesBlog($limit,$start);
+          $pages = model('Pages')->viewLimitedPagesBlog($limit,$start);
             foreach ($pages as $page => $value) { ?>
                             <div class="col-12">
                                 <div class="single-blog wow fadeInUp" data-wow-delay="0.1s">

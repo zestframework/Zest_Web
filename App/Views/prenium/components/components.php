@@ -27,7 +27,7 @@
             <div class="col-lg-8 posts-list">
 
         <?php
-          $tItems = count(\App\Models\Components::componentAll());
+          $tItems = count(model('Components')->componentAll());
           $page = $args['page'];
           $limit = 10;
           $url = "/components/";
@@ -36,7 +36,7 @@
           }else{
             $start = ($page - 1) * $limit;
           }
-          $pages = \App\Models\Components::viewLimitedComponent($limit,$start);
+          $pages = model('Components')->viewLimitedComponent($limit,$start);
             foreach ($pages as $page => $value) { ?>
           <div class="single-post row mt-10">
                 <div class="col-lg-3 col-md-3 meta-details">

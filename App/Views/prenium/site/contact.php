@@ -1,7 +1,7 @@
 <?= \Zest\View\View::view('nav'); ?>
-<title>Privacy</title>
+<title>Contact Us</title>
 <meta name="author" content="Malik umer Farooq">
-<meta name="description" lang="en" content="The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.">
+<meta name="description" lang="en" content="Contact us at any time to know about our project or other type of help and support.">
 <meta name="keywords" lang="en" content="Zest,framework, Zest Framework , privacy , free, source, GDPR , gdpr">
         <!-- ***** Breadcumb Area Start ***** -->
     <div class="zest-breadcumb-area" style="background-image: url(<?=site_base_url()?>/prenium/img/cover-small.jpg);">
@@ -27,7 +27,7 @@
 <style type="text/css" media="screen, projection">
 	@import url(https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.css); 
 </style> 
-<iframe title="Feedback Form" class="freshwidget-embedded-form" id="freshwidget-embedded-form" src="https://lablnet01.freshdesk.com/widgets/feedback_widget/new?&widgetType=embedded&formTitle=Contact+Us&submitTitle=Send&submitThanks=Thanks+for+messaging+us.+We'll+get+back+to+you+as+soon+as+we+can.&screenshot=No&searchArea=no" scrolling="no" height="800px" width="100%" frameborder="0" >
+<iframe title="Feedback Form" class="freshwidget-embedded-form" id="freshwidget-embedded-form" src="https://lablnet01.freshdesk.com/widgets/feedback_widget/new?&widgetType=embedded&formTitle=Contact+Us&submitTitle=Send&submitThanks=Thanks+for+messaging+us.+We'll+get+back+to+you+as+soon+as+we+can.&screenshot=yes&searchArea=no" scrolling="no" height="800px" width="100%" frameborder="0" >
 </iframe>
 	</div>
 </section>

@@ -10,14 +10,6 @@ use Zest\Auth\User;
 
 class Account extends Model
 {	
-	/* 
-	* Store database name
-	*/
-	protected static $db_name = Database::DB_NAME;
-	/* 
-	* Store database table name
-	*/
-	protected static $db_tbl = '';
 
 	public function isSignup()
 	{

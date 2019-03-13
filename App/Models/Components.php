@@ -3,30 +3,25 @@
 namespace App\Models;
 
 use \Zest\Database\Db as Model;
-use Config\Database;
 use Zest\Auth\User;
-use Config\Auth;
-use Config\Email;
-use Zest\Mail\Mail;
+
 class Components extends Model
 {	
-	/* 
-	* Store database name
-	*/
-	protected static $db_name = Database::DB_NAME;
-	/* 
-	* Store database table name
-	*/
-	protected static $db_tbl = 'community';
-	
-	public function create($title,$cat,$contents)
+    protected $db_name;
+    protected $db_tbl = 'community';
+    
+    public function __construct()
+    {
+        $this->db_name = __config()->database->db_name;
+    }
+    public function create($title,$cat,$contents)
 	{	
 		
 		$db = new Model;
         $created = date("Y-m-d H:i:s");
 		$slug = \Zest\Site\Site::salts(7);
 		$token = \Zest\Site\Site::salts(15);
-		$result = $db->db()->insert(['table'=>static::$db_tbl,'db_name'=>static::$db_name,'columns' => [
+		$result = $db->db()->insert(['table'=>$this->db_tbl,'db_name'=>$this->db_name,'columns' => [
             'ownerId' => (new User())->loginUser()[0]['id'],
 			'title' => $title,
             'category' => $cat,
@@ -50,7 +45,7 @@ class Components extends Model
         $ownerId = $this->componentWhere('slug',$slug)[0]['ownerId'];
         $created = date("Y-m-d H:i:s");
         $token = \Zest\Site\Site::salts(15);
-        $result = $db->db()->insert(['table'=>static::$db_tbl,'db_name'=>static::$db_name,'columns' => [
+        $result = $db->db()->insert(['table'=>$this->db_tbl,'db_name'=>$this->db_name,'columns' => [
             'ownerId' => (new User())->loginUser()[0]['id'],
             'contents' => $contents,
             'created' => $created,
@@ -66,28 +61,28 @@ class Components extends Model
 	public static function componentAll()
 	{
     	$db = new Model;
-		$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'order_by'=> 'ID DESC','wheres'=>['title IS NOT NULL AND isComponent IS NOT NULL']]);
+		$result = $db->db()->select(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'order_by'=> 'ID DESC','wheres'=>['title IS NOT NULL AND isComponent IS NOT NULL']]);
 		$db->db()->close();
 		return $result;		
 	}
     public static function componentWhere($where,$value)
     {
     	$db = new Model;
-    	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ["{$where} ="."'{$value}'" . 'AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'order_by'=> 'ID DESC']);
+    	$result = $db->db()->select(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'wheres' => ["{$where} ="."'{$value}'" . 'AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;
 	}  	
     public static function viewLimitedComponent($limit,$offset)
     {
     	$db = new Model;
-    	$result = $db->db()->select(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
+    	$result = $db->db()->select(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;    	
     }    
     public static function isComponent($slug)
     {
         $db = new Model;
-        $result = $db->db()->count(['db_name'=>static::$db_name,'table'=>static::$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL"]]);
+        $result = $db->db()->count(['db_name'=>$this->db_name,'table'=>$this->$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL"]]);
         $db->db()->close();
         return $result;
     }
