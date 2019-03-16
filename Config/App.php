@@ -3,23 +3,36 @@
 /* Zest Frameowrk config file */
 return [
 
+    //Additional 
+    'site' => [
+        'g_meta' => '',
+    ],
+
+    //Mailer
+    'mailer' => [
+        'username' => '',
+        'password' => '',
+        'port'     => 000,
+        'host'     => '',
+    ],
     /*
      * Basic configuration.
      */
    'Config' => [
-        'APP_NAME'                => 'Zest Framework',
-        'APP_VERSION'             => '3.0.0',
-        'SHOW_ERRORS'             => false,
-        'LANGUAGE'                => 'en',
-        'DATA_DIR'                => '../Storage/Data/',
-        'CACHE_DIR'               => '../Storage/Cache/',
-        'SESSION_PATH'            => '../Storage/Session/',
-        'THEME_PATH'              => '../App/Views/prenium/',
-        'ROUTER_CACHE'            => false,
-        'ROUTER_CACHE_REGENERATE' => 3600,
+        'app_name'                => 'Zest Framework',
+        'app_version'             => '3.0.0',
+        'SHOW_ERRORS'             => true,
+        'language'                => 'en',
+        'data_dir'                => '../Storage/Data/',
+        'cache_dir'               => '../Storage/Cache/',
+        'session_path'            => '../Storage/Session/',
+        'theme_path'              => '../App/Views/prenium/',
+        'router_cache'            => false,
+        'router_cache_regenerate' => 3600,
         'MAINTENANCE'             => false,
         'time_zone'                => 'UTC',
     ],
+
 
     /* Encryption */
     'encryption' => [
@@ -179,7 +192,7 @@ return [
             'media' => ['mp4', 'mp3', 'wav', '3gp'],
         ],
     ],    
-    
+
     'class_aliases' => [
 
     ],

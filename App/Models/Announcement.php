@@ -7,18 +7,12 @@ use Config\Database;
 
 class Announcement extends Model
 {   
-    /* 
-    * Store database name
-    */
-    protected $db_name = Database::DB_NAME;
-    /* 
-    * Store database table name
-    */
+    protected $db_name;
     protected $db_tbl = 'announcement';
     
     public function __construct()
     {
-        $this->createTable();
+        $this->db_name = __config()->database->db_name;
     }
     public function createTable()
     {

@@ -13,11 +13,11 @@ class Mailer
 		$mail   = new PHPMailer();
 		$mail->isSMTP();
 	    //$mail->SMTPDebug = 2;
-		$mail->Host = PMailer::MAILER_HOST;
-		$mail->Port = PMailer::MAILER_PORT;
+		$mail->Host = __config()->mailer->host;
+		$mail->Port = __config()->mailer->port;
 		$mail->SMTPAuth = true;
-		$mail->Username = PMailer::MAILER_USERNAME;
-		$mail->Password = PMailer::MAILER_PASSWORD;  
+		$mail->Username = __config()->mailer->username;
+		$mail->Password = __config()->mailer->password;  
 		$body = $message;    
 		$siteName = __config()->config->APP_NAME;
 		$siteEmail = __config()->email->site_email;

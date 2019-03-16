@@ -10,12 +10,19 @@ class Admin extends \Zest\Controller\Controller
   
     public function index()
     {
-        View::view('admin/admin');
+        view('admin/admin');
     }
 
     public function users()
     {
         view('admin/users/view');
+    }
+
+    public function imageUploader()
+    {
+        $file = site_base_url() . "/image/user.jpg";
+        echo json_encode(array('location' => $file));
+
     }
 
     public function announcement()
@@ -67,31 +74,6 @@ class Admin extends \Zest\Controller\Controller
             $users = $user->getByWhere('id',$id);
             view("admin/users/viewId",$users[0],false);
         }
-    }   
-    public function siteSetting()
-    {
-        if (input('status') || input('site')) {
-            if (input('status')) {
-                $status = input('type');
-                \App\Models\Site::siteUpdate($status,1);
-                header("Location:".site_base_url()."/admin/site/setting");
-            }
-            if (input('site')) {
-                $name = escape(input('name'));
-                $email = escape(input('email'));
-                $description = escape(input('description'));
-                $keyword = escape(input('keyword'));
-                $gmeta = escape(input('gmeta'));
-                \App\Models\Site::siteUpdate($name,2);
-                \App\Models\Site::siteUpdate($email,3);
-                \App\Models\Site::siteUpdate($description,4);
-                \App\Models\Site::siteUpdate($keyword,5);
-                \App\Models\Site::siteUpdate($gmeta,6);
-                header("Location:".site_base_url()."/admin/site/setting");
-            }
-        } else {
-            View::view("admin/siteSetting");
-        }
     }
     public function pageAdd(){
         if (input("page")) {
@@ -99,26 +81,27 @@ class Admin extends \Zest\Controller\Controller
             $keyword = escape(input('keyword'));
             $shortContent = escape(input('scontent'));
             $type = escape(input('type'));
-            $content = $this->cleanPages(input('contents'));
+            $content = escape(input('contents'));
             $files = new \Zest\Files\Files();
             $dir = "../Storage/Data/";
             $files->mkdir($dir."Blogs/");
             $target = "../Storage/Data/Blogs/";
+            $est = model('Pages')->readingTime(escape(input('contents'),'root'));
             $file = $files->fileUpload($_FILES['image'],$target,'image');
             if ($file['status'] === 'success') {
                 $fileSalts = "Blogs/".$file['code'];
             } else {
                 $fileSalts = '';
             }
-            $result = \App\Models\Pages::pageCreate($title,$keyword,$shortContent,$type,$content,$fileSalts);
+            $result = model('Pages')->pageCreate($title,$keyword,$shortContent,$type,$content,$est,$fileSalts);
             redirect(site_base_url()."/admin/page/view");
         } else {
-            View::view("admin/pageAdd");
+            view("admin/pageAdd");
         }
     }
     public function pageView()
     {
-        View::view("admin/pageView");
+        view("admin/pageView");
     }
     public function pageViewId()
     {
@@ -129,13 +112,14 @@ class Admin extends \Zest\Controller\Controller
                 $keyword = escape(input('keyword'));
                 $shortContent = escape(input('scontent'));
                 $content = $this->cleanPages(input('contents'));
-                $result = \App\Models\Pages::pageUpdate(['title'=>$title,'keyword' => $keyword,'scontent'=>$shortContent,'content'=>$content,'updated'=>date("Y-m-d H:i:s")],$id);
+                $est = model('Pages')->readingTime(escape(input('contents'),'root'));
+                $result = model('Pages')->pageUpdate(['title'=>$title,'keyword' => $keyword,'scontent'=>$shortContent,'content'=>$content,'updated'=>date("Y-m-d H:i:s"),'est' => $est],$id);
                 redirect(site_base_url()."/admin/view/page/{$id}");
             }
             if (input('ty')) {
                 $id = input('id');
                 $type = input('type');
-                $result = \App\Models\Pages::pageUpdate(['type'=>$type,'updated'=>date("Y-m-d H:i:s")],$id);
+                $result = model('Pages')->pageUpdate(['type'=>$type,'updated'=>date("Y-m-d H:i:s")],$id);
                 redirect(site_base_url()."/admin/view/page/{$id}");
             }
             if (input('img')) {
@@ -150,12 +134,12 @@ class Admin extends \Zest\Controller\Controller
                 } else {
                     $fileSalts = '';
                 }                
-                $result = \App\Models\Pages::pageUpdate(['image'=>$fileSalts,'updated'=>date("Y-m-d H:i:s")],$id);
+                $result = model('Pages')->pageUpdate(['image'=>$fileSalts,'updated'=>date("Y-m-d H:i:s")],$id);
                 redirect(site_base_url()."/admin/view/page/{$id}");
             }
         } else {
             $id = $this->route_params['id'];
-            $page = \App\Models\Pages::pageWhere("id",$id);
+            $page = model('Pages')->pageWhere("id",$id);
             View::view("admin/pageViewId",$page[0],false);
         }
     }

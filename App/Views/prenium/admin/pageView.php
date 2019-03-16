@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
                  <?php 
-                    $pages = \App\Models\Pages::pageAll();
+                    $pages = model('Pages')->pageAll();
                     foreach ($pages as $page => $value) {
                  ?>   
                     <tr>

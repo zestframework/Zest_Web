@@ -21,7 +21,7 @@ class Pages extends Model
         $this->db_name = __config()->database->db_name;
     }
 
-    public function pageCreate($title,$keyword,$shortContent,$type,$content,$file)
+    public function pageCreate($title,$keyword,$shortContent,$type,$content,$est,$file)
     {   
         
         $db = new Model;
@@ -42,6 +42,7 @@ class Pages extends Model
             'slug' => $slug,
             'token' => $token,
             'image' => $file,
+            'est'   => $est,
         ]]);
         $db->db()->close();
         return $result;
@@ -108,5 +109,15 @@ class Pages extends Model
         $update = $db->db()->update(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'columns'=>$params,'wheres'=>['id ='.$id]]);
         $db->db()->close();
         return $update;     
+    }
+
+    public function readingTime($contents)
+    {
+        $word = str_word_count($contents);
+        $m = floor($word / 250);
+        $s = floor($word % 250 / (250 / 60));
+        $est = $m >= 1 ? $m. ' min ' : ' ';
+        $est .= $s >= 1 ? $s .' sec' : ' ';
+        return $est;
     }
 }

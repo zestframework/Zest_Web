@@ -21,9 +21,8 @@ $user = new \Zest\Auth\User;
         <meta name="description" lang="en" content="<?=$args['scontent']?>">
         <meta name="keywords" lang="en" content="<?=$args['keyword']?>">    
       <?php endif;?>  
-      <?php  $args = \App\Models\Site::get(); ?>
       <link rel="shortcut icon" type="image/png" href="<?= site_base_url(); ?>/prenium/img/icon.png"/>
-      <meta name="google-site-verification" content="<?= $args[5]['value'] ?>" />
+      <meta name="google-site-verification" content="<?=__config()->site->g_meta?>" />
       <link href="<?=site_base_url()?>/prenium/style.css" rel="stylesheet">
       <link href="<?=site_base_url()?>/prenium/css/responsive.css" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,10 +118,6 @@ $user = new \Zest\Auth\User;
             </div>
         </div>
        <?php 
-          $announcement = model('Announcement')->get()[0];
-          if (!empty($announcement['detail'])) {
-            echo "<span class='alert alert-".$announcement['type']."'>".$announcement['detail']."</span><br>";
-         }
           $msg = view_system_message();
           if (!empty($msg)) :
              echo $msg;
@@ -130,6 +125,15 @@ $user = new \Zest\Auth\User;
         ?>
     </header>
     <!-- ***** Header Area End ***** -->
+       <?php 
+          $announcement = model('Announcement')->get()[0];
+          if (!empty($announcement['detail'])) { ?>
+        <div class="section_padding_100" style="background-color: #000;">
+                        <?php echo "<div class='alert alert-".$announcement['type']."' style='  word-wrap: break-word;'>".$announcement['detail']."</div>"; ?>
+    </div>
+     <?php } ?>
 <script type="text/javascript">
     url = "<?= site_base_url(); ?>/";
 </script>  
+
+

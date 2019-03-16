@@ -116,17 +116,6 @@
                     </li>                                     
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">settings</i>
-                            <span>Settings</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="<?= site_base_url(); ?>/admin/site/setting">Site</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">announcement</i>
                             <span>Announcement</span>
                         </a>

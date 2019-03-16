@@ -22,7 +22,6 @@ $router->post('account/password/reset/process',"Account@resetMyPasswordProcess")
 //Admin
 
 $router->get('admin/home',"Admin@index",'AdminMiddleware');
-$router->add('admin/site/setting',"Admin@siteSetting","GET|POST|HEAD",'AdminMiddleware');
 $router->add('admin/page/add',"Admin@pageAdd","GET|POST|HEAD",'AdminMiddleware');
 $router->get('admin/page/view',"Admin@pageView",'AdminMiddleware');
 $router->add('admin/view/page/{id:[0-9]+}',"Admin@pageViewId","GET|POST|HEAD",'AdminMiddleware');
@@ -31,6 +30,8 @@ $router->add('admin/view/user/{id:[0-9]+}',"Admin@userViewId","GET|POST|HEAD",'A
 $router->get('admin/generate/sitemap',"Admin@generateSiteMap",'AdminMiddleware');
 $router->add('admin/send/mail',"Admin@sendMails","GET|POST|HEAD",'AdminMiddleware');
 $router->add('admin/announcement',"Admin@announcement","GET|POST|HEAD",'AdminMiddleware');
+$router->post('admin/uploader/image', 'Admin@imageUploader', 'AdminMiddleware');
+
 //blogs 
 $router->get('blogs/{page:[0-9]+}',"Blogs@blog");
 $router->get('blog/view/{slug:[A-Za-z0-9]+}/{title:[A-Za-z0-9+.-]+}',"Blogs@view");

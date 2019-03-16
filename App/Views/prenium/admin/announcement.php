@@ -36,12 +36,12 @@
                                     	<label>Current:  <?=$args['type']?></label>
                                         <select class="form-control" name='type'>
                                         	<option value="success">Success</option>
-                                        	<option value="error">Error</option>
-                                        	<option value="information">Info</option>
+                                        	<option value="danger">Error</option>
+                                            <option value="dark">Dark</option>
+                                        	<option value="info">Info</option>
                                         	<option value="warning">Warning</option>
                                         	<option value="primary">Primary</option>
                                         	<option value="secondary">secondary</option>
-                                        	<option value="dark">Dark</option>
                                         	<option value="light">Light</option>
                                         </select>
                                     </div>

@@ -67,7 +67,12 @@
 		<h5>Upload/Update component file (existing file will be override)</h5>		
 		<form class="" action="<?=site_base_url()?>/components/view/<?=$args['slug']?>" method='post' enctype="multipart/form-data">
         <div class="col-md-8">
+        	<label>Component version:</label>
           <input type="text" name="version" id='version' required class="form-control" >
+        </div>
+         <div class="col-md-8">
+         	<label>Zest supported version:</label>
+          <input type="text" name="supportedVersion" id='version' required class="form-control" >
         </div>
         <div class="col-md-8">
           <input type="file" name="file" id='file' required class="form-control">
@@ -77,20 +82,31 @@
 		</form>	
 		<br><hr><br>	
 	<?php }} ?>			
-		<?php if ($args['componentFile'] !== NULL) { ?>
+		<?php 
+		$files = model('Components')->getComFiles($args['id']);
+		if (!empty($files)) {
+		?>
 			  <table class="table table-hover">
     <thead>
       <tr>
         <th>#</th>
         <th>Version</th>
+        <th>Zest supported version</th>
         <th>Download</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><?=$args['id']?></td>
-        <td><?=$args['componentVersion']?></td>
-        <td><a href="<?=site_base_url()?>read/zip/<?=$args['componentFile']?>">Download</a></td>
+    	<?php if(is_array($files)) { ?>
+    		<?php foreach ($files as $key => $value) { 
+    			$versions = json_decode($value['additional'], true);
+    			?>
+    	<tr>
+        <td><?=$value['id']?></td>
+        <td><?=$versions['version']?></td>
+        <td><?=$versions['supportedVersion']?></td>
+        <td><a href="<?=site_base_url()?>/read/zip/<?=$value['slug']?>">Download</a></td>
+       </tr> 
+    	<?php } } ?>
     </tbody>
   </table>
 		<?php } else { ?>

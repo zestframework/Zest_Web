@@ -32,7 +32,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Pages</div>
-                            <div class="number count-to" data-from="0" data-to="<?= count(\App\Models\Pages::pageAll()) ?>" data-speed="1000" data-fresh-interval="20"><?= count(\App\Models\Pages::pageAll()) ?></div>
+                            <div class="number count-to" data-from="0" data-to="<?= count(model('Pages')->pageAll()) ?>" data-speed="1000" data-fresh-interval="20"><?= count(model('Pages')->pageAll()) ?></div>
                         </div>
                     </div>
                 </div>

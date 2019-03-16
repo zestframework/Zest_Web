@@ -87,11 +87,11 @@ class Community extends Model
     public function isClose($slug)
     {
         $result = $this->communityWhere('slug',$slug);
-        if ($result[0]['isClosed'] === 'yes') {
-            return true;
-        } else {
+        //if ($result[0]['isClosed'] === 'yes') {
+           // return true;
+       // /} else {
             return false;
-        }
+        //}
     }       
     public function communityReplies($slug)
     {

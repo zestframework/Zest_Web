@@ -42,7 +42,7 @@
                 <div class="col-lg-3 col-md-3 meta-details">
                   <div class="user-details row">
                     <p class="user-name col-lg-12 col-md-12 col-6"><a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['username'] ?>"><?= (new \Zest\Auth\User())->getByWhere('id',$value['ownerId'])[0]['name'] ?></a> <span class="lnr lnr-user"></span></p>
-                    <p class="date col-lg-12 col-md-12 col-6"><?php echo ($value['componentVersion']) ? $value['componentVersion'] : 0?> <span class="fa fa-version"></span></p></div>
+                    </div>
                 </div>
                 <div class="col-lg-9 col-md-9 ">
                   <a class="posts-title" href="<?=site_base_url()?>/components/view/<?=$value['slug']?>"><h3><?=$value['title']?></h3></a>

@@ -62,13 +62,12 @@ class Components extends \Zest\Controller\Controller
          } elseif(input('file')) {
             $slug = $this->route_params['slug'];
             $id = model('Components')->componentWhere('slug',$slug)[0]['id'];
-            $prevFile = model('Components')->componentWhere('slug',$slug)[0]['componentFile'];
             $version = escape(input('version'));
+            $supportedVersion = escape(input('supportedVersion'));
             $file = (new \Zest\Files\Files())->fileUpload( $_FILES['file'],'../Storage/Data/','zip');
             if ($file['status'] === 'success') {
+                model('File')->add('com', $file['code'], $id, ['version' => $version, 'supportedVersion' => $supportedVersion]);
                 add_system_message("Component file uploaded successfully", 'success');
-                unlink(route()->storage_data.'/'.$prevFile);
-                $res = model('Community')->communityUpdate(['componentFile' => $file['code'],'componentVersion' => $version],$id);
             } else {
                 add_system_message("Sorry, file not uploaded", 'error');
             }

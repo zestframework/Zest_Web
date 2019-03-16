@@ -65,12 +65,12 @@ p img:hover {
                                     </div>
                                     <!-- Post Meta -->
                                     <div class="post-meta">
-                                        <h6>By <a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['username'] ?>"><?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?></a></a><a href="#!"><?=$args['created']?></a><a href="#"><a href="<?=site_base_url()?>/community/add">Any Question?</a></p><div class="fb-share-button" data-href="<?=site_base_url();?>/news/view/<?=$args['slug']?>/<?=urlencode($args['title'])?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></h6>
+                                        <h6>By <a href="<?=site_base_url()?>/@<?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['username'] ?>"><?= (new \Zest\Auth\User())->getByWhere('id',$args['ownerId'])[0]['name'] ?></a></a><a href="#!"><?=$args['created']?></a>
+                                          <a href="#"><a href="<?=site_base_url()?>/community/add">Any Question?</a><p style='color: green'><?=$args['est'];?> read</p><div class="fb-share-button" data-href="<?=site_base_url();?>/news/view/<?=$args['slug']?>/<?=urlencode($args['title'])?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></h6>
                                     </div>
                                     <!-- Post Excerpt -->
                                     <p class="page-view"><?php
-                  $html = (new \Parsedown())->text($args['content']);
-                  echo html_entity_decode($html);
+                  echo html_entity_decode($args['content']);
                     ?></p>
                                 </div>
                             </div>             

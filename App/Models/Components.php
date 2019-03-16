@@ -58,32 +58,37 @@ class Components extends Model
         $db->db()->close();
         return $result;
     }    
-	public static function componentAll()
+	public function componentAll()
 	{
     	$db = new Model;
 		$result = $db->db()->select(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'order_by'=> 'ID DESC','wheres'=>['title IS NOT NULL AND isComponent IS NOT NULL']]);
 		$db->db()->close();
 		return $result;		
 	}
-    public static function componentWhere($where,$value)
+    public function componentWhere($where,$value)
     {
     	$db = new Model;
     	$result = $db->db()->select(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'wheres' => ["{$where} ="."'{$value}'" . 'AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;
 	}  	
-    public static function viewLimitedComponent($limit,$offset)
+    public function viewLimitedComponent($limit,$offset)
     {
     	$db = new Model;
-    	$result = $db->db()->select(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
+    	$result = $db->db()->select(['db_name'=> $this->db_name,'table'=> $this->db_tbl,'wheres' => ['title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
     	$db->db()->close();
     	return $result;    	
     }    
-    public static function isComponent($slug)
+    public function isComponent($slug)
     {
         $db = new Model;
-        $result = $db->db()->count(['db_name'=>$this->db_name,'table'=>$this->$db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL"]]);
+        $result = $db->db()->count(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'wheres' => ['slug ='."'{$slug}' AND title IS NOT NULL AND isComponent IS NOT NULL AND isDelete IS NULL"]]);
         $db->db()->close();
         return $result;
+    }
+
+    public function getComFiles($id)
+    {
+        return model('File')->getByWhere('objectId', $id);
     }
 }
