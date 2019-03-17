@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use Ajaxray\PHPWatermark\Watermark;
-
 use Zest\Auth\Auth;
 use Zest\Auth\User;
 use Zest\Site\Site;
