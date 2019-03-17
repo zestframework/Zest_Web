@@ -56,4 +56,33 @@ class File extends Model
 
         return $result;
     }
+    public function getAll()
+    {
+        $db = new Model;
+        $result = $db->db()->select(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'order_by'=> 'ID DESC']);
+        $db->db()->close();
+
+        return $result;     
+    }
+    public function has($id)
+    {
+        $db = new Model;
+        $result = $db->db()->count(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'wheres' => ['id = '. $id]]);
+        $db->db()->close();
+        return $result;
+    }
+
+    public function update($params,$id)
+    {
+        $db = new Model;
+        $update = $db->db()->update(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'columns'=>$params,'wheres'=>['id ='.$id]]);
+        $db->db()->close();
+        return $update;     
+    }
+
+    public function getLastId()
+    {
+        $files = $this->getAll();
+        return current($files)['id'];
+    }
 }

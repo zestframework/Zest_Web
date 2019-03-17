@@ -64,7 +64,7 @@ class Components extends \Zest\Controller\Controller
             $id = model('Components')->componentWhere('slug',$slug)[0]['id'];
             $version = escape(input('version'));
             $supportedVersion = escape(input('supportedVersion'));
-            $file = (new \Zest\Files\Files())->fileUpload( $_FILES['file'],'../Storage/Data/','zip');
+            $file = (new \Zest\Files\Files())->fileUpload( $_FILES['file'], route()->storage_data,'zip');
             if ($file['status'] === 'success') {
                 model('File')->add('com', $file['code'], $id, ['version' => $version, 'supportedVersion' => $supportedVersion]);
                 add_system_message("Component file uploaded successfully", 'success');

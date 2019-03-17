@@ -114,8 +114,8 @@ class Pages extends Model
     public function readingTime($contents)
     {
         $word = str_word_count($contents);
-        $m = floor($word / 250);
-        $s = floor($word % 250 / (250 / 60));
+        $m = floor($word / 200);
+        $s = floor($word % 200 / (200 / 60));
         $est = $m >= 1 ? $m. ' min ' : ' ';
         $est .= $s >= 1 ? $s .' sec' : ' ';
         return $est;

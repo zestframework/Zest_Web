@@ -18,6 +18,8 @@ $router->get('account/reset-password',"Account@passwordReset");
 $router->post('account/reset-password/process',"Account@passwordResetProcess");
 $router->get('account/password/reset/{token:([a-zA-Z0-9])+}',"Account@resetMyPassword");
 $router->post('account/password/reset/process',"Account@resetMyPasswordProcess");
+$router->post('account/password/reset/process',"Account@resetMyPasswordProcess");
+$router->post('uploader/image',"Account@imageUploader");
 
 //Admin
 
@@ -30,7 +32,6 @@ $router->add('admin/view/user/{id:[0-9]+}',"Admin@userViewId","GET|POST|HEAD",'A
 $router->get('admin/generate/sitemap',"Admin@generateSiteMap",'AdminMiddleware');
 $router->add('admin/send/mail',"Admin@sendMails","GET|POST|HEAD",'AdminMiddleware');
 $router->add('admin/announcement',"Admin@announcement","GET|POST|HEAD",'AdminMiddleware');
-$router->post('admin/uploader/image', 'Admin@imageUploader', 'AdminMiddleware');
 
 //blogs 
 $router->get('blogs/{page:[0-9]+}',"Blogs@blog");

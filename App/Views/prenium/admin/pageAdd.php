@@ -16,7 +16,7 @@ tinymce.init({
   plugins: 'advlist anchor autolink autoresize autosave code codesample colorpicker image code emoticons fullpage fullscreen help hr imagetools importcss insertdatetime legacyoutput link lists media paste pagebreak preview print save quickbars searchreplace  spellchecker tabfocus template',
   toolbar: 'formatselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | link image media pageembed | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment | image code',
      convert_urls: false,
-     images_upload_url: "<?=site_base_url()?>/admin/uploader/image",
+     images_upload_url: "<?=site_base_url()?>/uploader/image",
      image_caption: true,
      spellchecker_dialog: true,
      importcss_append: true,
@@ -26,7 +26,7 @@ tinymce.init({
       
         xhr = new XMLHttpRequest();
         xhr.withCredentials = false;
-        xhr.open('POST', "<?=site_base_url()?>/admin/uploader/image");
+        xhr.open('POST', "<?=site_base_url()?>/uploader/image");
       
         xhr.onload = function() {
             var json;
@@ -48,7 +48,7 @@ tinymce.init({
       
         formData = new FormData();
         formData.append('file', blobInfo.blob(), blobInfo.filename());
-      
+        formData.append('type','page');
         xhr.send(formData);
     },
 

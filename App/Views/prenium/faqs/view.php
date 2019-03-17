@@ -65,7 +65,7 @@ p img:hover {
                                     </div>
                                     <!-- Post Excerpt -->
                                     <p class="page-view"><?php
-                  echo html_entity_decode($args['content']);
+                  echo decode_html_entity($args['content']);
                     ?></p>
                                 </div>
                             </div>    

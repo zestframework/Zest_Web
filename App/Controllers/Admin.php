@@ -18,13 +18,6 @@ class Admin extends \Zest\Controller\Controller
         view('admin/users/view');
     }
 
-    public function imageUploader()
-    {
-        $file = site_base_url() . "/image/user.jpg";
-        echo json_encode(array('location' => $file));
-
-    }
-
     public function announcement()
     {
         if (input('submit')) {

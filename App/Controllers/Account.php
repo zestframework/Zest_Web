@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use Ajaxray\PHPWatermark\Watermark;
+
 use Zest\Auth\Auth;
 use Zest\Auth\User;
 use Zest\Site\Site;
@@ -20,6 +22,19 @@ class Account extends \Zest\Controller\Controller
         $this->isLogin();
         view("account/login");
     }
+    
+    public function imageUploader()
+    {
+        $type = escape(input('type'));
+        $file = (new \Zest\Files\Files())->fileUpload( $_FILES['file'], route()->storage_data,'image');
+        if ($file['status'] === 'success') {
+            model('File')->add($type, $file['code'], (new User())->loginUser()[0]['id'], null);
+            model('WaterMark\WaterMark')->add($file['code']);
+            $file = site_base_url() . "/read/image/".$file['code'];
+            echo json_encode(array('location' => $file));
+        }
+    }
+
     public function loginProcess() 
     {
         $this->isLogin();

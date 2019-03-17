@@ -8,6 +8,53 @@
 		background-color: #f9f9ff!important;
 	}
 </style>
+          <script src='<?= site_base_url() ?>/tinymce/tinymce.min.js'></script>
+        <script>
+tinymce.init({
+  selector: 'textarea#desc',
+  plugins: 'advlist anchor autolink autoresize autosave code codesample colorpicker image code emoticons fullpage fullscreen help hr imagetools importcss insertdatetime legacyoutput link lists media paste pagebreak preview print save quickbars searchreplace  spellchecker tabfocus template',
+  toolbar: 'formatselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | link image media pageembed | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment | image code',
+     convert_urls: false,
+     images_upload_url: "<?=site_base_url()?>/uploader/image",
+     image_caption: true,
+     spellchecker_dialog: true,
+     importcss_append: true,
+     height: 400,
+    images_upload_handler: function (blobInfo, success, failure) {
+        var xhr, formData;
+      
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', "<?=site_base_url()?>/uploader/image");
+      
+        xhr.onload = function() {
+            var json;
+        
+            if (xhr.status != 200) {
+                failure('HTTP Error: ' + xhr.status);
+                return;
+            }
+        
+            json = JSON.parse(xhr.responseText);
+        
+            if (!json || typeof json.location != 'string') {
+                failure('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+        
+            success(json.location);
+        };
+      
+        formData = new FormData();
+        formData.append('file', blobInfo.blob(), blobInfo.filename());
+        formData.append('type','community');
+        xhr.send(formData);
+    },
+
+ });
+  </script>
+	
+
         <!-- ***** Breadcumb Area Start ***** -->
     <div class="zest-breadcumb-area" style="background-image: url(<?=site_base_url()?>/prenium/img/cover-small.jpg);">
         <div class="container h-100">
@@ -48,7 +95,7 @@
                
             </ul></div>
         <?php  } ?>    
-		<p class="text-right" id=''><?=  html_entity_decode((new \Parsedown())->text($args['contents']));?></p>
+		<p class="text-right" id=''><?=  decode_html_entity($args['contents']);?></p>
   			<?php if ((new \App\Models\Community)->isClose($args['slug'])) { ?>
 							<div class='alert alert-info' style='color:black'>This topic has been closed by admin</div>
 			<?php } ?>
@@ -71,7 +118,7 @@
 	  	</b></h5>
 		<h5 id='cummunity-time'><i><?=$value['created']?></i></h5>
 		<i class="fa fa-delete"></i>
-		<p class="text-right" id=''><?=  html_entity_decode((new \Parsedown())->text($value['contents']));?></p>
+		<p class="text-right" id=''><?=  decode_html_entity($value['contents']);?></p>
   	</div>
   </div>
 </div>
@@ -81,7 +128,7 @@
 	<div class="card">
 		<div class="card-body">
 			<form action="<?=site_base_url()?>/community/view/<?=$args['slug']?>" method="post">
-				<textarea id="description" name='description' class="materialize-textarea"></textarea>
+				<textarea id="desc" name='description' class="materialize-textarea"></textarea>
 				<input type='submit' name='submit' class='btn zest-btn mt-50 pull-right' value='Reply'/>
 			</form>
 		</div>	
