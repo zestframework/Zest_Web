@@ -40,27 +40,27 @@ class Components extends \Zest\Controller\Controller
     }
     public function view()
     {
+         $slug = $this->route_params['slug'];
          if (input('submit')) {
             if (!model('Community')->isClose($slug)) {
                 $slug = $this->route_params['slug'];
                 $contents = escape(input('description'));
                 $res = model('Community')->reply($slug,$contents);
-                 redirect(site_base_url().'/components/view/' .$slug);
+                add_system_message('Your reply had been added', 'success');
+                 redirect(site_base_url().'/components/view/' .$slug.'/1');
             } else {
-                redirect(site_base_url().'/components/view/' .$slug);
+                add_system_message('Sorry, this topic has been closed!', 'error');
+                redirect(site_base_url().'/components/view/' .$slug.'/1');
             }     
          } elseif(input('close')) {
-            $slug = $this->route_params['slug'];
             $id = model('Components')->componentWhere('slug',$slug)[0]['id'];
             $res = model('Community')->communityUpdate(['isClosed' => 'yes'],$id);
-            redirect(site_base_url().'/components/view/' .$slug);
+            redirect(site_base_url().'/components/view/' .$slug.'/1');
          } elseif(input('open')) {
-            $slug = $this->route_params['slug'];
             $id = model('Components')->componentWhere('slug',$slug)[0]['id'];
             $res = model('Community')->communityUpdate(['isClosed' => 'no'],$id);
-            redirect(site_base_url().'/components/view/' .$slug);
+            redirect(site_base_url().'/components/view/' .$slug.'/1');
          } elseif(input('file')) {
-            $slug = $this->route_params['slug'];
             $id = model('Components')->componentWhere('slug',$slug)[0]['id'];
             $version = escape(input('version'));
             $supportedVersion = escape(input('supportedVersion'));
@@ -71,17 +71,18 @@ class Components extends \Zest\Controller\Controller
             } else {
                 add_system_message("Sorry, file not uploaded", 'error');
             }
-            redirect(site_base_url().'/components/view/' .$slug);
+            redirect(site_base_url().'/components/view/' .$slug.'/1');
          } elseif(input('delete') && (new \App\Models\Account)->isAdmin()) {
-            $slug = $this->route_params['slug'];
             $id = model('Components')->componentWhere('slug',$slug)[0]['id'];
             $res = model('Community')->communityUpdate(['isDelete' => 'yes'],$id);
             redirect(site_base_url().'/components/1');
          } else {
-             $slug = $this->route_params['slug'];
              if (model('Components')->isComponent($slug) !== 0) {
+                $page = $this->route_params['page'];
+                $arg1 = ['page' => $page];
                 $pages = model('Components')->componentWhere('slug',$slug);
-                view('components/view',$pages[0],false);
+                $args = array_merge($arg1, $pages[0]);
+                view('components/view',$args,false);
              } else {
                 view("errors/404");
              }

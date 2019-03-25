@@ -45,7 +45,7 @@
                     <p class="date col-lg-12 col-md-12 col-6"><?=count((new \App\Models\Community)->communityReplies($value['slug']))?> <span class="fa fa-reply"></span></p></div>
                 </div>
                 <div class="col-lg-9 col-md-9 ">
-                  <a class="posts-title" href="<?=site_base_url()?>/community/view/<?=$value['slug']?>"><h3><?=$value['title']?></h3></a>
+                  <a class="posts-title" href="<?=site_base_url()?>/community/view/<?=$value['slug']?>/1"><h3><?=$value['title']?></h3></a>
                 </div>
               </div>    
               <hr>                        

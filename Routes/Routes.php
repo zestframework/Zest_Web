@@ -58,13 +58,13 @@ $router->get('contribute/donate',"Contribute@donation");
 $router->get('community/add',"Community@add");
 $router->post('community/add/process',"Community@addProcess","Auth");
 $router->get('community/{page:[0-9\.\-]+}',"Community@index");
-$router->add('community/view/{slug:[A-Za-z0-9]+}',"Community@view","GET|POST|HEAD");
+$router->add('community/view/{slug:[A-Za-z0-9]+}/{page:[0-9\.\-]+}',"Community@view","GET|POST|HEAD");
 
 //Components
 $router->get('components/add',"Components@add");
 $router->post('components/add/process',"Components@addProcess","Auth");
 $router->get('components/{page:[0-9]+}',"Components@index");
-$router->add('components/view/{slug:[A-Za-z0-9]+}',"Components@view","GET|POST|HEAD");
+$router->add('components/view/{slug:[A-Za-z0-9]+}/{page:[0-9\.\-]+}',"Components@view","GET|POST|HEAD");
 
 //Readers
 $router->get('read/image/{image:[a-z0-9.]+}',"Reader@image");

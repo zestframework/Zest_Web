@@ -1,7 +1,7 @@
 <?php
 $user = new \Zest\Auth\User;
  if (!$user->isLogin()) {
-     if (is_cookie('user')) {
+     if (!\Zest\Session\Session::has('user') && is_cookie('user')) {
           \Zest\Session\Session::set('user',get_cookie('user')); 
      }
    } else {

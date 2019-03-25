@@ -100,6 +100,15 @@ class Community extends Model
         $db->db()->close();
         return $result;        
     }
+    
+    public function limitedCommunityReplies($limit,$offset, $slug)
+    {
+        $db = new Model;
+        $result = $db->db()->select(['db_name'=>$this->db_name,'table'=>$this->db_tbl,'wheres' => ['slug ='."'{$slug}'". ' AND title IS NULL AND isComponent IS NULL AND isDelete IS NULL'],'limit' => ['start' => $limit , 'end' => $offset],'order_by'=> 'ID DESC']);
+        $db->db()->close();
+        return $result;     
+    }
+
     public function viewLimitedCommunity($limit,$offset)
     {
         $db = new Model;

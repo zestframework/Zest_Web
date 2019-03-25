@@ -1,8 +1,58 @@
 <?= \Zest\View\View::view('nav'); ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 <title><?=$args['title']?></title>
 <meta name="author" content="<?=(new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['name']?>">
 <meta name="keywords" lang="en" content="component,components,add on , plugin , parts , ,<?= $args['title'] ?>,zest,framework,php,php7,php7.2,Zest framework">
+          <script src='<?= site_base_url() ?>/tinymce/tinymce.min.js'></script>
+        <script>
+tinymce.init({
+  selector: 'textarea#desc',
+  theme: 'silver',
+  plugins: 'advlist anchor autolink autoresize autosave code codesample colorpicker image code emoticons fullpage fullscreen help hr imagetools importcss insertdatetime legacyoutput link lists media paste pagebreak preview print save quickbars searchreplace  spellchecker tabfocus',
+  toolbar: 'formatselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | link image media pageembed | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment | image code',
+    mobile: {
+      theme: 'mobile',
+      plugins: [ 'autosave', 'lists', 'autolink', 'image', 'code', 'emoticons', 'imagetool', 'paste' ]
+    },  
+     convert_urls: false,
+     images_upload_url: "<?=site_base_url()?>/uploader/image",
+     image_caption: true,
+     spellchecker_dialog: true,
+     importcss_append: true,
+     height: 400,
+    images_upload_handler: function (blobInfo, success, failure) {
+        var xhr, formData;
+      
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', "<?=site_base_url()?>/uploader/image");
+      
+        xhr.onload = function() {
+            var json;
+        
+            if (xhr.status != 200) {
+                failure('HTTP Error: ' + xhr.status);
+                return;
+            }
+        
+            json = JSON.parse(xhr.responseText);
+        
+            if (!json || typeof json.location != 'string') {
+                failure('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+        
+            success(json.location);
+        };
+      
+        formData = new FormData();
+        formData.append('file', blobInfo.blob(), blobInfo.filename());
+        formData.append('type','community');
+        xhr.send(formData);
+    },
+
+ });
+  </script>
+
 <style type="text/css">
 	body {
 		background-color: #f9f9ff!important;
@@ -35,7 +85,7 @@
   	<div id='community-topic'>
 	  	<h5 id=''><b><a href="<?=site_base_url()?>/@<?=(new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['username']?>" ><?=(new \Zest\Auth\User)->getByWhere('id',$args['ownerId'])[0]['name']?></a></b>	</h5>
 	  		<i>Posted in - <?=$args['category']?></i>
-		<h5 id='cummunity-time'><i><?=$args['created']?></i></h5>
+		<h5 id='cummunity-time'><i><?= (new \Zest\Common\Formats())->friendlyTime($args['created'])?></i></h5>
 		<?php if ((new \App\Models\Account)->isAdmin()) { ?>
 	  <div class="dropdown">
   <button class="btn zest-btn pull-right" type="button" data-toggle="dropdown">Actions</button>
@@ -120,7 +170,16 @@
 	<div class="container">
 		<h2 class="mb-10">Replies</h2>
 		 <?php
-			$replies = (new \App\Models\Community)->communityReplies($args['slug']);
+			   $tItems = count((new \App\Models\Community)->communityReplies($args['slug']));
+          $page = $args['page'];
+          $limit = 6;
+          $url = "/community/view/".$args['slug'].'/';
+          if($page == 1){
+            $start = 0;
+          } else{
+            $start = ($page - 1) * $limit;
+          }
+          $replies = (new \App\Models\Community)->limitedCommunityReplies($limit,$start, $args['slug']);
             foreach ($replies as $reply => $value) { ?>
 <div class="card">
 	<div class="card-body">
@@ -128,19 +187,24 @@
   	<div id='community-topic'>
 	  	<h5 id=''><b><a href="<?=site_base_url()?>/@<?=(new \Zest\Auth\User)->getByWhere('id',$value['ownerId'])[0]['username']?>" ><?=(new \Zest\Auth\User)->getByWhere('id',$value['ownerId'])[0]['name']?></a>
 	  	</b></h5>
-		<h5 id='cummunity-time'><i><?=$value['created']?></i></h5>
+		<h5 id='cummunity-time'><i><?= (new \Zest\Common\Formats())->friendlyTime($value['created'])?></i></h5>
 		<i class="fa fa-delete"></i>
 		<p class="text-right" id=''><?=  html_entity_decode((new \Parsedown())->text($value['contents']));?></p>
   	</div>
   </div>
 </div>
 <?php } ?> 	
+    <div class="zest-pagination-area section_padding_100">
+          <nav>
+             <?=pagination($tItems,$limit,$args['page'],$url);?>
+          </nav>
+      </div> 
 		<?php if ((new \Zest\Auth\User())->isLogin()) {
 			if (!(new \App\Models\Community)->isClose($args['slug'])) { ?>
 	<div class="card">
 		<div class="card-body">
-			<form action="<?=site_base_url()?>/components/view/<?=$args['slug']?>" method="post">
-				<textarea id="description" name='description' class="materialize-textarea"></textarea>
+			<form action="<?=site_base_url()?>/components/view/<?=$args['slug']?>/1" method="post">
+				<textarea id="desc" name='description' class="materialize-textarea"></textarea>
 				<input type='submit' name='submit' class='btn zest-btn mt-50 pull-right' value='Reply'/>
 			</form>
 		</div>	
@@ -153,10 +217,6 @@
 </div>
 
 <?= \Zest\View\View::view('footer'); ?>
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-<script>
-var simplemde = new SimpleMDE({ element: document.getElementById("description") });
-</script>
 
 <script type="text/javascript">
 	$("#component-top-close-topic").click(function(){

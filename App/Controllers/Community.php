@@ -39,41 +39,42 @@ class Community extends \Zest\Controller\Controller
     }
     public function view()
     {
+        $slug = $this->route_params['slug'];
          if (input('submit')) {
             if ((new \Zest\Auth\User())->isLogin()) {
-                $slug = $this->route_params['slug'];
     			if (!model('Community')->isClose($slug)) {
     				$contents = escape(input('description'));
     				$res = model('Community')->reply($slug,$contents);
                     add_system_message("You reply, had been added", 'success');
-    				redirect(site_base_url().'/community/view/' .$slug);
+    				redirect(site_base_url().'/community/view/' .$slug.'/1');
     			} else {
-    				redirect(site_base_url().'/community/view/' .$slug);
+                    add_system_message('Sorry, this topic has been closed!', 'error');
+    				redirect(site_base_url().'/community/view/' .$slug.'/1');
     			}
              } else {
                 add_system_message("You should be login, in order to reply in any topic", "error");
                 redirect(site_base_url()."/account/login");
              }   
          } elseif(input('close') && (new \App\Models\Account)->isAdmin()) {
-            $slug = $this->route_params['slug'];
             $id = model('Community')->communityWhere('slug',$slug)[0]['id'];
             $res = model('Community')->communityUpdate(['isClosed' => 'yes'],$id);
-            redirect(site_base_url().'/community/view/' .$slug);
+            redirect(site_base_url().'/community/view/' .$slug.'/1');
          } elseif(input('open') && (new \App\Models\Account)->isAdmin()) {
-            $slug = $this->route_params['slug'];
             $id = model('Community')->communityWhere('slug',$slug)[0]['id'];
             $res = model('Community')->communityUpdate(['isClosed' => 'no'],$id);
-            redirect(site_base_url().'/community/view/' .$slug);
+            redirect(site_base_url().'/community/view/' .$slug.'/1');
          } elseif(input('delete') && (new \App\Models\Account)->isAdmin()) {
-            $slug = $this->route_params['slug'];
             $id = model('Community')->communityWhere('slug',$slug)[0]['id'];
             $res = model('Community')->communityUpdate(['isDelete' => 'yes'],$id);
             redirect(site_base_url().'/community/1');
          } else {
-             $slug = $this->route_params['slug'];
              if (model('Community')->isCommunity($slug) !== 0) {
+                $page = $this->route_params['page'];
+                $arg1 = ['page' => $page];
                 $pages = model('Community')->communityWhere('slug',$slug);
-                view('/community/view',$pages[0],false);
+                $args = array_merge($arg1, $pages[0]);
+
+                view('/community/view',$args,false);
              } else {
                 view("errors/404");
              }
